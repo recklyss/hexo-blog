@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 {% if theme.canvas_nest %}
-<script type="text/javascript" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+<script type="text/javascript" color="10,255,15" opacity='0.7' count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
 {% endif %}
 
 {% set html_class = 'theme-next ' + theme.scheme %}
