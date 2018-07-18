@@ -1,6 +1,8 @@
 ---
 title: 关于我 - 一个普通的Java程序员
 date: 2018-06-28 10:59:33
+type: "about"
+comments: false
 ---
 <center>热爱技术，喜欢钻研，但不是宅男</center>
 <center>喜欢代码，精益求精，不拘于掌固</center>
