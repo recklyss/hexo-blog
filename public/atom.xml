@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-28T12:12:51.399Z</updated>
+  <updated>2018-08-30T15:28:55.090Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,13 +17,18 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>开发日记-2018-08-28</title>
+    <title>开发日记-20180828</title>
     <link href="http://yoursite.com/blog/20180811/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-20180828/"/>
     <id>http://yoursite.com/blog/20180811/开发日记-20180828/</id>
     <published>2018-08-11T03:02:37.000Z</published>
-    <updated>2018-08-28T12:12:51.399Z</updated>
+    <updated>2018-08-30T15:28:55.090Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="Mysql数据库根据多个字段进行分组统计"><a href="#Mysql数据库根据多个字段进行分组统计" class="headerlink" title="Mysql数据库根据多个字段进行分组统计"></a>Mysql数据库根据多个字段进行分组统计</h3><p>如下图，表order为订单表，字段以及数据如下：</p><p><img src="http://ol3d80aa0.bkt.clouddn.com/order.png" alt="order.png"><br>现在想要根据表中的信息，查询每天不同的商户有多少笔订单，以及订单的总金额。<br><a id="more"></a><br>需要完成以上查询，就需要进行group by多个字段统计，统计sql如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">store_name,</span><br><span class="line">DATE_FORMAT(add_time, &apos;%Y-%m-%d&apos;) AS addDate,</span><br><span class="line">count(1) AS total,</span><br><span class="line">sum(order_money) AS total_money</span><br><span class="line">FROM</span><br><span class="line">`order`</span><br><span class="line">GROUP BY</span><br><span class="line">DATE_FORMAT(add_time, &apos;%Y-%m-%d&apos;),</span><br><span class="line">store_name;</span><br></pre></td></tr></table></figure></p><p>统计查询得到的数据结果如下：</p><p><img src="http://ol3d80aa0.bkt.clouddn.com/a.png" alt="a.png"></p>]]></content>
     
     <summary type="html">
+    
+      &lt;h3 id=&quot;Mysql数据库根据多个字段进行分组统计&quot;&gt;&lt;a href=&quot;#Mysql数据库根据多个字段进行分组统计&quot; class=&quot;headerlink&quot; title=&quot;Mysql数据库根据多个字段进行分组统计&quot;&gt;&lt;/a&gt;Mysql数据库根据多个字段进行分组统计&lt;/h3&gt;&lt;p&gt;如下图，表order为订单表，字段以及数据如下：&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://ol3d80aa0.bkt.clouddn.com/order.png&quot; alt=&quot;order.png&quot;&gt;&lt;br&gt;现在想要根据表中的信息，查询每天不同的商户有多少笔订单，以及订单的总金额。&lt;br&gt;
     
     </summary>
     
