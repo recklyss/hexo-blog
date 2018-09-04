@@ -6,7 +6,11 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
+<<<<<<< HEAD
   <updated>2018-08-30T15:35:16.710Z</updated>
+=======
+  <updated>2018-09-04T12:00:20.856Z</updated>
+>>>>>>> 82061a41ff49a06d57dd4f43333dcaaf27db7cca
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +21,69 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+<<<<<<< HEAD
     <title>开发日记-20180828</title>
     <link href="http://yoursite.com/blog/20180811/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-20180828/"/>
     <id>http://yoursite.com/blog/20180811/开发日记-20180828/</id>
     <published>2018-08-11T03:02:37.000Z</published>
     <updated>2018-08-30T15:35:16.710Z</updated>
+=======
+    <title>hexo博客文章置顶方式</title>
+    <link href="http://yoursite.com/blog/20180904/hexo%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6%E6%96%B9%E5%BC%8F/"/>
+    <id>http://yoursite.com/blog/20180904/hexo博客文章置顶方式/</id>
+    <published>2018-09-04T11:51:53.000Z</published>
+    <updated>2018-09-04T12:00:20.856Z</updated>
+>>>>>>> 82061a41ff49a06d57dd4f43333dcaaf27db7cca
+    
+    <content type="html"><![CDATA[<h3 id="博文置顶"><a href="#博文置顶" class="headerlink" title="博文置顶"></a>博文置顶</h3><h4 id="目前已经有修改后支持置顶的仓库，可以直接用以下命令安装"><a href="#目前已经有修改后支持置顶的仓库，可以直接用以下命令安装" class="headerlink" title="目前已经有修改后支持置顶的仓库，可以直接用以下命令安装"></a>目前已经有修改后支持置顶的仓库，可以直接用以下命令安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure><a id="more"></a><h4 id="然后在需要置顶的文章的Front-matter中加上top-true即可。比如下面这篇文章："><a href="#然后在需要置顶的文章的Front-matter中加上top-true即可。比如下面这篇文章：" class="headerlink" title="然后在需要置顶的文章的Front-matter中加上top: true即可。比如下面这篇文章："></a>然后在需要置顶的文章的Front-matter中加上top: true即可。比如下面这篇文章：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo博客置顶</span><br><span class="line">date: 2017-09-08 12:00:25</span><br><span class="line">categories: 博客搭建系列</span><br><span class="line">top: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure><h4 id="到目前为止，置顶功能已经可以实现了。下面可以设置明确的置顶标志："><a href="#到目前为止，置顶功能已经可以实现了。下面可以设置明确的置顶标志：" class="headerlink" title="到目前为止，置顶功能已经可以实现了。下面可以设置明确的置顶标志："></a>到目前为止，置顶功能已经可以实现了。下面可以设置明确的置顶标志：</h4><h5 id="打开：-blog-themes-next-layout-macro-目录下的post-swig文件，定位到-lt-div-class-quot-post-meta-quot-gt-标签下，紧接着下一行插入如下代码："><a href="#打开：-blog-themes-next-layout-macro-目录下的post-swig文件，定位到-lt-div-class-quot-post-meta-quot-gt-标签下，紧接着下一行插入如下代码：" class="headerlink" title="打开：/blog/themes/next/layout/_macro 目录下的post.swig文件，定位到&lt;div class=&quot;post-meta&quot;&gt;标签下，紧接着下一行插入如下代码："></a>打开：/blog/themes/next/layout/_macro 目录下的post.swig文件，定位到<code>&lt;div class=&quot;post-meta&quot;&gt;</code>标签下，紧接着下一行插入如下代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">  &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span><br><span class="line">  &lt;font color=7D26CD&gt;置顶&lt;/font&gt;</span><br><span class="line">  &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure><hr><p>至此，博客置顶的方式就全部完成了</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;博文置顶&quot;&gt;&lt;a href=&quot;#博文置顶&quot; class=&quot;headerlink&quot; title=&quot;博文置顶&quot;&gt;&lt;/a&gt;博文置顶&lt;/h3&gt;&lt;h4 id=&quot;目前已经有修改后支持置顶的仓库，可以直接用以下命令安装&quot;&gt;&lt;a href=&quot;#目前已经有修改后支持置顶的仓库，可以直接用以下命令安装&quot; class=&quot;headerlink&quot; title=&quot;目前已经有修改后支持置顶的仓库，可以直接用以下命令安装&quot;&gt;&lt;/a&gt;目前已经有修改后支持置顶的仓库，可以直接用以下命令安装&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm uninstall hexo-generator-index --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-index-pin-top --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="开发日记" scheme="http://yoursite.com/tags/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="博客设置" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+<<<<<<< HEAD
+    <title>一些胡言乱语</title>
+    <link href="http://yoursite.com/blog/20180729/%E9%9A%8F%E7%AC%94/"/>
+    <id>http://yoursite.com/blog/20180729/随笔/</id>
+    <published>2018-07-29T10:33:49.000Z</published>
+    <updated>2018-08-30T15:35:16.712Z</updated>
+=======
+    <title>泰国7天6晚自由行攻略</title>
+    <link href="http://yoursite.com/blog/20180904/%E6%B3%B0%E5%9B%BD7%E5%A4%A96%E6%99%9A%E8%87%AA%E7%94%B1%E8%A1%8C%E6%94%BB%E7%95%A5/"/>
+    <id>http://yoursite.com/blog/20180904/泰国7天6晚自由行攻略/</id>
+    <published>2018-09-04T11:38:45.000Z</published>
+    <updated>2018-09-04T11:44:24.147Z</updated>
+>>>>>>> 82061a41ff49a06d57dd4f43333dcaaf27db7cca
+    
+    <content type="html"><![CDATA[<h4 id="人生不可能是一场说走就走的旅行，但心怀远方的人，一定要时刻做着说走就走的准备！"><a href="#人生不可能是一场说走就走的旅行，但心怀远方的人，一定要时刻做着说走就走的准备！" class="headerlink" title="人生不可能是一场说走就走的旅行，但心怀远方的人，一定要时刻做着说走就走的准备！"></a>人生不可能是一场说走就走的旅行，但心怀远方的人，一定要时刻做着说走就走的准备！</h4><a id="more"></a>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;人生不可能是一场说走就走的旅行，但心怀远方的人，一定要时刻做着说走就走的准备！&quot;&gt;&lt;a href=&quot;#人生不可能是一场说走就走的旅行，但心怀远方的人，一定要时刻做着说走就走的准备！&quot; class=&quot;headerlink&quot; title=&quot;人生不可能是一场说走就走的旅行，但心怀远方的人，一定要时刻做着说走就走的准备！&quot;&gt;&lt;/a&gt;人生不可能是一场说走就走的旅行，但心怀远方的人，一定要时刻做着说走就走的准备！&lt;/h4&gt;
+    
+    </summary>
+    
+    
+      <category term="旅行记录" scheme="http://yoursite.com/tags/%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>开发日记-20180828</title>
+    <link href="http://yoursite.com/blog/20180811/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-20180828/"/>
+    <id>http://yoursite.com/blog/20180811/开发日记-20180828/</id>
+    <published>2018-08-11T03:02:37.000Z</published>
+    <updated>2018-08-30T15:28:55.090Z</updated>
     
     <content type="html"><![CDATA[<h3 id="Mysql数据库根据多个字段进行分组统计"><a href="#Mysql数据库根据多个字段进行分组统计" class="headerlink" title="Mysql数据库根据多个字段进行分组统计"></a>Mysql数据库根据多个字段进行分组统计</h3><p>如下图，表order为订单表，字段以及数据如下：</p><p><img src="http://ol3d80aa0.bkt.clouddn.com/order.png" alt="order.png"><br>现在想要根据表中的信息，查询每天不同的商户有多少笔订单，以及订单的总金额。<br><a id="more"></a><br>需要完成以上查询，就需要进行group by多个字段统计，统计sql如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">store_name,</span><br><span class="line">DATE_FORMAT(add_time, &apos;%Y-%m-%d&apos;) AS addDate,</span><br><span class="line">count(1) AS total,</span><br><span class="line">sum(order_money) AS total_money</span><br><span class="line">FROM</span><br><span class="line">`order`</span><br><span class="line">GROUP BY</span><br><span class="line">DATE_FORMAT(add_time, &apos;%Y-%m-%d&apos;),</span><br><span class="line">store_name;</span><br></pre></td></tr></table></figure></p><p>统计查询得到的数据结果如下：</p><p><img src="http://ol3d80aa0.bkt.clouddn.com/a.png" alt="a.png"></p>]]></content>
     
@@ -34,26 +96,6 @@
     
     
       <category term="开发日记" scheme="http://yoursite.com/tags/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>一些胡言乱语</title>
-    <link href="http://yoursite.com/blog/20180729/%E9%9A%8F%E7%AC%94/"/>
-    <id>http://yoursite.com/blog/20180729/随笔/</id>
-    <published>2018-07-29T10:33:49.000Z</published>
-    <updated>2018-08-30T15:35:16.712Z</updated>
-    
-    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;很多时候看见街上幸福的情侣的时候，总会想要将自己带入到其中，想象着如果那个男生是自己该多好。能偶有一个人依赖着自己，和自己一起生活，一起为了美好的未来而努力工作生活是一件多么美好的事情。可是事实上是，当自己有机会去了解到一个女生的时候，却又畏首畏尾，犹犹豫豫。生怕她想要的东西是自己完全给不了的。<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;而且对于我来说，好像有一种情节。有个人，如果没有和她画上一个斩钉截铁的句号，那么我可能完全没有办法将自己投入到下一个开始的感情中去。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;也许这一刻快要来了吧。再等两个月。也许我和她之间的可能性非常小了，又或许她还是与我有着相同的想法。总之我没问，她也没说。我们似乎对于某一段共同的过去不约而同的一个字都没有提起过。细思一下也是很有意思的事情。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;经常会想，如果没有她我会和一个怎么样的人在一起，也许是一个身材娇小，性格活泼可爱的萝莉。因为我好像需要一个同样闹的人陪在身边一起疯过每一天。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;偶尔再网上看到她写与自己ex之间的故事，看得出来她也是曾经想要认真开始一段感情的人。可是我从她的文字里面却感受不到任何真正的感情，或许是我的错觉吧。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;真的好烦啊。为什么总是能够像被诅咒过一样，总是能够给我希望又让我失望，我完全不懂她想要什么，也许我真的是执念，我们真的不合适？</p><p>&nbsp;&nbsp;&nbsp;&nbsp;总之，我会尽快结束掉这痛苦的感觉，不管是开始，还是结束。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很多时候看见街上幸福的情侣的时候，总会想要将自己带入到其中，想象着如果那个男生是自己该多好。能偶有一个人依赖着自己，和自己一起生活，一起为了美好的未来而努力工作生活是一件多么美好的事情。可是事实上是，当自己有机会去了解到一个女生的时候，却又畏首畏尾，犹犹豫豫。生怕她想要的东西是自己完全给不了的。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="生活随笔" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
     
   </entry>
   
@@ -101,9 +143,9 @@
     </summary>
     
     
-      <category term="IDEA" scheme="http://yoursite.com/tags/IDEA/"/>
-    
       <category term="开发日记" scheme="http://yoursite.com/tags/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="IDEA" scheme="http://yoursite.com/tags/IDEA/"/>
     
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
