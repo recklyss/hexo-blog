@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[hexo博客文章置顶方式]]></title>
+    <url>%2Fblog%2F20180904%2Fhexo%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6%E6%96%B9%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[博文置顶目前已经有修改后支持置顶的仓库，可以直接用以下命令安装12npm uninstall hexo-generator-index --savenpm install hexo-generator-index-pin-top --save 然后在需要置顶的文章的Front-matter中加上top: true即可。比如下面这篇文章：123456---title: hexo博客置顶date: 2017-09-08 12:00:25categories: 博客搭建系列top: true--- 到目前为止，置顶功能已经可以实现了。下面可以设置明确的置顶标志：打开：/blog/themes/next/layout/_macro 目录下的post.swig文件，定位到&lt;div class=&quot;post-meta&quot;&gt;标签下，紧接着下一行插入如下代码：12345&#123;% if post.top %&#125; &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt; &lt;font color=7D26CD&gt;置顶&lt;/font&gt; &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;&#123;% endif %&#125; 至此，博客置顶的方式就全部完成了]]></content>
+      <tags>
+        <tag>开发日记</tag>
+        <tag>博客设置</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[泰国7天6晚自由行攻略]]></title>
     <url>%2Fblog%2F20180904%2F%E6%B3%B0%E5%9B%BD7%E5%A4%A96%E6%99%9A%E8%87%AA%E7%94%B1%E8%A1%8C%E6%94%BB%E7%95%A5%2F</url>
     <content type="text"><![CDATA[人生不可能是一场说走就走的旅行，但心怀远方的人，一定要时刻做着说走就走的准备！]]></content>
@@ -31,8 +40,8 @@
     <url>%2Fblog%2F20180708%2F%E5%85%B3%E4%BA%8EIDEA%E5%86%8D%E4%BB%8Egit%E6%88%96%E8%80%85svn%E4%B8%8A%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E6%97%B6%E4%B8%8D%E8%83%BD%E5%8A%A0%E8%BD%BD%E5%AD%97%E6%A8%A1%E5%9D%97%E7%9A%84%E9%97%AE%E9%A2%98%2F</url>
     <content type="text"><![CDATA[关于IDEA再从git或者svn上导入项目时不能加载字模块的问题 最近入职新公司，很多东西也都算是要从头学起。在之前公司用的都是eclipse，这边要求用IDEA，其实很早就知道这是一个非常强大的编译器，但平时没有机会使用，现在有机会用这个还是挺开心的。 由于公司使用gitlab，在注册好账号导入代码的时候遇到一个情况，就是直接用IDEA的git工具导入的话会出现，maven项目的子模块无法被识别以及被管理的情况。事实上eclipse也有同样的问题。现在只说下使用IDEA遇到这个情况的解决办法。 有两种解决方式。1、手动将module添加到项目管理： 打开文件选项中的项目结构（快捷键ctrl+alt+shift+s） 选择 模块-加号-导入module，手动将自己需要的模块一一导入进去2、先将项目通过命令行导入到本机，然后通过IDEA的New Project from Existing Sources导入本地项目进来，这个直接就能够对所有模块进行代码管理了 从eclipse转到IDEA前几天是最艰难的，因为很多习惯不是说改就能改掉的，工具的使用总得需要一个学习的时间，但是等这段时间过去，后面一定会体会到IDEA的强大。]]></content>
       <tags>
-        <tag>IDEA</tag>
         <tag>开发日记</tag>
+        <tag>IDEA</tag>
         <tag>git</tag>
       </tags>
   </entry>
