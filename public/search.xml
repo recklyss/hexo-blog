@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[泰国7天6晚自由行攻略]]></title>
+    <url>%2Fblog%2F20180904%2F%E6%B3%B0%E5%9B%BD7%E5%A4%A96%E6%99%9A%E8%87%AA%E7%94%B1%E8%A1%8C%E6%94%BB%E7%95%A5%2F</url>
+    <content type="text"><![CDATA[人生不可能是一场说走就走的旅行，但心怀远方的人，一定要时刻做着说走就走的准备！]]></content>
+      <tags>
+        <tag>旅行记录</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[开发日记-20180828]]></title>
     <url>%2Fblog%2F20180811%2F%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-20180828%2F</url>
     <content type="text"><![CDATA[Mysql数据库根据多个字段进行分组统计如下图，表order为订单表，字段以及数据如下： 现在想要根据表中的信息，查询每天不同的商户有多少笔订单，以及订单的总金额。需要完成以上查询，就需要进行group by多个字段统计，统计sql如下：12345678910SELECT store_name, DATE_FORMAT(add_time, &apos;%Y-%m-%d&apos;) AS addDate, count(1) AS total, sum(order_money) AS total_moneyFROM `order`GROUP BY DATE_FORMAT(add_time, &apos;%Y-%m-%d&apos;), store_name; 统计查询得到的数据结果如下：]]></content>
       <tags>
         <tag>开发日记</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[一些胡言乱语]]></title>
-    <url>%2Fblog%2F20180729%2F%E9%9A%8F%E7%AC%94%2F</url>
-    <content type="text"><![CDATA[&nbsp;&nbsp;&nbsp;&nbsp;很多时候看见街上幸福的情侣的时候，总会想要将自己带入到其中，想象着如果那个男生是自己该多好。能偶有一个人依赖着自己，和自己一起生活，一起为了美好的未来而努力工作生活是一件多么美好的事情。可是事实上是，当自己有机会去了解到一个女生的时候，却又畏首畏尾，犹犹豫豫。生怕她想要的东西是自己完全给不了的。&nbsp;&nbsp;&nbsp;&nbsp;而且对于我来说，好像有一种情节。有个人，如果没有和她画上一个斩钉截铁的句号，那么我可能完全没有办法将自己投入到下一个开始的感情中去。 &nbsp;&nbsp;&nbsp;&nbsp;也许这一刻快要来了吧。再等两个月。也许我和她之间的可能性非常小了，又或许她还是与我有着相同的想法。总之我没问，她也没说。我们似乎对于某一段共同的过去不约而同的一个字都没有提起过。细思一下也是很有意思的事情。 &nbsp;&nbsp;&nbsp;&nbsp;经常会想，如果没有她我会和一个怎么样的人在一起，也许是一个身材娇小，性格活泼可爱的萝莉。因为我好像需要一个同样闹的人陪在身边一起疯过每一天。 &nbsp;&nbsp;&nbsp;&nbsp;偶尔再网上看到她写与自己ex之间的故事，看得出来她也是曾经想要认真开始一段感情的人。可是我从她的文字里面却感受不到任何真正的感情，或许是我的错觉吧。 &nbsp;&nbsp;&nbsp;&nbsp;真的好烦啊。为什么总是能够像被诅咒过一样，总是能够给我希望又让我失望，我完全不懂她想要什么，也许我真的是执念，我们真的不合适？ &nbsp;&nbsp;&nbsp;&nbsp;总之，我会尽快结束掉这痛苦的感觉，不管是开始，还是结束。]]></content>
-      <tags>
-        <tag>生活随笔</tag>
       </tags>
   </entry>
   <entry>
