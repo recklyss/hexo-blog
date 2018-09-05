@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2018-08-30T15:35:16.710Z</updated>
+  <updated>2018-09-04T14:05:13.831Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo博客文章置顶方式</title>
+    <link href="http://yoursite.com/blog/20180904/hexo%E5%8D%9A%E5%AE%A2%E6%96%87%E7%AB%A0%E7%BD%AE%E9%A1%B6%E6%96%B9%E5%BC%8F/"/>
+    <id>http://yoursite.com/blog/20180904/hexo博客文章置顶方式/</id>
+    <published>2018-09-04T11:51:53.000Z</published>
+    <updated>2018-09-04T14:05:13.831Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="博文置顶"><a href="#博文置顶" class="headerlink" title="博文置顶"></a>博文置顶</h3><h4 id="目前已经有修改后支持置顶的仓库，可以直接用以下命令安装"><a href="#目前已经有修改后支持置顶的仓库，可以直接用以下命令安装" class="headerlink" title="目前已经有修改后支持置顶的仓库，可以直接用以下命令安装"></a>目前已经有修改后支持置顶的仓库，可以直接用以下命令安装</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm uninstall hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-index-pin-top --save</span><br></pre></td></tr></table></figure><a id="more"></a><h4 id="然后在需要置顶的文章的Front-matter中加上top-true即可。比如下面这篇文章："><a href="#然后在需要置顶的文章的Front-matter中加上top-true即可。比如下面这篇文章：" class="headerlink" title="然后在需要置顶的文章的Front-matter中加上top: true即可。比如下面这篇文章："></a>然后在需要置顶的文章的Front-matter中加上top: true即可。比如下面这篇文章：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: hexo博客置顶</span><br><span class="line">date: 2017-09-08 12:00:25</span><br><span class="line">categories: 博客搭建系列</span><br><span class="line">top: true</span><br><span class="line">---</span><br></pre></td></tr></table></figure><h4 id="到目前为止，置顶功能已经可以实现了。下面可以设置明确的置顶标志："><a href="#到目前为止，置顶功能已经可以实现了。下面可以设置明确的置顶标志：" class="headerlink" title="到目前为止，置顶功能已经可以实现了。下面可以设置明确的置顶标志："></a>到目前为止，置顶功能已经可以实现了。下面可以设置明确的置顶标志：</h4><h5 id="打开：-blog-themes-next-layout-macro-目录下的post-swig文件，定位到-lt-div-class-quot-post-meta-quot-gt-标签下，紧接着下一行插入如下代码："><a href="#打开：-blog-themes-next-layout-macro-目录下的post-swig文件，定位到-lt-div-class-quot-post-meta-quot-gt-标签下，紧接着下一行插入如下代码：" class="headerlink" title="打开：/blog/themes/next/layout/_macro 目录下的post.swig文件，定位到&lt;div class=&quot;post-meta&quot;&gt;标签下，紧接着下一行插入如下代码："></a>打开：/blog/themes/next/layout/_macro 目录下的post.swig文件，定位到<code>&lt;div class=&quot;post-meta&quot;&gt;</code>标签下，紧接着下一行插入如下代码：</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;% if post.top %&#125;</span><br><span class="line">  &lt;i class=&quot;fa fa-thumb-tack&quot;&gt;&lt;/i&gt;</span><br><span class="line">  &lt;font color=7D26CD&gt;置顶&lt;/font&gt;</span><br><span class="line">  &lt;span class=&quot;post-meta-divider&quot;&gt;|&lt;/span&gt;</span><br><span class="line">&#123;% endif %&#125;</span><br></pre></td></tr></table></figure><hr><p>至此，博客置顶的方式就全部完成了</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;博文置顶&quot;&gt;&lt;a href=&quot;#博文置顶&quot; class=&quot;headerlink&quot; title=&quot;博文置顶&quot;&gt;&lt;/a&gt;博文置顶&lt;/h3&gt;&lt;h4 id=&quot;目前已经有修改后支持置顶的仓库，可以直接用以下命令安装&quot;&gt;&lt;a href=&quot;#目前已经有修改后支持置顶的仓库，可以直接用以下命令安装&quot; class=&quot;headerlink&quot; title=&quot;目前已经有修改后支持置顶的仓库，可以直接用以下命令安装&quot;&gt;&lt;/a&gt;目前已经有修改后支持置顶的仓库，可以直接用以下命令安装&lt;/h4&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;npm uninstall hexo-generator-index --save&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;npm install hexo-generator-index-pin-top --save&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+    
+    </summary>
+    
+    
+      <category term="开发日记" scheme="http://yoursite.com/tags/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="博客设置" scheme="http://yoursite.com/tags/%E5%8D%9A%E5%AE%A2%E8%AE%BE%E7%BD%AE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>泰国7天6晚自由行攻略</title>
+    <link href="http://yoursite.com/blog/20180904/%E6%B3%B0%E5%9B%BD7%E5%A4%A96%E6%99%9A%E8%87%AA%E7%94%B1%E8%A1%8C%E6%94%BB%E7%95%A5/"/>
+    <id>http://yoursite.com/blog/20180904/泰国7天6晚自由行攻略/</id>
+    <published>2018-09-04T11:38:45.000Z</published>
+    <updated>2018-09-04T15:55:59.531Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>人生不可能是一场说走就走的旅行，但心怀远方的人，一定要时刻做着说走就走的准备！</p></blockquote><p><font face="STCAIYUN">关于去泰国这件事情，可能发生的很突然，但是没关系，既然决定了，就把它安排在计划里。</font></p><h3 id="一、出行前的准备"><a href="#一、出行前的准备" class="headerlink" title="一、出行前的准备"></a>一、出行前的准备</h3><h4 id="1、护照-amp-签证"><a href="#1、护照-amp-签证" class="headerlink" title="1、护照&amp;签证"></a>1、护照&amp;签证</h4><p>我是在杭州工作，在杭州工作社保交满一年，就可以办护照了。拿着身份证在西湖区行政服务中心的出入境管理那儿就可以办理了。现在一楼自助打印下社保证明，然后去后面的楼，出入境办理区按照流程办理即可。大概一个多礼拜就能拿到护照，我也没想到有这么快。</p><p>签证是在淘宝上买的，260￥。七个工作日到手。</p><h4 id="2、泰铢-amp-电话卡-amp-出入境-amp-去泰国的必备软件-amp-其他"><a href="#2、泰铢-amp-电话卡-amp-出入境-amp-去泰国的必备软件-amp-其他" class="headerlink" title="2、泰铢&amp;电话卡&amp;出入境&amp;去泰国的必备软件&amp;其他"></a>2、泰铢&amp;电话卡&amp;出入境&amp;去泰国的必备软件&amp;其他</h4><p>泰国新规定，过境签、落地签-10000泰铢或等值外币现金（每人），20000泰铢（家庭）；<br>旅游签-20000泰铢或等值外币现金（每人），40000泰铢（家庭），抽查到概率很低，一般落地签会查的吧。但是网上说好像都不查的，或者很少查，但还是换两千的吧。</p><p>然后再淘宝买泰国7天happy卡，<a href="https://traveldetail.fliggy.com/item.htm?spm=a230r.1.14.1.42f77cb9MwHKZ4&amp;id=38255797452&amp;ns=1&amp;abbucket=7&amp;smToken=ef69fda777d249bab6581b59d4cb9a82&amp;smSign=twzGgFTirKEEIRtKkNLrYQ%3D%3D" target="_blank" rel="noopener">我买的是这家的</a>，8天无限流量，4G。</p><p>入境时需要填写出入境卡，然后和护照一起交给海关查看盖章。下面是入境卡中文说明图：<br><img src="http://ol3d80aa0.bkt.clouddn.com/%E6%B3%B0%E5%9B%BD%E5%87%BA%E5%85%A5%E5%A2%83%E5%8D%A1%E4%B8%AD%E6%96%87.jpg" alt="出入境卡"></p><p>一般情况下，在乘坐航班时常会有工作人员在抵达目的地钱给乘客发放出入境卡，以便乘客提前填好出入境卡，方便出关。护照也很重要，可以在国内出发前复印几份护照一定要放行李箱，不要随身携带。</p><a id="more"></a><h3 id="END-其他一些实用信息"><a href="#END-其他一些实用信息" class="headerlink" title="END - 其他一些实用信息"></a>END - 其他一些实用信息</h3><blockquote><h4 id="大使馆-领事馆"><a href="#大使馆-领事馆" class="headerlink" title="大使馆/领事馆"></a>大使馆/领事馆</h4></blockquote><p>中国驻泰国大使馆<br>地址：NO.57, Racgadapisek Road, Bangkok<br>电话：+66-02-2450088<br>领事保护电话：+66-854833327（24小时值班手机），+66-02-2457010（工作日9：00-17：00）</p><p>中国驻清迈总领事馆<br>地址：111 Changloh Road, Haiya District, Chiangmai<br>电话：+66-53-280380，+66-53-276125，+66-53-276457</p><p>中国驻宋卡总领事馆（近普吉岛、苏梅岛、甲米）<br>地址：9 Sadao Road, Songkhla<br>电话：+66-74-322034<br>领事保护电话：+66-817665560</p><p>中国驻宋卡总领馆驻普吉领事办公室<br>电话：+66-76-304219<br>领事保护电话：+66-945956168（中文、泰文），+66-945986859（中文）</p><p>中国驻孔敬总领馆<br>地址：142/44 Moo 2，Rob-Bueng Rd.，Nai-Muang， Muang， Khon Kaen<br>电话：+66-43-226873</p><blockquote><h4 id="紧急电话"><a href="#紧急电话" class="headerlink" title="紧急电话"></a>紧急电话</h4></blockquote><p>警察:123/191<br>火警:199<br>救护:2460199<br>领事:022-457010<br>大使馆:022-457044<br>旅游投诉:1155</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;人生不可能是一场说走就走的旅行，但心怀远方的人，一定要时刻做着说走就走的准备！&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;font face=&quot;STCAIYUN&quot;&gt;关于去泰国这件事情，可能发生的很突然，但是没关系，既然决定了，就把它安排在计划里。&lt;/font&gt;&lt;/p&gt;
+&lt;h3 id=&quot;一、出行前的准备&quot;&gt;&lt;a href=&quot;#一、出行前的准备&quot; class=&quot;headerlink&quot; title=&quot;一、出行前的准备&quot;&gt;&lt;/a&gt;一、出行前的准备&lt;/h3&gt;&lt;h4 id=&quot;1、护照-amp-签证&quot;&gt;&lt;a href=&quot;#1、护照-amp-签证&quot; class=&quot;headerlink&quot; title=&quot;1、护照&amp;amp;签证&quot;&gt;&lt;/a&gt;1、护照&amp;amp;签证&lt;/h4&gt;&lt;p&gt;我是在杭州工作，在杭州工作社保交满一年，就可以办护照了。拿着身份证在西湖区行政服务中心的出入境管理那儿就可以办理了。现在一楼自助打印下社保证明，然后去后面的楼，出入境办理区按照流程办理即可。大概一个多礼拜就能拿到护照，我也没想到有这么快。&lt;/p&gt;
+&lt;p&gt;签证是在淘宝上买的，260￥。七个工作日到手。&lt;/p&gt;
+&lt;h4 id=&quot;2、泰铢-amp-电话卡-amp-出入境-amp-去泰国的必备软件-amp-其他&quot;&gt;&lt;a href=&quot;#2、泰铢-amp-电话卡-amp-出入境-amp-去泰国的必备软件-amp-其他&quot; class=&quot;headerlink&quot; title=&quot;2、泰铢&amp;amp;电话卡&amp;amp;出入境&amp;amp;去泰国的必备软件&amp;amp;其他&quot;&gt;&lt;/a&gt;2、泰铢&amp;amp;电话卡&amp;amp;出入境&amp;amp;去泰国的必备软件&amp;amp;其他&lt;/h4&gt;&lt;p&gt;泰国新规定，过境签、落地签-10000泰铢或等值外币现金（每人），20000泰铢（家庭）；&lt;br&gt;旅游签-20000泰铢或等值外币现金（每人），40000泰铢（家庭），抽查到概率很低，一般落地签会查的吧。但是网上说好像都不查的，或者很少查，但还是换两千的吧。&lt;/p&gt;
+&lt;p&gt;然后再淘宝买泰国7天happy卡，&lt;a href=&quot;https://traveldetail.fliggy.com/item.htm?spm=a230r.1.14.1.42f77cb9MwHKZ4&amp;amp;id=38255797452&amp;amp;ns=1&amp;amp;abbucket=7&amp;amp;smToken=ef69fda777d249bab6581b59d4cb9a82&amp;amp;smSign=twzGgFTirKEEIRtKkNLrYQ%3D%3D&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;我买的是这家的&lt;/a&gt;，8天无限流量，4G。&lt;/p&gt;
+&lt;p&gt;入境时需要填写出入境卡，然后和护照一起交给海关查看盖章。下面是入境卡中文说明图：&lt;br&gt;&lt;img src=&quot;http://ol3d80aa0.bkt.clouddn.com/%E6%B3%B0%E5%9B%BD%E5%87%BA%E5%85%A5%E5%A2%83%E5%8D%A1%E4%B8%AD%E6%96%87.jpg&quot; alt=&quot;出入境卡&quot;&gt;&lt;/p&gt;
+&lt;p&gt;一般情况下，在乘坐航班时常会有工作人员在抵达目的地钱给乘客发放出入境卡，以便乘客提前填好出入境卡，方便出关。护照也很重要，可以在国内出发前复印几份护照一定要放行李箱，不要随身携带。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="旅行记录" scheme="http://yoursite.com/tags/%E6%97%85%E8%A1%8C%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>开发日记-20180828</title>
@@ -38,31 +89,11 @@
   </entry>
   
   <entry>
-    <title>一些胡言乱语</title>
-    <link href="http://yoursite.com/blog/20180729/%E9%9A%8F%E7%AC%94/"/>
-    <id>http://yoursite.com/blog/20180729/随笔/</id>
-    <published>2018-07-29T10:33:49.000Z</published>
-    <updated>2018-08-30T15:35:16.712Z</updated>
-    
-    <content type="html"><![CDATA[<p>&nbsp;&nbsp;&nbsp;&nbsp;很多时候看见街上幸福的情侣的时候，总会想要将自己带入到其中，想象着如果那个男生是自己该多好。能偶有一个人依赖着自己，和自己一起生活，一起为了美好的未来而努力工作生活是一件多么美好的事情。可是事实上是，当自己有机会去了解到一个女生的时候，却又畏首畏尾，犹犹豫豫。生怕她想要的东西是自己完全给不了的。<br><a id="more"></a><br>&nbsp;&nbsp;&nbsp;&nbsp;而且对于我来说，好像有一种情节。有个人，如果没有和她画上一个斩钉截铁的句号，那么我可能完全没有办法将自己投入到下一个开始的感情中去。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;也许这一刻快要来了吧。再等两个月。也许我和她之间的可能性非常小了，又或许她还是与我有着相同的想法。总之我没问，她也没说。我们似乎对于某一段共同的过去不约而同的一个字都没有提起过。细思一下也是很有意思的事情。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;经常会想，如果没有她我会和一个怎么样的人在一起，也许是一个身材娇小，性格活泼可爱的萝莉。因为我好像需要一个同样闹的人陪在身边一起疯过每一天。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;偶尔再网上看到她写与自己ex之间的故事，看得出来她也是曾经想要认真开始一段感情的人。可是我从她的文字里面却感受不到任何真正的感情，或许是我的错觉吧。</p><p>&nbsp;&nbsp;&nbsp;&nbsp;真的好烦啊。为什么总是能够像被诅咒过一样，总是能够给我希望又让我失望，我完全不懂她想要什么，也许我真的是执念，我们真的不合适？</p><p>&nbsp;&nbsp;&nbsp;&nbsp;总之，我会尽快结束掉这痛苦的感觉，不管是开始，还是结束。</p>]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;很多时候看见街上幸福的情侣的时候，总会想要将自己带入到其中，想象着如果那个男生是自己该多好。能偶有一个人依赖着自己，和自己一起生活，一起为了美好的未来而努力工作生活是一件多么美好的事情。可是事实上是，当自己有机会去了解到一个女生的时候，却又畏首畏尾，犹犹豫豫。生怕她想要的东西是自己完全给不了的。&lt;br&gt;
-    
-    </summary>
-    
-    
-      <category term="生活随笔" scheme="http://yoursite.com/tags/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/"/>
-    
-  </entry>
-  
-  <entry>
     <title>开发日记-20180718</title>
     <link href="http://yoursite.com/blog/20180719/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-20180718/"/>
     <id>http://yoursite.com/blog/20180719/开发日记-20180718/</id>
     <published>2018-07-18T18:07:56.000Z</published>
-    <updated>2018-07-20T12:23:41.013Z</updated>
+    <updated>2018-07-18T18:14:32.445Z</updated>
     
     <content type="html"><![CDATA[<h2 id="开发日记-20180718"><a href="#开发日记-20180718" class="headerlink" title="开发日记 20180718"></a>开发日记 20180718</h2><h3 id="com-alibaba-dubbo-remoting-transport-AbstractCodec-checkPayload-ERROR-Data-length-too-large"><a href="#com-alibaba-dubbo-remoting-transport-AbstractCodec-checkPayload-ERROR-Data-length-too-large" class="headerlink" title="com.alibaba.dubbo.remoting.transport.AbstractCodec.checkPayload() ERROR  Data length too large"></a>com.alibaba.dubbo.remoting.transport.AbstractCodec.checkPayload() ERROR  Data length too large</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">com.alibaba.dubbo.remoting.transport.AbstractCodec.checkPayload() ERROR  Data length too large: 11557050, max payload: 8388608 java.io.IOException: Data length too large: 11557050, max payload: 838860</span><br></pre></td></tr></table></figure><p>在使用dubbo框架开发的时候，需要做一个导出csv文件的功能，查询大量的数据然后在提供者这边进行处理导出，其中数据达到过20万行以上，几十M的数据，抛出了这样一个异常。遇到服务提供者从数据库查询或者其他地方返回过大的对象，导致报错时，尽管有办法取消这个数据长度的限制，但是这并不符合程序开发的初衷。我们需要将对于数据的处理放在业务层，我在这里做了异步导出，给前端返回的仅仅是一个程序完成的状态，完美的解决了这个问题。</p><a id="more"></a><h3 id="在dubbo消费者服务中写aop方法拦截工具类中的方法"><a href="#在dubbo消费者服务中写aop方法拦截工具类中的方法" class="headerlink" title="在dubbo消费者服务中写aop方法拦截工具类中的方法"></a>在dubbo消费者服务中写aop方法拦截工具类中的方法</h3><p>尽管服务的提供者和消费者都引入的工具类模块的依赖，但是拦截器的实际拦截的还是那个实际本身所在模块的方法。如果工具类是在消费者service层被使用的，那么在上层模块的拦截器是无法拦截到这个方法的。</p><h3 id="在dubbo服务中手动获取注册的提供者的bean"><a href="#在dubbo服务中手动获取注册的提供者的bean" class="headerlink" title="在dubbo服务中手动获取注册的提供者的bean"></a>在dubbo服务中手动获取注册的提供者的bean</h3><p>在这里犯的错：以为通过SpringContextHolder.getBean()可以获取，是我傻逼了，dubbo中的服务怎么能用spring上下文获取呢。这里我使用dubbo的方式完成了这个功能。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * 获取服务的代理对象</span><br><span class="line"> *</span><br><span class="line"> * @return</span><br><span class="line"> */</span><br><span class="line">public static &lt;T&gt; T getReferenceConfig(String appName,String address,Class&lt;?&gt; interfaceClass) &#123;</span><br><span class="line">    String key  = interfaceClass.getName();</span><br><span class="line">    ReferenceConfig&lt;T&gt; referenceConfig =  (ReferenceConfig&lt;T&gt;)referenceCache.get(key);</span><br><span class="line">    if(referenceConfig == null)&#123;</span><br><span class="line">        referenceConfig = new ReferenceConfig&lt;T&gt;();</span><br><span class="line"></span><br><span class="line">        referenceConfig.setApplication(application);</span><br><span class="line">        referenceConfig.setRegistry(getRegistryConfig(appName,address));</span><br><span class="line">        referenceConfig.setInterface(interfaceClass);</span><br><span class="line"></span><br><span class="line">        referenceCache.put(key,referenceConfig);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    return referenceConfig.get();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
     
@@ -87,7 +118,7 @@
     <link href="http://yoursite.com/blog/20180708/%E5%85%B3%E4%BA%8EIDEA%E5%86%8D%E4%BB%8Egit%E6%88%96%E8%80%85svn%E4%B8%8A%E5%AF%BC%E5%85%A5%E9%A1%B9%E7%9B%AE%E6%97%B6%E4%B8%8D%E8%83%BD%E5%8A%A0%E8%BD%BD%E5%AD%97%E6%A8%A1%E5%9D%97%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://yoursite.com/blog/20180708/关于IDEA再从git或者svn上导入项目时不能加载字模块的问题/</id>
     <published>2018-07-08T15:26:49.000Z</published>
-    <updated>2018-07-20T12:23:41.013Z</updated>
+    <updated>2018-07-08T15:29:21.370Z</updated>
     
     <content type="html"><![CDATA[<h3 id="关于IDEA再从git或者svn上导入项目时不能加载字模块的问题"><a href="#关于IDEA再从git或者svn上导入项目时不能加载字模块的问题" class="headerlink" title="关于IDEA再从git或者svn上导入项目时不能加载字模块的问题"></a>关于IDEA再从git或者svn上导入项目时不能加载字模块的问题</h3><blockquote><p>最近入职新公司，很多东西也都算是要从头学起。在之前公司用的都是eclipse，这边要求用IDEA，其实很早就知道这是一个非常强大的编译器，但平时没有机会使用，现在有机会用这个还是挺开心的。</p></blockquote><p>由于公司使用gitlab，在注册好账号导入代码的时候遇到一个情况，就是直接用IDEA的git工具导入的话会出现，maven项目的子模块无法被识别以及被管理的情况。事实上eclipse也有同样的问题。现在只说下使用IDEA遇到这个情况的解决办法。</p><a id="more"></a><h4 id="有两种解决方式。"><a href="#有两种解决方式。" class="headerlink" title="有两种解决方式。"></a>有两种解决方式。</h4><h5 id="1、手动将module添加到项目管理："><a href="#1、手动将module添加到项目管理：" class="headerlink" title="1、手动将module添加到项目管理："></a>1、手动将module添加到项目管理：</h5><ul><li>打开文件选项中的项目结构（快捷键ctrl+alt+shift+s）<br><a href="https://simimg.com/i/oLFwe" target="_blank" rel="noopener"><img src="https://s1.ax2x.com/2018/07/08/oLFwe.png" alt="oLFwe.png"></a></li><li>选择 模块-加号-导入module，手动将自己需要的模块一一导入进去<br><a href="https://simimg.com/i/oLTGd" target="_blank" rel="noopener"><img src="https://s1.ax2x.com/2018/07/08/oLTGd.png" alt="oLTGd.png"></a><h5 id="2、先将项目通过命令行导入到本机，然后通过IDEA的New-Project-from-Existing-Sources导入本地项目进来，这个直接就能够对所有模块进行代码管理了"><a href="#2、先将项目通过命令行导入到本机，然后通过IDEA的New-Project-from-Existing-Sources导入本地项目进来，这个直接就能够对所有模块进行代码管理了" class="headerlink" title="2、先将项目通过命令行导入到本机，然后通过IDEA的New Project from Existing Sources导入本地项目进来，这个直接就能够对所有模块进行代码管理了"></a>2、先将项目通过命令行导入到本机，然后通过IDEA的New Project from Existing Sources导入本地项目进来，这个直接就能够对所有模块进行代码管理了</h5><a href="https://simimg.com/i/oLXER" target="_blank" rel="noopener"><img src="https://s1.ax2x.com/2018/07/08/oLXER.md.png" alt="oLXER.md.png"></a><br><a href="https://simimg.com/i/oLm7r" target="_blank" rel="noopener"><img src="https://s1.ax2x.com/2018/07/08/oLm7r.md.png" alt="oLm7r.md.png"></a></li></ul><blockquote><p>从eclipse转到IDEA前几天是最艰难的，因为很多习惯不是说改就能改掉的，工具的使用总得需要一个学习的时间，但是等这段时间过去，后面一定会体会到IDEA的强大。</p></blockquote>]]></content>
     
@@ -101,9 +132,9 @@
     </summary>
     
     
-      <category term="IDEA" scheme="http://yoursite.com/tags/IDEA/"/>
-    
       <category term="开发日记" scheme="http://yoursite.com/tags/%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0/"/>
+    
+      <category term="IDEA" scheme="http://yoursite.com/tags/IDEA/"/>
     
       <category term="git" scheme="http://yoursite.com/tags/git/"/>
     
