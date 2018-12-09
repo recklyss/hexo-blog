@@ -1,6 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[Java中map新的骚操作]]></title>
+    <url>%2Fblog%2F20181209%2FJava%E4%B8%ADmap%E6%96%B0%E7%9A%84%E9%AA%9A%E6%93%8D%E4%BD%9C%2F</url>
+    <content type="text"><![CDATA[在Java8中对于Map的操作新增的compute之类的方法，对于开发中很有帮助，在此处整理一下其用法，以及方法之间的异同，具体的先总结一下如下： 总结computeIfPresent 就是根据方法来，返回方法中的值对原值进行替换，新的为null就删除键值对，但是原值为null新值不为null依然返回nullcomputeIfAbsent 就是根据旧值来，旧的没有再根据方法返回的来，旧值存在就返回旧值compute 就是两者结合，新值为null，就删除键值对；新值不为null就进行替换。 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950package test;import java.util.HashMap;public class MapTest &#123; public static void main(String[] args) &#123; HashMap&lt;Integer, String&gt; map = new HashMap&lt;&gt;(); map.put(1,&quot;zhang&quot;); // computeIfPresent 根据之前的key/value 如果oldValue 不为null 则根据提供的方法返回一个新的值 并进行新值对旧值的替换 System.out.println(&quot; 1 ---&gt; &quot; + map.computeIfPresent(1,(key,value)-&gt;&#123; return key + value;//原值不为null新值不为null 新值替换旧值 &#125;)); // 否则删除键值对 System.out.println(&quot; 2 ---&gt; &quot; + map.computeIfPresent(1,(key,value)-&gt;&#123; return null;//原值不为null新值为null 删除键值对 &#125;)); map.put(1,null); System.out.println(&quot; 3 ---&gt; &quot; + map.computeIfPresent(1,(key,value)-&gt;&#123; return &quot;jiaheng&quot;;//原值为null 不做更改 &#125;)); // computeIfAbsent 根据之前的key 如果旧值为空或者key不存在 就按照方法用新值替换旧值 新值为null不做替换 map.put(1,&quot;zhang&quot;); System.out.println(&quot; 4 ---&gt; &quot; + map.computeIfAbsent(1,k-&gt;&#123; return null;// 不会被替换旧值 返回原值 &#125;)); System.out.println(&quot; 5 ---&gt; &quot; + map.computeIfAbsent(2,k-&gt;&#123; k = k*k; return k.toString();// key=2不存在 直接新建并存入新值 &#125;)); // compute类似于computeIfAbsent和computeIfPresent的合体 map.put(1,null); System.out.println(&quot; 6 ---&gt; &quot; + map.compute(1,(k,v)-&gt;&#123; return &quot;张&quot;;// 原值为null新值不为null 新值替换旧值 此处与computeIfPresent不同 &#125;)); System.out.println(&quot; 7 ---&gt; &quot; + map.compute(1,(k,v)-&gt;&#123; v = (k*10) + v; return v;// 新值不为null 替换旧值 &#125;)); System.out.println(&quot; 8 ---&gt; &quot; + map.compute(1,(k,v)-&gt;&#123; return null;// 新值为null 删除键值对 &#125;)); // 总结 // computeIfPresent 就是根据方法来，返回方法中的值对原值进行替换，新的为null就删除键值对，但是原值为null新值不为null依然返回null // computeIfAbsent 就是根据旧值来，旧的没有再根据方法返回的来，旧值存在就返回旧值 // compute 就是两者结合，新值为null，就删除键值对；新值不为null就进行替换。 &#125;&#125;]]></content>
+      <tags>
+        <tag>开发日记</tag>
+        <tag>Java拾遗</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[nodepad++不用插件去重的方法]]></title>
     <url>%2Fblog%2F20181112%2Fnodepad-%E4%B8%8D%E7%94%A8%E6%8F%92%E4%BB%B6%E5%8E%BB%E9%87%8D%E7%9A%84%E6%96%B9%E6%B3%95%2F</url>
     <content type="text"><![CDATA[在工作中，当我们需要对一个文本中的行进行去重统计的时候，会发现对于文本的去重并不是那么好处理。而nodepad++的去重插件一般人又懒得去安装，不巧在网上找到这样一个去重的小技巧，即使用正则表达式进行去重，简直方便快捷。在这里分享出来，希望大家能够用的上。1^(.*?)$\s+?^(?=.*^\1$) 点击全部替换，就可以将重复行全部去掉喽]]></content>
