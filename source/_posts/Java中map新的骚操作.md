@@ -1,7 +1,8 @@
 ---
 title: Java中map新的骚操作
 date: 2018-12-09 23:03:05
-tags: [开发日记,Java拾遗]
+categories: [Java基础]
+tags: [开发日记,Java基础]
 ---
 #### 在Java8中对于Map的操作新增的compute之类的方法，对于开发中很有帮助，在此处整理一下其用法，以及方法之间的异同，具体的先总结一下如下：
 

@@ -1,7 +1,8 @@
 ---
 title: hexo博客文章置顶方式
 date: 2018-09-04 19:51:53
-tags: [开发日记,博客设置]
+categories: [hexo博客配置]
+tags: [开发日记,hexo]
 ---
 
 ### 博文置顶

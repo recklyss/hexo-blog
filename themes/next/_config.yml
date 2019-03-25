@@ -46,7 +46,7 @@ footer:
   # Specify the date when the site was setup.
   # If not defined, current year will be used.
   #since: 2015
-  
+
   # ---------使用不蒜子统计------------------
   # visitors count
   #counter: true
@@ -99,15 +99,15 @@ menu:
   home: / || home
   about: /about/ || user
   tags: /tags/tags.html || tags
-  #categories: /categories/ || th
+  categories: /categories/ || th
   archives: /archives/ || archive
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
-  #github: 
-  #      url: https://github.com/Fatezhang
-  #      target: _blank
-  #      icon: github
+#  github:
+#        url: https://github.com/Fatezhang
+#        target: _blank
+#        icon: github
 # Enable/Disable menu icons.
 menu_icons:
   enable: true
@@ -431,7 +431,7 @@ gitment:
 # Available value:
 #    button | slide
 # Warning: Baidu Share does not support https.
-baidushare: 
+baidushare:
   type: button
   baidushare: true
 

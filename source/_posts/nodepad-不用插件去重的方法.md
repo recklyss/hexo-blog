@@ -1,6 +1,7 @@
 ---
 title: nodepad++不用插件去重的方法
 date: 2018-11-12 13:54:14
+categories: [hexo博客配置]
 tags: [开发日记,工作技巧]
 ---
 

@@ -1,8 +1,8 @@
 ---
 title: spring-boot微服务搭建
-date: 2018-06-27 17:01:21
-tags: 
-	- spring-boot
+date: 2018-03-27 17:01:21
+categories: [框架相关]
+tags: [springboot]
 ---
 
 [本人的csdn传送门](http://blog.csdn.net/qq_26627671/article/details/76563127)
