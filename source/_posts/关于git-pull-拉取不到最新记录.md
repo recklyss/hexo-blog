@@ -1,6 +1,7 @@
 ---
 title: 关于git pull 拉取不到最新记录
-date: 2018-10-31 11:39:17
+date: 2018-5-31 11:39:17
+categories: [git]
 tags: 开发日记
 ---
 //

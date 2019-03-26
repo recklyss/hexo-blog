@@ -5,7 +5,6 @@ type: "about"
 comments: false
 ---
 <center><font face="STCAIYUN">**一个不愿意透露职业的软件开发工程师**</font></center>
-<center><img src="http://ol3d80aa0.bkt.clouddn.com/zjh2.jpg" width="250" align=center /></center>
 <center><strong>真正的大师，永远都怀着一颗学徒的心  —— 易</strong></center>
 <center>
 <font face="STCAIYUN">我是 ** 陈年风楼 **</font>  </br>
@@ -18,4 +17,4 @@ comments: false
 
 <font face="STCAIYUN">喜欢结交有趣的朋友，听他们讲有趣的故事</font></br>
 
-<font face="STCAIYUN">欢迎来访我的博客！</font></br>
+<font face="STCAIYUN">欢迎来访我的博客！</font></br></center>

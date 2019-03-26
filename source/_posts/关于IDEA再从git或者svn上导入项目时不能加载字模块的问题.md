@@ -1,6 +1,7 @@
 ---
 title: 关于IDEA再从git或者svn上导入项目时不能加载字模块的问题
 date: 2018-07-08 23:26:49
+categories: [开发工具]
 tags: [IDEA,开发日记,git]
 ---
 
