@@ -4,6 +4,31 @@
 
     
   <url>
+    <loc>http://yoursite.com/blog/20190320/%E4%BD%BF%E7%94%A8springboot%E8%BF%9B%E8%A1%8C%E5%9B%BD%E9%99%85%E5%8C%96%E6%97%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/</loc>
+    <lastmod>2019-04-01T12:35:10.420Z</lastmod>
+    <data>
+        <display>
+        <title>使用springboot进行国际化时自定义读取数据库配置</title>
+        <pubTime>2019-03-20T11:27:02.000Z</pubTime>
+        
+        <tag>springboot</tag>
+         
+        <tag>国际化</tag>
+         
+         
+           
+             
+              <breadCrumb title="国际化" url="http://yoursite.com/categories/%E5%9B%BD%E9%99%85%E5%8C%96/"/>
+          
+             
+              <breadCrumb title="框架相关" url="http://yoursite.com/categories/%E5%9B%BD%E9%99%85%E5%8C%96/%E6%A1%86%E6%9E%B6%E7%9B%B8%E5%85%B3/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>http://yoursite.com/blog/20160911/%E4%B8%80%E4%B8%AA%E8%8F%9C%E9%B8%9F%E5%9C%A8%E4%B8%89%E6%98%9F%E5%AE%9E%E4%B9%A0%E7%9A%84%E6%84%9F%E5%8F%97/</loc>
     <lastmod>2019-03-26T06:00:13.410Z</lastmod>
     <data>
@@ -279,9 +304,9 @@
         <title>校招面试【京东、顺丰科技、招银网络科技、去哪儿网】</title>
         <pubTime>2016-09-27T11:38:45.000Z</pubTime>
         
-        <tag>个人随笔</tag>
-         
         <tag>面试经历</tag>
+         
+        <tag>个人随笔</tag>
          
          
            
