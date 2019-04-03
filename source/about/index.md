@@ -1,20 +1,34 @@
 ---
-title: 迷途自渡
 date: 2018-06-28 10:59:33
 type: "about"
 comments: false
 ---
-<center><font face="STCAIYUN">**一个不愿意透露职业的软件开发工程师**</font></center>
-<center><strong>真正的大师，永远都怀着一颗学徒的心  —— 易</strong></center>
-<center>
-<font face="STCAIYUN">我是 ** 陈年风楼 **</font>  </br>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css">
+<style>
+body {
+    font-family: "微软雅黑", Helvetica, "微软雅黑", Arial, sans-serif;
+    font-size: 13px;
+    line-height: 18px;
+    margin: 10px 13px 10px 13px;
+}
+</style>
+<div style="float:right">
+    <a href="https://github.com/Fatezhang"><img src="https://avatars0.githubusercontent.com/u/12826096?s=400&u=39fd86d33e63e90f030cdc157712c0e19bfa53bb&v=4" width="100"></a>
+</div>
+## <i class="fa fa-address-book"></i> 张嘉恒 <font size="3">/ <i class="fa fa-mars"></i> Jiaheng Zhang</font>
+### Java后端开发工程师 <font size="2">/ Java Web Engineer</font>
+&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-home"></i>  陕西西安
+&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-envelope-o fa-fw"></i> 762344938@qq.com
+&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-weixin"></i>  18829291537
 
-<font face="STCAIYUN">一个希望能够成为大师的码农</font>  </br>
 
-<font face="STCAIYUN">一个不宅、不闷、不呆，有趣、乐观、有点儿瓜皮的程序员</font></br>
+### <i class="fa fa-user-circle-o"></i>  关于我
 
-<font face="STCAIYUN">常常周末，不是在山上，就是在海里，就是无法宅在家</font></br>
 
-<font face="STCAIYUN">喜欢结交有趣的朋友，听他们讲有趣的故事</font></br>
+### <i class="fa fa-id-badge"></i>  工作经历
 
-<font face="STCAIYUN">欢迎来访我的博客！</font></br></center>
+
+### <i class="fa fa-university"></i>  教育经历
+
+
+### <i class="fa fa-code"></i> 技术经历

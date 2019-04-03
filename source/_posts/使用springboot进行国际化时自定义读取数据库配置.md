@@ -1,7 +1,7 @@
 ---
 title: 使用springboot进行国际化时自定义读取数据库配置
 date: 2019-03-20 19:27:02
-categories: [国际化,框架相关]
+categories: [国际化]
 tags: [springboot,国际化]
 ---
 ## 前言
