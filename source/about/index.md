@@ -16,16 +16,17 @@ body {
     <a href="https://github.com/Fatezhang"><img src="https://avatars0.githubusercontent.com/u/12826096?s=400&u=39fd86d33e63e90f030cdc157712c0e19bfa53bb&v=4" width="100"></a>
 </div>
 ## <i class="fa fa-address-book"></i> 张嘉恒 <font size="3">/ <i class="fa fa-mars"></i> Jiaheng Zhang</font>
-### Java后端开发工程师 <font size="2">/ Java Web Engineer</font>
-&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-home"></i>  陕西西安
-&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-envelope-o fa-fw"></i> 762344938@qq.com
-&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-weixin"></i>  18829291537
-
+### <i class="fa fa-star"></i> Java后端开发工程师 <font size="2">/ Java Web Engineer</font>
+  - <i class="fa fa-home"></i>  陕西西安
+  - <i class="fa fa-envelope-o fa-fw"></i> 762344938@qq.com
+  - <i class="fa fa-mobile-phone"></i>  18829291537
+  - <i class="fa fa-file-text"></i>  http://zhangjiaheng.cn
 
 ### <i class="fa fa-user-circle-o"></i>  关于我
 
 
 ### <i class="fa fa-id-badge"></i>  工作经历
+
 
 
 ### <i class="fa fa-university"></i>  教育经历
