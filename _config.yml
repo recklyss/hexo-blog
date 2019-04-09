@@ -89,5 +89,7 @@ deploy:
   bransh: master 
 plugins: hexo-generate-feed
 
+sitemap: 
+    path: sitemap.xml
 baidusitemap:
   path: baidusitemap.xml
