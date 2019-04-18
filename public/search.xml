@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[leetcode:Z字形变换]]></title>
+    <url>%2Fblog%2F20190413%2Fleetcode-Z%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2%2F</url>
+    <content type="text"><![CDATA[题目如下将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。 比如输入字符串为 “LEETCODEISHIRING” 行数为 3 时，排列如下： 123L C I RE T O E S I I GE D H N 之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：”LCIRETOESIIGEDHN”。请你实现这个将字符串进行指定行数变换的函数： 1string convert(string s, int numRows); 示例 1: 12输入: s = &quot;LEETCODEISHIRING&quot;, numRows = 3输出: &quot;LCIRETOESIIGEDHN&quot; 示例 2: 12输入: s = &quot;LEETCODEISHIRING&quot;, numRows = 4输出: &quot;LDREOEIIECIHNTSG&quot; 解释: 1234L D RE O E I IE C I H NT S G 解题思路拿到这个题目，第一时间就可以想到，根据题中图示构造二维数组，先将数据按照相应的样子存储进去，最后再从数组中按行取出，但是这样会有占用更多内存空间的风险。所以，我这边还思考了第二种解法：就是直接根据规律计算出下一个要输出的字符的下标，直接输出即可，无需再创建多余的二维数组。 第一种解法：构造二维数组 构造二位数组最主要的就是计算出这个二维数组有多少列，列数有了，按照Z型规律将原字符串塞进去就行了，计算列数代码如下 123456789private int getColNum(String s, int n) &#123; int x = s.length() / (2 * n - 2); int y = s.length() % (2 * n - 2); int l = x + 1 + x * (n - 2); if (y &gt;= n) &#123; l = l + 1 + y % n; &#125; return l; &#125; 第二种解法：计算下一个要输出的字符的下标直接看github代码吧：点这里]]></content>
+      <categories>
+        <category>算法题解</category>
+      </categories>
+      <tags>
+        <tag>leetcode</tag>
+        <tag>算法题解</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[dubbo服务降级]]></title>
+    <url>%2Fblog%2F20190412%2F%E4%BD%BF%E7%94%A8spring-cloud-starter-netflix-hystrix%E7%BB%93%E5%90%88dubbo%E8%BF%9B%E8%A1%8C%E6%9C%8D%E5%8A%A1%E9%99%8D%E7%BA%A7%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>分布式相关</category>
+      </categories>
+      <tags>
+        <tag>springboot</tag>
+        <tag>dubbo</tag>
+        <tag>分布式服务降级</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[使用springboot进行国际化时自定义读取数据库配置]]></title>
     <url>%2Fblog%2F20190320%2F%E4%BD%BF%E7%94%A8springboot%E8%BF%9B%E8%A1%8C%E5%9B%BD%E9%99%85%E5%8C%96%E6%97%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE%2F</url>
     <content type="text"><![CDATA[前言springboot默认就支持国际化的，而且不需要你过多的做什么配置，只需要在resources/下创建国际化配置文件即可，注意名称必须以messages开始。 messages.properties （默认的语言配置文件，当找不到其他语言的配置的时候，使用该文件进行展示）。 具体的关于springboot的国际化配置我这边就不再过多介绍(包括Locale的设置以及如何根据区域设置语言等)，关于页面上得使用可以参考：springboot国际化。在这篇博客中，我要介绍的是一个很有用的功能并且绝大部分人也会用得到，就是不使用配置文件messages.properties储存国际化语言，而使用数据库进行动态配置，做到无需重启更改配置。 如何使用MessageSource介绍Spring提供了一个接口MessageSource用于获取国际化信息，ReloadableResourceBundleMessageSource和ResourceBundleMessageSource都是继承了该接口的一个抽象实现类AbstractMessageSource，在spring官网有一段这样介绍messageSource的话：图中红框画起来的意思就是，上下文加载的时候会查询messageSource的bean，如果没有就会创建一个名为messageSource放在上下文中… …等等。 在springboot中注入自定义messageSource通过上面的介绍，我们就可以自己定义自己的messageSource进行配置的读取了。 我这边是把这个放在了业务层，大家用的时候也可以直接放在控制层(一般都放在控制层，要用到)，使用@Compnent(“messageSource”)注解声明下bean名称即可 123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899// MyMessageSourceService是我自己的接口 你也可以不需要。使用@Compnent(&quot;messageSource&quot;)注解就行@Service(&quot;messageSource&quot;)public class MyMessageSource extends AbstractMessageSource implements ResourceLoaderAware, MyMessageSourceService &#123; ResourceLoader resourceLoader; // 这个是用来缓存数据库中获取到的配置的 数据库配置更改的时候可以调用reload方法重新加载 // 当然 实际使用者也可以不使用这种缓存的方式 private static final Map&lt;String, Map&lt;String, String&gt;&gt; LOCAL_CACHE = new ConcurrentHashMap&lt;&gt;(256); @Autowired SysI18nService sysI18nService; private final Logger logger = LoggerFactory.getLogger(MyMessageSource.class); /** * 初始化 */ @PostConstruct public void init() &#123; this.reload(); &#125; /** * 重新将数据库中的国际化配置加载 */ public void reload() &#123; LOCAL_CACHE.clear(); LOCAL_CACHE.putAll(loadAllMessageResourcesFromDB()); &#125; /** * 从数据库中获取所有国际化配置 这边可以根据自己数据库表结构进行相应的业务实现 * 对应的语言能够取出来对应的值就行了 无需一定要按照这个方法来 */ public Map&lt;String, Map&lt;String, String&gt;&gt; loadAllMessageResourcesFromDB() &#123; List&lt;SysI18nBO&gt; list = sysI18nService.findList(new SysI18nAO()); if (CollectionUtils.isNotEmpty(list)) &#123; final Map&lt;String, String&gt; zhCnMessageResources = new HashMap&lt;&gt;(list.size()); final Map&lt;String, String&gt; enUsMessageResources = new HashMap&lt;&gt;(list.size()); final Map&lt;String, String&gt; idIdMessageResources = new HashMap&lt;&gt;(list.size()); for (SysI18nBO bo : list) &#123; String name = bo.getModel() + &quot;.&quot; + bo.getName(); String zhText = bo.getZhCn(); String enText = bo.getEnUs(); String idText = bo.getInId(); zhCnMessageResources.put(name, zhText); enUsMessageResources.put(name, enText); idIdMessageResources.put(name, idText); &#125; LOCAL_CACHE.put(&quot;zh&quot;, zhCnMessageResources); LOCAL_CACHE.put(&quot;en&quot;, enUsMessageResources); LOCAL_CACHE.put(&quot;in&quot;, idIdMessageResources); &#125; return MapUtils.EMPTY_MAP; &#125; /** * 从缓存中取出国际化配置对应的数据 或者从父级获取 * * @param code * @param locale * @return */ public String getSourceFromCache(String code, Locale locale) &#123; String language = locale.getLanguage(); Map&lt;String, String&gt; props = LOCAL_CACHE.get(language); if (null != props &amp;&amp; props.containsKey(code)) &#123; return props.get(code); &#125; else &#123; try &#123; if (null != this.getParentMessageSource()) &#123; return this.getParentMessageSource().getMessage(code, null, locale); &#125; &#125; catch (Exception ex) &#123; logger.error(ex.getMessage(), ex); &#125; return code; &#125; &#125; // 下面三个重写的方法是比较重要的 @Override public void setResourceLoader(ResourceLoader resourceLoader) &#123; this.resourceLoader = (resourceLoader == null ? new DefaultResourceLoader() : resourceLoader); &#125; @Override protected MessageFormat resolveCode(String code, Locale locale) &#123; String msg = getSourceFromCache(code, locale); MessageFormat messageFormat = new MessageFormat(msg, locale); return messageFormat; &#125; @Override protected String resolveCodeWithoutArguments(String code, Locale locale) &#123; return getSourceFromCache(code, locale); &#125;&#125; 最后 至此，自定义国际化配置读取数据库已经完成，只需要在更新数据库配置的时候调用一下reload重置一下缓存中的信息即可。 参考博客：spring xml配置自定义读取数据库的messageSource]]></content>
