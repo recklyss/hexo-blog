@@ -32,17 +32,17 @@ body {
 
   - Java基础扎实，熟悉集合、多线程等操作，熟悉常用的设计模式以及数据结构与算法
   - 熟练使用Spring、SpringMvc、Springboot、Mybatis等框架进行web后端开发
-  - 熟悉dubbo/zookeeper，有分布式服务开发经验
+  - 拥有分布式服务开发经验，能够dubbo/zookeeper等进行分布式服务开发
   - 熟悉Redis/Memcache等缓存服务，熟悉使用Mysql数据库进行数据持久化
   - 掌握Linux常用操作，能够独立进行项目搭建部署以及各种依赖环境的配置
-  - 熟悉nginx、jenkins
-  - 掌握前端常用的html/css/jQuery等语言或库。
+  - 熟悉nginx、tomcat等
+  - 掌握前端常用的html/css/JS/jQuery等语言或库
 
 
 ### <i class="fa fa-id-badge"></i>  工作经历
 #### <i class="fa fa-bookmark-o"></i> 杭州51公积金 ( *2018/07 - 今* ) &nbsp;&nbsp;&nbsp;&nbsp; <font size="2" color="#BDB76B">Java后端开发工程师</font>
-  - **51有钱理财后台**：负责理财后台以及APP的服务端开发。项目使用Springboot+MyBatis框架搭建，结合dubbo+zookeeper进行服务拆分.
-  - **贷款超市**：负责框架搭建以及管理系统的开发。项目使用Springboot+MyBatis框架。我主要负责框架搭建以及后台管理系统权限相关、资源位相关模块的开发。
+  - **51有钱理财后台**：负责理财后台业务以及APP相关接口开发。项目管理后台前端使用layui框架，后台使用Springboot+MyBatis框架搭建，结合dubbo+zookeeper进行服务拆分，使用rocketmq作为消息队列以对系统进行削峰和某些业务解耦，使用redis完成业务的一些缓存服务，使用[TX-LCN](https://www.txlcn.org/zh-cn/docs/demo/env.html)解决dubbo中的分布式事务问题。我主要负责的有：开发**风控模块**，对接新颜以及同盾数据接口，对商户推来的订单进行风控的自动审核，提高风控人员的工作效率；开发报表数据等页面**异步导出**功能，后台结合阿里OSS追加上传实现大数据量异步导出，前端只需要添加一个页面导出按钮即可无需再编写其他代码，很大程度上减少了同事的开发时间；开发**定时任务管理模块**，整合quartz完成定时任务的可配置化操作，减少编写定时任务的大量冗余代码，提高了同事们的工作效率。
+  - **贷款超市**：负责框架搭建以及管理系统的开发。项目使用Springboot+MyBatis框架。我主要负责框架搭建部署以及后台管理系统权限相关、资源位等相关模块的开发。
 
 #### <i class="fa fa-bookmark-o"></i> 浙江核新同花顺 ( *2017/02 - 2018/07* ) &nbsp;&nbsp;&nbsp;&nbsp; <font size="2" color="#BDB76B">Java后端开发工程师</font>
   - **level2后台管理系统**：负责level2后台以及APP的服务端开发。项目使用SpringMVC+MyBatis框架搭建，使用dubbo+zookeeper进行服务拆分。
