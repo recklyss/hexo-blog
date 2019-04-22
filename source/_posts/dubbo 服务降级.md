@@ -14,11 +14,12 @@ tags: [springboot,dubbo,分布式服务降级]
 <!--more-->
 *<font style="color: red">本文使用  `springboot+dubbo` 进行服务降级的演示</font>*
 
-### dubbo自带的mock进行服务降级
+### dubbo自带的mock进行服务降级，也叫本地伪装
 ##### dubbo作为阿里巴巴开源的最流行的服务治理框架，在提供了远程调用的同时也提供了服务降级的功能。
 具体使用
 
 dubbo mock的使用非常简单，即在我们平时进行开发时，编写impl实现类实现接口作为服务提供者的同时，编写mock实现类并覆盖所有接口中的方法。
+官方更详细的文档[戳这里](http://dubbo.apache.org/zh-cn/docs/user/demos/local-mock.html)
 
 比如有接口：
 ```
