@@ -1,8 +1,8 @@
 ---
 title: layui结合freemarker+springboot进行前端数据表格字典转义
 date: 2019-03-16 19:51:53
-categories: [Java基础]
-tags: [开发日记,freemarker,工厂模式,layui]
+categories: [springboot]
+tags: [开发日记,springboot,freemarker,工厂模式,layui]
 ---
 
 ### 前言

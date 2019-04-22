@@ -1,7 +1,7 @@
 ---
 title: spring-boot微服务搭建
 date: 2018-03-27 17:01:21
-categories: [框架相关]
+categories: [springboot]
 tags: [springboot]
 ---
 

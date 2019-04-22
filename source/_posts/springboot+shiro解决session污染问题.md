@@ -1,7 +1,7 @@
 ---
 title: springboot+shiro解决session污染的问题
 date: 2019-03-09 15:26:49
-categories: [Java基础]
+categories: [springboot]
 tags: [springboot,shiro,session污染]
 ---
 
