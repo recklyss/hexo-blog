@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>陈年风楼 | 博客</title>
   
-  <subtitle>一个人一只壶一杯茶，一座山一汪水一世界</subtitle>
+  <subtitle>当你看到了一座山，一定会想再看看山的后面是什么！</subtitle>
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhangjiaheng.cn/"/>
@@ -154,7 +154,7 @@
     <link href="http://zhangjiaheng.cn/blog/20181223/leetcode-Z%E5%AD%97%E5%BD%A2%E5%8F%98%E6%8D%A2/"/>
     <id>http://zhangjiaheng.cn/blog/20181223/leetcode-Z字形变换/</id>
     <published>2018-12-23T11:43:02.000Z</published>
-    <updated>2019-04-23T06:35:59.520Z</updated>
+    <updated>2019-04-23T13:10:39.629Z</updated>
     
     <content type="html"><![CDATA[<h4 id="题目如下"><a href="#题目如下" class="headerlink" title="题目如下"></a>题目如下</h4><p>将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。</p><p>比如输入字符串为 “LEETCODEISHIRING” 行数为 3 时，排列如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">L   C   I   R</span><br><span class="line">E T O E S I I G</span><br><span class="line">E   D   H   N</span><br></pre></td></tr></table></figure><p>之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：”LCIRETOESIIGEDHN”。<br><a id="more"></a><br>请你实现这个将字符串进行指定行数变换的函数：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string convert(string s, int numRows);</span><br></pre></td></tr></table></figure><p>示例 1:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;LEETCODEISHIRING&quot;, numRows = 3</span><br><span class="line">输出: &quot;LCIRETOESIIGEDHN&quot;</span><br></pre></td></tr></table></figure><p>示例 2:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">输入: s = &quot;LEETCODEISHIRING&quot;, numRows = 4</span><br><span class="line">输出: &quot;LDREOEIIECIHNTSG&quot;</span><br></pre></td></tr></table></figure><p>解释:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">L     D     R</span><br><span class="line">E   O E   I I</span><br><span class="line">E C   I H   N</span><br><span class="line">T     S     G</span><br></pre></td></tr></table></figure><h4 id="解题思路"><a href="#解题思路" class="headerlink" title="解题思路"></a>解题思路</h4><p>拿到这个题目，第一时间就可以想到，根据题中图示构造二维数组，先将数据按照相应的样子存储进去，最后再从数组中按行取出，但是这样会有占用更多内存空间的风险。所以，我这边还思考了第二种解法：就是直接根据规律计算出下一个要输出的字符的下标，直接输出即可，无需再创建多余的二维数组。</p><ul><li>第一种解法：构造二维数组</li></ul><p>构造二位数组最主要的就是计算出这个二维数组有多少列，列数有了，按照Z型规律将原字符串塞进去就行了，计算列数代码如下</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">private int getColNum(String s, int n) &#123;</span><br><span class="line">        int x = s.length() / (2 * n - 2);</span><br><span class="line">        int y = s.length() % (2 * n - 2);</span><br><span class="line">        int l = x + 1 + x * (n - 2);</span><br><span class="line">        if (y &gt;= n) &#123;</span><br><span class="line">            l = l + 1 + y % n;</span><br><span class="line">        &#125;</span><br><span class="line">        return l;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure><ul><li>第二种解法：计算下一个要输出的字符的下标<br>直接看github代码吧：<a href="https://github.com/Fatezhang/DataStructureAndAlgorithm/tree/master/Algorithm/src/main/java/Alogrithm/Alogrithm/ZigZagConversion" target="_blank" rel="noopener">点这里</a></li></ul>]]></content>
     
@@ -397,7 +397,7 @@
     <link href="http://zhangjiaheng.cn/blog/20180421/vlog-%E7%A8%8B%E5%BA%8F%E5%91%98%E7%9A%84%E4%B8%80%E5%A4%A9/"/>
     <id>http://zhangjiaheng.cn/blog/20180421/vlog-程序员的一天/</id>
     <published>2018-04-21T02:21:02.000Z</published>
-    <updated>2019-03-26T02:55:45.012Z</updated>
+    <updated>2019-04-05T04:46:27.314Z</updated>
     
     <content type="html"><![CDATA[<iframe src="//player.bilibili.com/player.html?aid=22367659&cid=37047708&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="width: 100%;height: 700px"> </iframe>]]></content>
     
