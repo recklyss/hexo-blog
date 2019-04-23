@@ -68,6 +68,41 @@
   </entry>
   
   <entry>
+    <title>事务传播机制和事务隔离级别</title>
+    <link href="http://zhangjiaheng.cn/blog/20190323/%E4%BA%8B%E5%8A%A1%E4%BC%A0%E6%92%AD%E6%9C%BA%E5%88%B6%E4%BB%A5%E5%8F%8A%E9%9A%94%E7%A6%BB%E7%BA%A7%E5%88%AB/"/>
+    <id>http://zhangjiaheng.cn/blog/20190323/事务传播机制以及隔离级别/</id>
+    <published>2019-03-23T13:41:16.000Z</published>
+    <updated>2019-04-23T16:14:25.632Z</updated>
+    
+    <content type="html"><![CDATA[<h4 id="事务的四个特性-ACID"><a href="#事务的四个特性-ACID" class="headerlink" title="事务的四个特性(ACID)"></a>事务的四个特性(ACID)</h4><ul><li><p>原子性<br>  事务执行开始之后的一系列操作都堪称是一个原子操作，要么全部做完，要么全部失败，不能出现部分操作成功的情况。“原子”顾名思义，就是一个不可分割的最小单元。</p></li><li><p>一致性<br>  事务开始执行之后，数据的正确性需要得到保证。如A向B转账，B却未收到钱。</p></li><li><p>隔离性<br>  同一时间只能由一个事务对数据进行修改操作，对于其他事务来说这个修改操作时透明的。</p></li><li><p>持久性<br>  事务对数据进行修改操作完成之后，数据发生的改变是持久不变的，不会自己恢复到改变之前的状态。</p></li></ul><a id="more"></a><h4 id="spring中的事务传播机制-以及事务隔离级别"><a href="#spring中的事务传播机制-以及事务隔离级别" class="headerlink" title="spring中的事务传播机制 以及事务隔离级别"></a>spring中的事务传播机制 以及事务隔离级别</h4><p><strong>在接口TransactionDefinition中，定义了7种传播机制</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package org.springframework.transaction;</span><br><span class="line"></span><br><span class="line">public interface TransactionDefinition &#123;</span><br><span class="line">    </span><br><span class="line">// 事务传播机制</span><br><span class="line">int PROPAGATION_REQUIRED = 0;// 默认的 也是最常用的 ，如果当前有事务，就加入当前这个事务，如果没有事务，就新建一个事务</span><br><span class="line">    int PROPAGATION_SUPPORTS = 1;// 如果有事务，就加入当前这个事务，如果没有事务，也不新建</span><br><span class="line">    int PROPAGATION_MANDATORY = 2;// 如果有事务，就会使用当前这个事务，如果没有就会抛出异常</span><br><span class="line">    int PROPAGATION_REQUIRES_NEW = 3;// 总是会开启一个新的事务，如果当前已经有事务，就将当前事务挂起</span><br><span class="line">    int PROPAGATION_NOT_SUPPORTED = 4;// 代码总是会在非事务的环境执行，如果当前有事务，先将事务挂起，执行完成之后再恢复</span><br><span class="line">    int PROPAGATION_NEVER = 5;// 绝对不允许代码在有事务的环境执行，有事务就抛出异常停止执行</span><br><span class="line">    int PROPAGATION_NESTED = 6;// 嵌套事务级别：如果没有父事务，就使用默认机制，如果有，子事务执行完成之后父事务才会提交</span><br><span class="line"></span><br><span class="line">// 事务隔离级别</span><br><span class="line">    int ISOLATION_DEFAULT = -1;// 默认级别 </span><br><span class="line">    int ISOLATION_READ_UNCOMMITTED = 1;// 读未提交 即脏读，可以读取别的事务已修改未提交的数据，会导致脏读、幻读和不可重复度</span><br><span class="line">    int ISOLATION_READ_COMMITTED = 2;// 提交读即不可重复读，一个事物能读取到另一个事务已经提交的数据，在多次读取同一数据时，该数据被另一事务修改，读取的数据不一致</span><br><span class="line">    int ISOLATION_REPEATABLE_READ = 4;// 可重复读 即一个事物只能读取到另一事务提交之前的数据，确保每次读取到的数据一致。但是数据又新增或者修改时不可预见</span><br><span class="line">    int ISOLATION_SERIALIZABLE = 8;// 序列化读 即事务串行读取数据，性能最差，安全性最高，保证数据准确性</span><br><span class="line">    int TIMEOUT_DEFAULT = -1;</span><br><span class="line"></span><br><span class="line">    int getPropagationBehavior();</span><br><span class="line"></span><br><span class="line">    int getIsolationLevel();</span><br><span class="line"></span><br><span class="line">    int getTimeout();</span><br><span class="line"></span><br><span class="line">    boolean isReadOnly();</span><br><span class="line"></span><br><span class="line">    String getName();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h4 id=&quot;事务的四个特性-ACID&quot;&gt;&lt;a href=&quot;#事务的四个特性-ACID&quot; class=&quot;headerlink&quot; title=&quot;事务的四个特性(ACID)&quot;&gt;&lt;/a&gt;事务的四个特性(ACID)&lt;/h4&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;原子性&lt;br&gt;  事务执行开始之后的一系列操作都堪称是一个原子操作，要么全部做完，要么全部失败，不能出现部分操作成功的情况。“原子”顾名思义，就是一个不可分割的最小单元。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;一致性&lt;br&gt;  事务开始执行之后，数据的正确性需要得到保证。如A向B转账，B却未收到钱。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;隔离性&lt;br&gt;  同一时间只能由一个事务对数据进行修改操作，对于其他事务来说这个修改操作时透明的。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;持久性&lt;br&gt;  事务对数据进行修改操作完成之后，数据发生的改变是持久不变的，不会自己恢复到改变之前的状态。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="Java基础" scheme="http://zhangjiaheng.cn/categories/Java%E5%9F%BA%E7%A1%80/"/>
+    
+    
+      <category term="Java基础" scheme="http://zhangjiaheng.cn/tags/Java%E5%9F%BA%E7%A1%80/"/>
+    
+      <category term="事务" scheme="http://zhangjiaheng.cn/tags/%E4%BA%8B%E5%8A%A1/"/>
+    
+      <category term="数据库" scheme="http://zhangjiaheng.cn/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
     <title>使用springboot进行国际化时自定义读取数据库配置</title>
     <link href="http://zhangjiaheng.cn/blog/20190320/%E4%BD%BF%E7%94%A8springboot%E8%BF%9B%E8%A1%8C%E5%9B%BD%E9%99%85%E5%8C%96%E6%97%B6%E8%87%AA%E5%AE%9A%E4%B9%89%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE%E5%BA%93%E9%85%8D%E7%BD%AE/"/>
     <id>http://zhangjiaheng.cn/blog/20190320/使用springboot进行国际化时自定义读取数据库配置/</id>
