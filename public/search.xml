@@ -126,18 +126,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[MySql数据库group by]]></title>
-    <url>%2Fblog%2F20180811%2F%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-20180828%2F</url>
-    <content type="text"><![CDATA[Mysql数据库根据多个字段进行分组统计如下图，表order为订单表，字段以及数据如下： 现在想要根据表中的信息，查询每天不同的商户有多少笔订单，以及订单的总金额。需要完成以上查询，就需要进行group by多个字段统计，统计sql如下：12345678910SELECT store_name, DATE_FORMAT(add_time, &apos;%Y-%m-%d&apos;) AS addDate, count(1) AS total, sum(order_money) AS total_moneyFROM `order`GROUP BY DATE_FORMAT(add_time, &apos;%Y-%m-%d&apos;), store_name; 统计查询得到的数据结果如下：]]></content>
-      <categories>
-        <category>数据库基础</category>
-      </categories>
-      <tags>
-        <tag>开发日记</tag>
-        <tag>MySql</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[dubbo获取注册中心的实例bean]]></title>
     <url>%2Fblog%2F20180719%2F%E5%BC%80%E5%8F%91%E6%97%A5%E8%AE%B0-20180718%2F</url>
     <content type="text"><![CDATA[开发日记 20180718com.alibaba.dubbo.remoting.transport.AbstractCodec.checkPayload() ERROR Data length too large1com.alibaba.dubbo.remoting.transport.AbstractCodec.checkPayload() ERROR Data length too large: 11557050, max payload: 8388608 java.io.IOException: Data length too large: 11557050, max payload: 838860 在使用dubbo框架开发的时候，需要做一个导出csv文件的功能，查询大量的数据然后在提供者这边进行处理导出，其中数据达到过20万行以上，几十M的数据，抛出了这样一个异常。遇到服务提供者从数据库查询或者其他地方返回过大的对象，导致报错时，尽管有办法取消这个数据长度的限制，但是这并不符合程序开发的初衷。我们需要将对于数据的处理放在业务层，我在这里做了异步导出，给前端返回的仅仅是一个程序完成的状态，完美的解决了这个问题。 在dubbo消费者服务中写aop方法拦截工具类中的方法尽管服务的提供者和消费者都引入的工具类模块的依赖，但是拦截器的实际拦截的还是那个实际本身所在模块的方法。如果工具类是在消费者service层被使用的，那么在上层模块的拦截器是无法拦截到这个方法的。 在dubbo服务中手动获取注册的提供者的bean在这里犯的错：以为通过SpringContextHolder.getBean()可以获取，是我傻逼了，dubbo中的服务怎么能用spring上下文获取呢。这里我使用dubbo的方式完成了这个功能。1234567891011121314151617181920/** * 获取服务的代理对象 * * @return */public static &lt;T&gt; T getReferenceConfig(String appName,String address,Class&lt;?&gt; interfaceClass) &#123; String key = interfaceClass.getName(); ReferenceConfig&lt;T&gt; referenceConfig = (ReferenceConfig&lt;T&gt;)referenceCache.get(key); if(referenceConfig == null)&#123; referenceConfig = new ReferenceConfig&lt;T&gt;(); referenceConfig.setApplication(application); referenceConfig.setRegistry(getRegistryConfig(appName,address)); referenceConfig.setInterface(interfaceClass); referenceCache.put(key,referenceConfig); &#125; return referenceConfig.get();&#125;]]></content>
