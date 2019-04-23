@@ -72,7 +72,7 @@
 
 
 
-  <meta name="keywords" content="开发日记,MySql," />
+  <meta name="keywords" content="springboot,spring," />
 
 
 
@@ -85,21 +85,18 @@
 
 
 
-<meta name="description" content="Mysql数据库根据多个字段进行分组统计如下图，表order为订单表，字段以及数据如下： 现在想要根据表中的信息，查询每天不同的商户有多少笔订单，以及订单的总金额。">
-<meta name="keywords" content="开发日记,MySql">
+<meta name="description" content="前言  通常的我们的项目开发中，经常会遇到那种在服务一启动就需要自动执行一些业务代码的情况。比如将数据库中的配置信息或者数据字典之类的缓存到redis，或者在服务启动的时候将一些配置化的定时任务开起来。关于spring mvc或者springboot如何在项目启动的时候就执行一些代码，方法其实有很多，我这边介绍一下我使用过的三种。">
+<meta name="keywords" content="springboot,spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="MySql数据库group by">
-<meta property="og:url" content="http://zhangjiaheng.cn/blog/20180811/开发日记-20180828/index.html">
+<meta property="og:title" content="如何在springboot服务启动之后执行一些代码(三种方式)">
+<meta property="og:url" content="http://zhangjiaheng.cn/blog/20190419/如何在springboot服务启动之后执行一些代码(三种方式)/index.html">
 <meta property="og:site_name" content="陈年风楼 | 博客">
-<meta property="og:description" content="Mysql数据库根据多个字段进行分组统计如下图，表order为订单表，字段以及数据如下： 现在想要根据表中的信息，查询每天不同的商户有多少笔订单，以及订单的总金额。">
+<meta property="og:description" content="前言  通常的我们的项目开发中，经常会遇到那种在服务一启动就需要自动执行一些业务代码的情况。比如将数据库中的配置信息或者数据字典之类的缓存到redis，或者在服务启动的时候将一些配置化的定时任务开起来。关于spring mvc或者springboot如何在项目启动的时候就执行一些代码，方法其实有很多，我这边介绍一下我使用过的三种。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://ol3d80aa0.bkt.clouddn.com/order.png">
-<meta property="og:image" content="http://ol3d80aa0.bkt.clouddn.com/a.png">
-<meta property="og:updated_time" content="2019-04-05T04:46:27.332Z">
+<meta property="og:updated_time" content="2019-04-23T08:34:10.344Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="MySql数据库group by">
-<meta name="twitter:description" content="Mysql数据库根据多个字段进行分组统计如下图，表order为订单表，字段以及数据如下： 现在想要根据表中的信息，查询每天不同的商户有多少笔订单，以及订单的总金额。">
-<meta name="twitter:image" content="http://ol3d80aa0.bkt.clouddn.com/order.png">
+<meta name="twitter:title" content="如何在springboot服务启动之后执行一些代码(三种方式)">
+<meta name="twitter:description" content="前言  通常的我们的项目开发中，经常会遇到那种在服务一启动就需要自动执行一些业务代码的情况。比如将数据库中的配置信息或者数据字典之类的缓存到redis，或者在服务启动的时候将一些配置化的定时任务开起来。关于spring mvc或者springboot如何在项目启动的时候就执行一些代码，方法其实有很多，我这边介绍一下我使用过的三种。">
 
 
 
@@ -129,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="http://zhangjiaheng.cn/blog/20180811/开发日记-20180828/"/>
+  <link rel="canonical" href="http://zhangjiaheng.cn/blog/20190419/如何在springboot服务启动之后执行一些代码(三种方式)/"/>
 
 
 
 
 
-  <title>MySql数据库group by | 陈年风楼 | 博客</title>
+  <title>如何在springboot服务启动之后执行一些代码(三种方式) | 陈年风楼 | 博客</title>
   
 
 
@@ -316,7 +313,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://zhangjiaheng.cn/blog/20180811/开发日记-20180828/">
+    <link itemprop="mainEntityOfPage" href="http://zhangjiaheng.cn/blog/20190419/如何在springboot服务启动之后执行一些代码(三种方式)/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="陈年风楼">
@@ -333,7 +330,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">MySql数据库group by</h1>
+          <h1 class="post-title" itemprop="name headline">如何在springboot服务启动之后执行一些代码(三种方式)</h1>
         
 
         <div class="post-meta">
@@ -348,8 +345,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-08-11T11:02:37+08:00">
-                2018-08-11
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-04-19T17:01:21+08:00">
+                2019-04-19
               </time>
             
 
@@ -371,8 +368,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/数据库基础/" itemprop="url" rel="index">
-                    <span itemprop="name">数据库基础</span>
+                  <a href="/categories/springboot/" itemprop="url" rel="index">
+                    <span itemprop="name">springboot</span>
                   </a>
                 </span>
 
@@ -407,7 +404,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  143 字
+                  1,299 字
                 </span>
               
 
@@ -423,7 +420,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 min
+                  6 min
                 </span>
               
             </div>
@@ -444,10 +441,24 @@
       
 
       
-        <h3 id="Mysql数据库根据多个字段进行分组统计"><a href="#Mysql数据库根据多个字段进行分组统计" class="headerlink" title="Mysql数据库根据多个字段进行分组统计"></a>Mysql数据库根据多个字段进行分组统计</h3><p>如下图，表order为订单表，字段以及数据如下：</p>
-<p><img src="http://ol3d80aa0.bkt.clouddn.com/order.png" alt="order.png"><br>现在想要根据表中的信息，查询每天不同的商户有多少笔订单，以及订单的总金额。<br><a id="more"></a><br>需要完成以上查询，就需要进行group by多个字段统计，统计sql如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">SELECT</span><br><span class="line">	store_name,</span><br><span class="line">	DATE_FORMAT(add_time, &apos;%Y-%m-%d&apos;) AS addDate,</span><br><span class="line">	count(1) AS total,</span><br><span class="line">	sum(order_money) AS total_money</span><br><span class="line">FROM</span><br><span class="line">	`order`</span><br><span class="line">GROUP BY</span><br><span class="line">	DATE_FORMAT(add_time, &apos;%Y-%m-%d&apos;),</span><br><span class="line">	store_name;</span><br></pre></td></tr></table></figure></p>
-<p>统计查询得到的数据结果如下：</p>
-<p><img src="http://ol3d80aa0.bkt.clouddn.com/a.png" alt="a.png"></p>
+        <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>  通常的我们的项目开发中，经常会遇到那种在服务一启动就需要自动执行一些业务代码的情况。比如将数据库中的配置信息或者数据字典之类的缓存到redis，或者在服务启动的时候将一些配置化的定时任务开起来。关于spring mvc或者springboot如何在项目启动的时候就执行一些代码，方法其实有很多，我这边介绍一下我使用过的三种。</p>
+  <a id="more"></a>
+<h4 id="1、-PostConstruct-注解"><a href="#1、-PostConstruct-注解" class="headerlink" title="1、@PostConstruct 注解"></a>1、<code>@PostConstruct</code> 注解</h4><p>从Java EE5规范开始，Servlet中增加了两个影响Servlet生命周期的注解，<code>@PostConstruct</code>和<code>@PreDestroy</code>，这两个注解被用来修饰一个非静态的void（）方法。<code>@PostConstruct</code>会在所在类的构造函数执行之后执行，在init()方法执行之前执行。(<code>@PreDestroy</code>注解的方法会在这个类的destory()方法执行之后执行。)</p>
+<ul>
+<li>使用示例：在Spring容器加载之后，我需要启动定时任务去做任务的处理（我的定时任务采用的是读取数据库配置的方式）。在这里我使用<code>@PostConstruct</code> 指定了需要启动的方法。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line">@Component // 注意 这里必须有</span><br><span class="line">public class StartAllJobInit &#123;</span><br><span class="line"></span><br><span class="line">    protected Logger logger = LoggerFactory.getLogger(getClass().getName());</span><br><span class="line">    @Autowired</span><br><span class="line">    JobInfoService jobInfoService;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    JobTaskUtil jobTaskUtil;</span><br><span class="line"></span><br><span class="line">    @PostConstruct // 构造函数之后执行</span><br><span class="line">    public void init()&#123;</span><br><span class="line">        System.out.println(&quot;容器启动后执行&quot;);</span><br><span class="line">        startJob();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void startJob() &#123;</span><br><span class="line">        List&lt;JobInfoBO&gt; list = jobInfoService.findList();</span><br><span class="line">        for (JobInfoBO jobinfo :list) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                if(&quot;0&quot;.equals(jobinfo.getStartWithrun()))&#123;</span><br><span class="line">                    logger.info(&quot;任务&#123;&#125;未设置自动启动。&quot;, jobinfo.getJobName());</span><br><span class="line">                    jobInfoService.updateJobStatus(jobinfo.getId(), BasicsConstantManual.BASICS_SYS_JOB_STATUS_STOP);</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    logger.info(&quot;任务&#123;&#125;设置了自动启动。&quot;, jobinfo.getJobName());</span><br><span class="line">                    jobTaskUtil.addOrUpdateJob(jobinfo);</span><br><span class="line">                    jobInfoService.updateJobStatus(jobinfo.getId(), BasicsConstantManual.BASICS_SYS_JOB_STATUS_STARTING);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (SchedulerException e) &#123;</span><br><span class="line">                logger.error(&quot;执行定时任务出错，任务名称 &#123;&#125; &quot;, jobinfo.getJobName());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="2、实现CommandLineRunner接口并重写run-方法"><a href="#2、实现CommandLineRunner接口并重写run-方法" class="headerlink" title="2、实现CommandLineRunner接口并重写run()方法"></a>2、实现<code>CommandLineRunner</code>接口并重写run()方法</h4><p><code>CommandLineRunner</code>接口文档描述如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">/**</span><br><span class="line"> * Interface used to indicate that a bean should &lt;em&gt;run&lt;/em&gt; when it is contained within</span><br><span class="line"> * a &#123;@link SpringApplication&#125;. Multiple &#123;@link CommandLineRunner&#125; beans can be defined</span><br><span class="line"> * within the same application context and can be ordered using the &#123;@link Ordered&#125;</span><br><span class="line"> * interface or &#123;@link Order @Order&#125; annotation.</span><br><span class="line"> * &lt;p&gt;</span><br><span class="line"> * If you need access to &#123;@link ApplicationArguments&#125; instead of the raw String array</span><br><span class="line"> * consider using &#123;@link ApplicationRunner&#125;.</span><br><span class="line"> *</span><br><span class="line"> * @author Dave Syer</span><br><span class="line"> * @see ApplicationRunner</span><br><span class="line"> */</span><br><span class="line">public interface CommandLineRunner &#123;</span><br><span class="line"></span><br><span class="line">	/**</span><br><span class="line">	 * Callback used to run the bean.</span><br><span class="line">	 * @param args incoming main method arguments</span><br><span class="line">	 * @throws Exception on error</span><br><span class="line">	 */</span><br><span class="line">	void run(String... args) throws Exception;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>如上所说：接口被用作加入Spring容器中时执行run(String… args)方法，通过命令行传递参数。SpringBoot在项目启动后会遍历所有实现CommandLineRunner的实体类并执行run方法，多个实现类可以并存并且根据order注解排序顺序执行。这边还有个<code>ApplicationRunner</code>接口，但是接收参数是使用的<code>ApplicationArguments</code>。这边不再赘述。</p>
+<p><strong>同样是启动时执行定时任务，使用这种方式我的写法如下：</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">@Component // 注意 这里必须有</span><br><span class="line">//@Order(2) 如果有多个类需要启动后执行 order注解中的值为启动的顺序</span><br><span class="line">public class StartAllJobInit implements CommandLineRunner &#123;</span><br><span class="line"></span><br><span class="line">    protected Logger logger = LoggerFactory.getLogger(getClass().getName());</span><br><span class="line">    @Autowired</span><br><span class="line">    JobInfoService jobInfoService;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    JobTaskUtil jobTaskUtil;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void run(String... args) &#123;</span><br><span class="line">        List&lt;JobInfoBO&gt; list = jobInfoService.findList();</span><br><span class="line">        for (JobInfoBO jobinfo :list) &#123;</span><br><span class="line">            try &#123;</span><br><span class="line">                if(&quot;0&quot;.equals(jobinfo.getStartWithrun()))&#123;</span><br><span class="line">                    logger.info(&quot;任务&#123;&#125;未设置自动启动。&quot;, jobinfo.getJobName());</span><br><span class="line">                    jobInfoService.updateJobStatus(jobinfo.getId(), BasicsConstantManual.BASICS_SYS_JOB_STATUS_STOP);</span><br><span class="line">                &#125;else&#123;</span><br><span class="line">                    logger.info(&quot;任务&#123;&#125;设置了自动启动。&quot;, jobinfo.getJobName());</span><br><span class="line">                    jobTaskUtil.addOrUpdateJob(jobinfo);</span><br><span class="line">                    jobInfoService.updateJobStatus(jobinfo.getId(), BasicsConstantManual.BASICS_SYS_JOB_STATUS_STARTING);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; catch (SchedulerException e) &#123;</span><br><span class="line">                logger.error(&quot;执行定时任务出错，任务名称 &#123;&#125; &quot;, jobinfo.getJobName());</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="3、使用ContextRefreshedEvent事件-上下文件刷新事件"><a href="#3、使用ContextRefreshedEvent事件-上下文件刷新事件" class="headerlink" title="3、使用ContextRefreshedEvent事件(上下文件刷新事件)"></a>3、使用<code>ContextRefreshedEvent</code>事件(上下文件刷新事件)</h4><blockquote>
+<p>ContextRefreshedEvent 官方在接口上的doc说明<br><br>Event raised when an {@code ApplicationContext} gets initialized or refreshed.</p>
+</blockquote>
+<p>ContextRefreshedEvent是Spring的ApplicationContextEvent一个实现，ContextRefreshedEvent 事件会在Spring容器初始化完成后以及刷新时触发。</p>
+<p><strong>在这里我需要在springboot程序启动之后加载配置信息和字典信息到Redis缓存中去，我可以这样写：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">@Component // 注意 这个也是必须有的注解 三种都需要 使spring扫描到这个类并交给它管理</span><br><span class="line">public class InitRedisCache implements ApplicationListener&lt;ContextRefreshedEvent&gt; &#123;</span><br><span class="line">    static final Logger logger = LoggerFactory</span><br><span class="line">            .getLogger(InitRedisCache.class);</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private SysConfigService sysConfigService;</span><br><span class="line"></span><br><span class="line">    @Autowired</span><br><span class="line">    private SysDictService sysDictService;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onApplicationEvent(ContextRefreshedEvent contextRefreshedEvent) &#123;</span><br><span class="line">        logger.info(&quot;-------加载配置信息 start-------&quot;);</span><br><span class="line">        sysConfigService.loadConfigIntoRedis();</span><br><span class="line">        logger.info(&quot;-------加载配置信息 end-------&quot;);</span><br><span class="line"></span><br><span class="line">        logger.info(&quot;-------加载字典信息 start-------&quot;);</span><br><span class="line">        sysDictService.loadDictIntoRedis();</span><br><span class="line">        logger.info(&quot;-------加载字典信息 end-------&quot;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意</strong>：这种方式在springmvc-spring的项目中使用的时候会出现执行两次的情况。这种是因为在加载spring和springmvc的时候会创建两个容器，都会触发这个事件的执行。这时候只需要在<code>onApplicationEvent</code>方法中判断是否有父容器即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">@Override  </span><br><span class="line">  public void onApplicationEvent(ContextRefreshedEvent event) &#123;  </span><br><span class="line">      if(event.getApplicationContext().getParent() == null)&#123;//root application context 没有parent，他就是老大.  </span><br><span class="line">           //需要执行的逻辑代码，当spring容器初始化完成后就会执行该方法。  </span><br><span class="line">      &#125;  </span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h4><p>以上，就是我在实际开发中常用的三种，在项目启动时执行代码的方式，开发者可以根据不同的使用情况选择合适的方法去执行自己的业务逻辑。</p>
 
       
     </div>
@@ -473,9 +484,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/开发日记/" rel="tag"><i class="fa fa-tag"></i> 开发日记</a>
+            <a href="/tags/springboot/" rel="tag"><i class="fa fa-tag"></i> springboot</a>
           
-            <a href="/tags/MySql/" rel="tag"><i class="fa fa-tag"></i> MySql</a>
+            <a href="/tags/spring/" rel="tag"><i class="fa fa-tag"></i> spring</a>
           
         </div>
       
@@ -488,8 +499,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/blog/20180719/开发日记-20180718/" rel="next" title="dubbo获取注册中心的实例bean">
-                <i class="fa fa-chevron-left"></i> dubbo获取注册中心的实例bean
+              <a href="/blog/20190412/dubbo 服务降级/" rel="next" title="dubbo服务降级">
+                <i class="fa fa-chevron-left"></i> dubbo服务降级
               </a>
             
           </div>
@@ -497,10 +508,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/blog/20180904/泰国7天6晚自由行攻略/" rel="prev" title="泰国7天6晚自由行攻略">
-                泰国7天6晚自由行攻略 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -708,7 +715,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Mysql数据库根据多个字段进行分组统计"><span class="nav-text">Mysql数据库根据多个字段进行分组统计</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#前言"><span class="nav-text">前言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1、-PostConstruct-注解"><span class="nav-text">1、@PostConstruct 注解</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2、实现CommandLineRunner接口并重写run-方法"><span class="nav-text">2、实现CommandLineRunner接口并重写run()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3、使用ContextRefreshedEvent事件-上下文件刷新事件"><span class="nav-text">3、使用ContextRefreshedEvent事件(上下文件刷新事件)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></li></ol></div>
             
 
           </div>
