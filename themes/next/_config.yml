@@ -141,14 +141,14 @@ scheme: Gemini
 social:
   GitHub: https://github.com/Fatezhang || github
   CSDN: https://blog.csdn.net/qq_26627671 || copyright
-  E-Mail: mailto:762344938@qq.com || envelope
+  E-Mail: mailto:zhangjiahengpoping@gmail.com || envelope
   #Google: https://plus.google.com/yourname || google
   #Twitter: https://twitter.com/yourname || twitter
   #FB Page: https://www.facebook.com/yourname || facebook
   #VK Group: https://vk.com/yourname || vk
   #StackOverflow: https://stackoverflow.com/yourname || stack-overflow
   #YouTube: https://youtube.com/yourname || youtube
-  #Instagram: https://instagram.com/yourname || instagram
+  Instagram: https://instagram.com/zhangjiaheng1874 || instagram
   #Skype: skype:yourname?call|chat || skype
 
 social_icons:
@@ -158,11 +158,11 @@ social_icons:
   CSDN: copyright
 # Blog rolls
 links_icon: link
-links_title: Links
+links_title: 他山之石
 links_layout: block
 #links_layout: inline
-#links:
-  #Title: http://example.com/
+links:
+  Hanger 's blog: https://hamger.github.io/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
