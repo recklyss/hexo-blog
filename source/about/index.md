@@ -14,7 +14,7 @@ body {
 }
 </style>
 <div style="float:right">
-    <a href="https://github.com/Fatezhang"><img src="/images/me.jpg" width="100"></a>
+    <a href="https://github.com/Fatezhang"><img src="me.jpg" width="100"></a>
 </div>
 ## <i class="fa fa-address-book"></i> 张嘉恒 <font size="3">/ <i class="fa fa-mars"></i> Jiaheng Zhang</font>
 ### <i class="fa fa-star"></i> Java后端开发工程师 <font size="2">/ Java Web Engineer</font> <!-- *<font size="2" color="#BDB76B">/ 期望薪资15K+</font>* -->
