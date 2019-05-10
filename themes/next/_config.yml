@@ -124,7 +124,7 @@ tag_cloud:
 
 # Schemes
 #scheme: Muse
-#scheme: Mist
+cheme: Mist
 #scheme: Pisces
 scheme: Gemini
 
@@ -162,7 +162,8 @@ links_title: 他山之石
 links_layout: block
 #links_layout: inline
 links:
-  Hanger 's blog: https://hamger.github.io/
+  Hanger's blog[一个努力的前端小哥]: https://hamger.github.io/
+  Xuanwo's blog[一个牛逼的后端大佬]: https://xuanwo.io/
 
 # Sidebar Avatar
 # in theme directory(source/images): /images/avatar.gif
