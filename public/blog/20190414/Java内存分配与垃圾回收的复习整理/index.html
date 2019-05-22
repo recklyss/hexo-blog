@@ -95,7 +95,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://zhangjiaheng.cn/blog/20190414/Java内存分配与垃圾回收的复习整理/zy.png">
 <meta property="og:image" content="http://zhangjiaheng.cn/blog/20190414/Java内存分配与垃圾回收的复习整理/jvm.png">
-<meta property="og:updated_time" content="2019-05-08T02:44:08.155Z">
+<meta property="og:updated_time" content="2019-05-22T12:36:48.900Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java内存分配与垃圾回收的复习整理">
 <meta name="twitter:description" content="摘要众所周知Java作为一个“一次编译，到处运行”的编译型语言，JVM虚拟机当之无愧的是Java语言世界的先锋将军。作为一个Java程序员，JVM虚拟机其相关知识是我们必须要了解以及深入掌握的重点。在本篇博客我将总结一下JVM虚拟机的内存结构、对象内存分配以及垃圾回收算法。这也是经常找工作求职必问的点。">
@@ -407,7 +407,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  758 字
+                  2,412 字
                 </span>
               
 
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  3 min
+                  8 min
                 </span>
               
             </div>
@@ -445,9 +445,9 @@
 
       
         <p><img src="/blog/20190414/Java内存分配与垃圾回收的复习整理/zy.png" alt="摘要"></p>
-<h4 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h4><p>众所周知Java作为一个“一次编译，到处运行”的编译型语言，JVM虚拟机当之无愧的是Java语言世界的先锋将军。作为一个Java程序员，JVM虚拟机其相关知识是我们必须要了解以及深入掌握的重点。在本篇博客我将总结一下JVM虚拟机的内存结构、对象内存分配以及垃圾回收算法。这也是经常找工作求职必问的点。</p>
+<h3 id="摘要"><a href="#摘要" class="headerlink" title="摘要"></a>摘要</h3><p>众所周知Java作为一个“一次编译，到处运行”的编译型语言，JVM虚拟机当之无愧的是Java语言世界的先锋将军。作为一个Java程序员，JVM虚拟机其相关知识是我们必须要了解以及深入掌握的重点。在本篇博客我将总结一下JVM虚拟机的内存结构、对象内存分配以及垃圾回收算法。这也是经常找工作求职必问的点。</p>
 <a id="more"></a>
-<h4 id="Java内存区域划分"><a href="#Java内存区域划分" class="headerlink" title="Java内存区域划分"></a>Java内存区域划分</h4><p>Java虚拟机在执行Java程序的过程中会将它所管理的内存划分为若干个不同的区域。每个区域各司其职，其创建与销毁数据的规则也都各不相同。根据《Java虚拟机规范（Java SE 7版）》的规定，主要分为如下图几个区域。</p>
+<h3 id="Java内存分配与垃圾回收的复习整理"><a href="#Java内存分配与垃圾回收的复习整理" class="headerlink" title="Java内存分配与垃圾回收的复习整理"></a>Java内存分配与垃圾回收的复习整理</h3><h4 id="Java内存区域划分"><a href="#Java内存区域划分" class="headerlink" title="Java内存区域划分"></a>Java内存区域划分</h4><p>Java虚拟机在执行Java程序的过程中会将它所管理的内存划分为若干个不同的区域。每个区域各司其职，其创建与销毁数据的规则也都各不相同。根据《Java虚拟机规范（Java SE 7版）》的规定，主要分为如下图几个区域。</p>
 <p><img src="/blog/20190414/Java内存分配与垃圾回收的复习整理/jvm.png" alt="Java内存划分"></p>
 <ul>
 <li><strong>程序计数器</strong>：当前线程执行字节码的行号指示器。[<em>线程私有</em>]</li>
@@ -457,10 +457,42 @@
 <li><strong>方法区</strong>：用于存储被虚拟机加载的类信息、常量、静态变量、即时编译器编译后的代码等数据 [<em>线程共享</em>]</li>
 <li><strong>运行时常量池</strong>：这是方法区的一部分。Class文件中除了有类的版本、字段、方法、接口等信息之外，还有一项信息是常量池，用于存放编译期生成的各种字面量和符号引用。这部分内容将在类加载后进入方法区的运行时常量池中存放。[<em>线程共享</em>]</li>
 </ul>
-<h4 id="Java虚拟机的对象内存分配"><a href="#Java虚拟机的对象内存分配" class="headerlink" title="Java虚拟机的对象内存分配"></a>Java虚拟机的对象内存分配</h4><pre><code>Java对象内存分配实际上就指的是将对象分配在堆上的过程。不过实际上堆还被虚拟机划分成了不同的区域，并且每个区域的分配策略都不相同。
-
-- 对象优先再Eden区域分配：大多数情况下，对象会在Eden区域分配，在Eden区域空间不够的情况下，会先进行一次MinorGC。
-</code></pre><h4 id="常用的垃圾回收算法"><a href="#常用的垃圾回收算法" class="headerlink" title="常用的垃圾回收算法"></a>常用的垃圾回收算法</h4><p>– 待续</p>
+<h4 id="常用的垃圾回收算法"><a href="#常用的垃圾回收算法" class="headerlink" title="常用的垃圾回收算法"></a>常用的垃圾回收算法</h4><blockquote>
+<p>在Java代码中，我们程序员通常只关注广义上的“栈”和“堆”这两种区域。上述划分的Java内存区域告诉我们，栈是朝生夕死的一块区域，当线程进入的时候，栈空间被分配，线程结束之后，栈的内存空间即被回收用来去做其他的任务，栈中的栈帧随着线程的进入与退出有条不紊的执行着入栈和出栈的操作，每一个栈帧中分配多少内存基本上是在类结构确定下来就已知的。而堆却不同，我们只有在程序运行期间才会知道创建那些对象，这部分内存分配和回收都是动态的。都由虚拟机的垃圾回收器进行“已死”对象的回收。</p>
+</blockquote>
+<h5 id="如何判断对象已死"><a href="#如何判断对象已死" class="headerlink" title="如何判断对象已死"></a>如何判断对象已死</h5><ul>
+<li><strong>引用计数法</strong>：给对象添加一个引用计数器，每当有引用指向它时计数器加1，引用失效后计数器减1。垃圾回收器回收对象计数器为0的对象昂即可。但是当出现对象之间循环引用，而对象却无实际作用的时候，这种方式就会出现内存泄漏。</li>
+<li><strong>可达性分析</strong>：通过一系列的称为“GC ROOTS”的对象作为起点，向下搜索，搜索走过的路径都称为引用链，当一个对象到“GC ROOTS”没有引用链的时候，证明这个对象不可达。此时会被判定为可回收对象。（此时并非一定死亡，在此之后还会进行两次标记处理，与finalize()方法有关，此处不再整理。注意一个知识点：任何对象的finalize()方法只会被系统调用一次，并且不建议使用）</li>
+</ul>
+<blockquote>
+<p>知道哪些对象是“垃圾”，接下来就是回收操作了</p>
+</blockquote>
+<h5 id="标记-清除法"><a href="#标记-清除法" class="headerlink" title="标记-清除法"></a>标记-清除法</h5><ul>
+<li>首先标记出所有需要回收的对象，然后统一回收。是最基础的回收算法。</li>
+<li>不足之处：1、效率低下，标记和清除的效率都不高；2、产生大量内存碎片，使得之后程序要分配大对象却没有空间，不得不除法GC。</li>
+</ul>
+<h5 id="复制"><a href="#复制" class="headerlink" title="复制"></a>复制</h5><ul>
+<li>首先将内存区域划分为两等分，每次只使用其中一块内存，当用完之后，将活着的对象复制到另一块内存，然后整个回收上一半。这种按顺序分配内存，实现简单，运行高效。</li>
+<li>不足之处：直接将内存缩小了一半，产生大量的空间浪费。然而很多垃圾收集器都是用这种方式，但是有过改进。因为堆中的对象90%都是朝生夕死的，只有10%是会长期存活下来的对象，那么对于这90%的对象，完全可以使用这种高效的复制收集算法。首先将内存区域划分三份，10%的对象存在其中较大的一分中，另外的两份等份分配，处理这90%的“死的快”的对象。这就是Form,To,Eden区域。即Eden:From:To=8:1:1</li>
+</ul>
+<h5 id="标记-整理法"><a href="#标记-整理法" class="headerlink" title="标记-整理法"></a>标记-整理法</h5><ul>
+<li>标记整理的方式实际上也是先将可回收对象标记起来，然后对于这些存活着的对象，并不直接回收，而是先向一端移动，最后直接回收端边界之外的对象。这种做法解决了处理存活率较高的大对象的回收，适合老年代堆对象回收。</li>
+</ul>
+<h5 id="分代收集"><a href="#分代收集" class="headerlink" title="分代收集"></a>分代收集</h5><ul>
+<li>当前商业虚拟机基本上都会采取分代收集算法。即根据对象存活周期的不同将内存划分为不同区域，分别使用不同的垃圾回收算法进行垃圾回收。比如在新生代使用复制算法，因为新生代大量对象都是朝生夕死需要很高的回收效率，而对于老年代则使用标记清除或者标记整理。</li>
+</ul>
+<h4 id="Java虚拟机的对象内存分配"><a href="#Java虚拟机的对象内存分配" class="headerlink" title="Java虚拟机的对象内存分配"></a>Java虚拟机的对象内存分配</h4><p>Java对象内存分配实际上就指的是将对象分配在堆上的过程。不过实际上堆还被虚拟机划分成了不同的区域，并且每个区域的分配策略都不相同。上面我们说到虚拟机根据对象存活周期的不同将对内存分为几种不同的区域，即新生代Eden,From Survivor,To Survivor和老年代。那么这几种区域是如何进行内存分配的呢？</p>
+<ul>
+<li>对象优先再Eden区域分配：大多数情况下，对象会在Eden区域分配，在Eden区域空间不够的情况下，会先进行一次MinorGC（MinorGC是新生代垃圾回收，Full GC是老年代垃圾回收）。</li>
+<li>大对象直接进入老年代：大对象即指的是需要大量连续空间的对象，例如很长的字符串以及数组。虚拟机提供参数<code>-XX:PretenureSizeThreadhold</code>参数设置大于多少算是大对象，避免在新生代几个区域中发生大量的内存复制。</li>
+<li>长期存活的对象直接进入老年代：每经过一次MinorGC对象的年龄都会加1。当年龄加到<code>-XX:MaxTenuringThreadhold</code>（默认15）指定的值时，判断为长期存活，对象会被移动到老年代。</li>
+<li>动态对象年龄判断：为了适应多变的内存情况，一般虚拟机都会使用动态对象年龄判定。如果Survivor中相同年龄的所有对象大小总和大于该空间的一半，该年龄以上的对象就会直接进入老年代，无需等到年龄大于<code>-XX:MaxTenuringThreadhold</code>（默认15）指定的值。</li>
+<li>空间分配担保：在发生MinorGC之前，虚拟机会先检查老年代最大可用连续空间是否大于新生代所有对象总空间，是的话MinorGC可以被认定是安全的。如果不成立，虚拟机会先检查<code>HandlerPromotionFailure</code>参数是否允许担保失败，不允许的话会继续检查老年代最大可用连续空间是否大于历次晋升到老年代对象的平均大小，如果大于就尝试进行一次MinorGC，尽管这次MinorGC是有风险的；如果小于的话或者<code>HandlerPromotionFailure</code>设置不允许冒险，那么就会执行一次FullGC。</li>
+</ul>
+<hr>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><blockquote>
+<p>内存回收与垃圾收集很多时候都是影响系统性能和并发能力的主要因素之一，虚拟机提供了多种垃圾收集器以及大量的调节参数，方便开发人员根据实际应用调整以便程序可以获得最高的性能。这些垃圾收集器和虚拟机参数没有固定的标准的组合，需要开发人员对于内存分配与垃圾回收相当了解，才得以根据实际情况实际配置。</p>
+</blockquote>
 
       
     </div>
@@ -747,7 +779,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#摘要"><span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java内存区域划分"><span class="nav-text">Java内存区域划分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java虚拟机的对象内存分配"><span class="nav-text">Java虚拟机的对象内存分配</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的垃圾回收算法"><span class="nav-text">常用的垃圾回收算法</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#摘要"><span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java内存分配与垃圾回收的复习整理"><span class="nav-text">Java内存分配与垃圾回收的复习整理</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Java内存区域划分"><span class="nav-text">Java内存区域划分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#常用的垃圾回收算法"><span class="nav-text">常用的垃圾回收算法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#如何判断对象已死"><span class="nav-text">如何判断对象已死</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标记-清除法"><span class="nav-text">标记-清除法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#复制"><span class="nav-text">复制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#标记-整理法"><span class="nav-text">标记-整理法</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#分代收集"><span class="nav-text">分代收集</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Java虚拟机的对象内存分配"><span class="nav-text">Java虚拟机的对象内存分配</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
@@ -790,7 +822,7 @@
     
       <span class="post-meta-item-text">站点字数统计&#58;</span>
     
-    <span title="站点字数统计">20.1k</span>
+    <span title="站点字数统计">21.8k</span>
   
 </div>
 
