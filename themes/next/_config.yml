@@ -114,9 +114,9 @@ menu_icons:
   #github: github
 #tag-cloud 配置
 tag_cloud:
-  textColour: \#2626ff
+  textColour: \#663300
   outlineColour: \#9999ff
-  textHeight: 25
+  textHeight: 30
 
 # ---------------------------------------------------------------
 # Scheme Settings
@@ -253,7 +253,7 @@ post_wordcount:
 wechat_subscriber:
   enabled: true
   qcode: /images/wx.jpg
-  description: 本不想放微信的，如果有转账的需求，请加我好友~
+  description: 本不想放微信的，如果有转账的需求，请加我好友～哈哈
 
 # Reward
 #reward_comment: Donate comment here
