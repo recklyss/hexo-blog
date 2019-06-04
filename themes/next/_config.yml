@@ -587,6 +587,8 @@ busuanzi_count:
   page_pv_header: <i class="fa fa-file-o"></i>
   page_pv_footer: 次阅读
 
+# mouse click effect: fireworks | explosion | love | text
+cursor_effect: fireworks
 
 # Tencent analytics ID
 # tencent_analytics:
