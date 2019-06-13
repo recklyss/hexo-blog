@@ -2224,7 +2224,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #1bb804;
+  background: #3925ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3293,12 +3293,13 @@ hr {
 .footer {
   margin-top: 80px;
   padding: 10px 0;
-  background: #f5f5f5;
-  color: #666;
+  background: rgba(173,179,177,0.122);
+  color: #121621;
+  box-shadow: inset 1px 1px 8px 3px #e1ddda;
 }
 .footer-inner {
   margin: 0 auto;
-  text-align: left;
+  text-align: center;
 }
 @media (max-width: 767px) {
   .footer-inner {
@@ -3313,6 +3314,12 @@ hr {
     background-attachment: fixed;
     background-position: 50% 50%;
     background-size: 100% 100%;
+  }
+  code {
+    background: rgba(145,166,35,0.302);
+  }
+  blockquote {
+    border-left: 4px solid #20c696;
   }
   #footer a {
     color: #eee;
