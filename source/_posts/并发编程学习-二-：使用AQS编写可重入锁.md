@@ -1,7 +1,7 @@
 ---
 title: 并发编程学习(二)：使用AQS编写可重入锁
 date: 2019-05-25 14:07:35
-categories: [并发编程]
+categories: [Java基础,并发编程]
 tags: [Java基础,并发编程,可重入锁,AQS]
 ---
 ![AQS中文文档介绍](aqs.png)

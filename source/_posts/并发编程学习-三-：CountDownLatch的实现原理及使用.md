@@ -1,7 +1,7 @@
 ---
 title: 并发编程学习(三)：CountDownLatch的实现原理及使用
 date: 2019-06-02 21:36:53
-categories: [并发编程]
+categories: [Java基础,并发编程]
 tags: [Java基础,并发编程,AQS,CountDownLatch]
 ---
 ![什么是CountDownLatch？](cdl.png)
