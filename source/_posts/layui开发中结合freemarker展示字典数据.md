@@ -8,7 +8,7 @@ tags: [开发日记,springboot,freemarker,工厂模式,layui]
 ### 前言
 在layui的开发中，我们经常会用到表格数据展示。但是在数据库中我们通常保存的一些状态等数据，都是枚举值，而我们在前端展示的时候就不能使用这些枚举值了，而要展示枚举值对应的意义数据。比如状态status，1=启用，0=停用。
 那么在layui的数据表格中，我们要展示这样的数据，写法可以是：
-```
+```javascript
 templet: function (d) {
   if(d.status === 1){
       return "启用";
@@ -23,7 +23,7 @@ templet: function (d) {
 <!-- more -->
 ### freemarker自定义标签介绍及使用
 `TemplateDirectiveModel`接口是freemarker自定标签或者自定义指令的核心处理接口。当模板页面遇到用户自定义的标签指令时，`execute()`方法会被执行。`execute()`方法如下。
-```
+```java
 public void execute(
   Environment env, Map params, TemplateModel[] loopVars, TemplateDirectiveBody body
 ) throws TemplateException, IOException;
@@ -39,7 +39,7 @@ public void execute(
 #### 开始使用
 
 ###### 定义接收页面参数的对象
-```
+```java
 @Getter
 @Setter
 public class TableThTag {
@@ -59,7 +59,7 @@ public class TableThTag {
 }
 ```
 ###### 实现`TemplateDirectiveModel`接口并重写`execute`方法
-```
+```java
 @Component
 @org.springframework.context.annotation.Configuration
 public class TableThDirective implements TemplateDirectiveModel {
@@ -112,7 +112,7 @@ public class TableThDirective implements TemplateDirectiveModel {
 下面就是创建html的具体工厂以及实现方法。
 ###### `ThFormatterInterface `抽象工厂创建html生成器
 接口
-```
+```java
 public interface ThFormatterInterface {
     /**
      * 构造生成枚举html
@@ -123,7 +123,7 @@ public interface ThFormatterInterface {
 }
 ```
 工厂
-```
+```java
 public class ThFormatterFactory {
 
     private static Logger logger = LoggerFactory.getLogger(ThFormatterFactory.class);
@@ -149,7 +149,7 @@ public class ThFormatterFactory {
 }
 ```
 实现类
-```
+```java
 public class ThFormatterTemplate implements ThFormatterInterface {
 
     @Override
@@ -172,7 +172,7 @@ public class ThFormatterTemplate implements ThFormatterInterface {
 }
 ```
 ###### 最后将自定义标签注入到freemarker标签中去
-```
+```java
 @org.springframework.context.annotation.Configuration
 public class FreemarkerConfig {
 

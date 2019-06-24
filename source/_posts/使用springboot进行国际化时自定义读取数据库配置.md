@@ -16,7 +16,7 @@ Spring提供了一个接口MessageSource用于获取国际化信息，Reloadable
 #### 在springboot中注入自定义messageSource
 通过上面的介绍，我们就可以自己定义自己的messageSource进行配置的读取了。
  ** 我这边是把这个放在了业务层，大家用的时候也可以直接放在控制层(一般都放在控制层，要用到)，使用@Compnent("messageSource")注解声明下bean名称即可 **
- ```
+ ```java
  // MyMessageSourceService是我自己的接口 你也可以不需要。使用@Compnent("messageSource")注解就行
  @Service("messageSource")
  public class MyMessageSource extends AbstractMessageSource implements ResourceLoaderAware, MyMessageSourceService {

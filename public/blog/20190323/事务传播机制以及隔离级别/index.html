@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="陈年风楼 | 博客">
 <meta property="og:description" content="事务的四个特性(ACID) 原子性  事务执行开始之后的一系列操作都堪称是一个原子操作，要么全部做完，要么全部失败，不能出现部分操作成功的情况。“原子”顾名思义，就是一个不可分割的最小单元。  一致性  事务开始执行之后，数据的正确性需要得到保证。如A向B转账，B却未收到钱。  隔离性  同一时间只能由一个事务对数据进行修改操作，对于其他事务来说这个修改操作时透明的。  持久性  事务对数据进行修">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T09:48:29.931Z">
+<meta property="og:updated_time" content="2019-06-24T08:14:12.691Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事务传播机制和事务隔离级别">
 <meta name="twitter:description" content="事务的四个特性(ACID) 原子性  事务执行开始之后的一系列操作都堪称是一个原子操作，要么全部做完，要么全部失败，不能出现部分操作成功的情况。“原子”顾名思义，就是一个不可分割的最小单元。  一致性  事务开始执行之后，数据的正确性需要得到保证。如A向B转账，B却未收到钱。  隔离性  同一时间只能由一个事务对数据进行修改操作，对于其他事务来说这个修改操作时透明的。  持久性  事务对数据进行修">
@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  727 字
+                  772 字
                 </span>
               
 
@@ -454,7 +454,77 @@
 </li>
 </ul>
 <a id="more"></a>
-<h4 id="spring中的事务传播机制-以及事务隔离级别"><a href="#spring中的事务传播机制-以及事务隔离级别" class="headerlink" title="spring中的事务传播机制 以及事务隔离级别"></a>spring中的事务传播机制 以及事务隔离级别</h4><p><strong>在接口TransactionDefinition中，定义了7种传播机制</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">package org.springframework.transaction;</span><br><span class="line"></span><br><span class="line">public interface TransactionDefinition &#123;</span><br><span class="line">    </span><br><span class="line">	// 事务传播机制</span><br><span class="line">	int PROPAGATION_REQUIRED = 0;			// 默认的 也是最常用的 ，如果当前有事务，就加入当前这个事务，如果没有事务，就新建一个事务</span><br><span class="line">    int PROPAGATION_SUPPORTS = 1;			// 如果有事务，就加入当前这个事务，如果没有事务，也不新建</span><br><span class="line">    int PROPAGATION_MANDATORY = 2;			// 如果有事务，就会使用当前这个事务，如果没有就会抛出异常</span><br><span class="line">    int PROPAGATION_REQUIRES_NEW = 3;		// 总是会开启一个新的事务，如果当前已经有事务，就将当前事务挂起</span><br><span class="line">    int PROPAGATION_NOT_SUPPORTED = 4;		// 代码总是会在非事务的环境执行，如果当前有事务，先将事务挂起，执行完成之后再恢复</span><br><span class="line">    int PROPAGATION_NEVER = 5;				// 绝对不允许代码在有事务的环境执行，有事务就抛出异常停止执行</span><br><span class="line">    int PROPAGATION_NESTED = 6;				// 嵌套事务级别：如果没有父事务，就使用默认机制，如果有，子事务执行完成之后父事务才会提交</span><br><span class="line">	</span><br><span class="line">	// 事务隔离级别</span><br><span class="line">    int ISOLATION_DEFAULT = -1;				// 默认级别 </span><br><span class="line">    int ISOLATION_READ_UNCOMMITTED = 1;		// 读未提交 即脏读，可以读取别的事务已修改未提交的数据，会导致脏读、幻读和不可重复度</span><br><span class="line">    int ISOLATION_READ_COMMITTED = 2;		// 提交读	即不可重复读，一个事物能读取到另一个事务已经提交的数据，在多次读取同一数据时，该数据被另一事务修改，读取的数据不一致</span><br><span class="line">    int ISOLATION_REPEATABLE_READ = 4;		// 可重复读 即一个事物只能读取到另一事务提交之前的数据，确保每次读取到的数据一致。但是数据又新增或者修改时不可预见</span><br><span class="line">    int ISOLATION_SERIALIZABLE = 8;			// 序列化读 即事务串行读取数据，性能最差，安全性最高，保证数据准确性</span><br><span class="line">    int TIMEOUT_DEFAULT = -1;</span><br><span class="line"></span><br><span class="line">    int getPropagationBehavior();</span><br><span class="line"></span><br><span class="line">    int getIsolationLevel();</span><br><span class="line"></span><br><span class="line">    int getTimeout();</span><br><span class="line"></span><br><span class="line">    boolean isReadOnly();</span><br><span class="line"></span><br><span class="line">    String getName();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h4 id="spring中的事务传播机制-以及事务隔离级别"><a href="#spring中的事务传播机制-以及事务隔离级别" class="headerlink" title="spring中的事务传播机制 以及事务隔离级别"></a>spring中的事务传播机制 以及事务隔离级别</h4><p><strong>在接口<code>TransactionDefinition</code>中，定义了7种传播机制</strong></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> org.springframework.transaction;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">TransactionDefinition</span> </span>&#123;</span><br><span class="line">    </span><br><span class="line">	<span class="comment">// 事务传播机制</span></span><br><span class="line">	<span class="keyword">int</span> PROPAGATION_REQUIRED = <span class="number">0</span>;	</span><br><span class="line">    <span class="keyword">int</span> PROPAGATION_SUPPORTS = <span class="number">1</span>;		</span><br><span class="line">    <span class="keyword">int</span> PROPAGATION_MANDATORY = <span class="number">2</span>;		</span><br><span class="line">    <span class="keyword">int</span> PROPAGATION_REQUIRES_NEW = <span class="number">3</span>;		</span><br><span class="line">    <span class="keyword">int</span> PROPAGATION_NOT_SUPPORTED = <span class="number">4</span>;</span><br><span class="line">    <span class="keyword">int</span> PROPAGATION_NEVER = <span class="number">5</span>;				</span><br><span class="line">    <span class="keyword">int</span> PROPAGATION_NESTED = <span class="number">6</span>;				</span><br><span class="line">	</span><br><span class="line">	<span class="comment">// 事务隔离级别</span></span><br><span class="line">    <span class="keyword">int</span> ISOLATION_DEFAULT = -<span class="number">1</span>;				<span class="comment">// 默认级别 </span></span><br><span class="line">    <span class="keyword">int</span> ISOLATION_READ_UNCOMMITTED = <span class="number">1</span>;		</span><br><span class="line">    <span class="keyword">int</span> ISOLATION_READ_COMMITTED = <span class="number">2</span>;		</span><br><span class="line">    <span class="keyword">int</span> ISOLATION_REPEATABLE_READ = <span class="number">4</span>;		</span><br><span class="line">    <span class="keyword">int</span> ISOLATION_SERIALIZABLE = <span class="number">8</span>;		</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="各种传播机制和隔离级别详解"><a href="#各种传播机制和隔离级别详解" class="headerlink" title="各种传播机制和隔离级别详解"></a>各种传播机制和隔离级别详解</h4><h5 id="事务传播机制"><a href="#事务传播机制" class="headerlink" title="事务传播机制"></a>事务传播机制</h5><table>
+<thead>
+<tr>
+<th style="text-align:left">事务传播机制</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">PROPAGATION_REQUIRED</td>
+<td style="text-align:left">默认的 也是最常用的 ，如果当前有事务，就加入当前这个事务，如果没有事务，就新建一个事务</td>
+</tr>
+<tr>
+<td style="text-align:left">PROPAGATION_SUPPORTS</td>
+<td style="text-align:left">如果有事务，就加入当前这个事务，如果没有事务，也不新建</td>
+</tr>
+<tr>
+<td style="text-align:left">PROPAGATION_MANDATORY</td>
+<td style="text-align:left">如果有事务，就会使用当前这个事务，如果没有就会抛出异常</td>
+</tr>
+<tr>
+<td style="text-align:left">PROPAGATION_REQUIRES_NEW</td>
+<td style="text-align:left">总是会开启一个新的事务，如果当前已经有事务，就将当前事务挂起</td>
+</tr>
+<tr>
+<td style="text-align:left">PROPAGATION_NOT_SUPPORTED</td>
+<td style="text-align:left">代码总是会在非事务的环境执行，如果当前有事务，先将事务挂起，执行完成之后再恢复</td>
+</tr>
+<tr>
+<td style="text-align:left">PROPAGATION_NEVER</td>
+<td style="text-align:left">绝对不允许代码在有事务的环境执行，有事务就抛出异常停止执行</td>
+</tr>
+<tr>
+<td style="text-align:left">PROPAGATION_NESTED</td>
+<td style="text-align:left">嵌套事务级别：如果没有父事务，就使用默认机制，如果有，子事务执行完成之后父事务才会提交</td>
+</tr>
+</tbody>
+</table>
+<h5 id="事务隔离级别"><a href="#事务隔离级别" class="headerlink" title="事务隔离级别"></a>事务隔离级别</h5><table>
+<thead>
+<tr>
+<th style="text-align:left">通俗名称</th>
+<th style="text-align:left">事务隔离级别</th>
+<th style="text-align:left">作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">脏读</td>
+<td style="text-align:left">ISOLATION_READ_UNCOMMITTED</td>
+<td style="text-align:left">读未提交 即脏读，可以读取别的事务已修改未提交的数据，会导致脏读、幻读和不可重复度</td>
+</tr>
+<tr>
+<td style="text-align:left">不可重复读</td>
+<td style="text-align:left">ISOLATION_READ_COMMITTED</td>
+<td style="text-align:left">提交读    即不可重复读，一个事物能读取到另一个事务已经提交的数据，在多次读取同一数据时，该数据被另一事务修改，读取的数据不一致</td>
+</tr>
+<tr>
+<td style="text-align:left">可重复读</td>
+<td style="text-align:left">ISOLATION_REPEATABLE_READ</td>
+<td style="text-align:left">可重复读 即一个事物只能读取到另一事务提交之前的数据，确保每次读取到的数据一致。但是数据又新增或者修改时不可预见</td>
+</tr>
+<tr>
+<td style="text-align:left">幻读</td>
+<td style="text-align:left">ISOLATION_SERIALIZABLE</td>
+<td style="text-align:left">序列化读 即事务串行读取数据，性能最差，安全性最高，保证数据准确性</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
@@ -745,7 +815,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#事务的四个特性-ACID"><span class="nav-text">事务的四个特性(ACID)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spring中的事务传播机制-以及事务隔离级别"><span class="nav-text">spring中的事务传播机制 以及事务隔离级别</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#事务的四个特性-ACID"><span class="nav-text">事务的四个特性(ACID)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#spring中的事务传播机制-以及事务隔离级别"><span class="nav-text">spring中的事务传播机制 以及事务隔离级别</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#各种传播机制和隔离级别详解"><span class="nav-text">各种传播机制和隔离级别详解</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#事务传播机制"><span class="nav-text">事务传播机制</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#事务隔离级别"><span class="nav-text">事务隔离级别</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -788,7 +858,7 @@
     
       <span class="post-meta-item-text">站点字数统计&#58;</span>
     
-    <span title="站点字数统计">31.8k</span>
+    <span title="站点字数统计">31.9k</span>
   
 </div>
 

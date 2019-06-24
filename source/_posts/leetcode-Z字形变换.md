@@ -57,7 +57,7 @@ T     S     G
 
 构造二位数组最主要的就是计算出这个二维数组有多少列，列数有了，按照Z型规律将原字符串塞进去就行了，计算列数代码如下
 
-```
+```java
 private int getColNum(String s, int n) {
         int x = s.length() / (2 * n - 2);
         int y = s.length() % (2 * n - 2);

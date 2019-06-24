@@ -93,7 +93,7 @@
 <meta property="og:site_name" content="陈年风楼 | 博客">
 <meta property="og:description" content="题目如下将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。 比如输入字符串为 “LEETCODEISHIRING” 行数为 3 时，排列如下： 123L   C   I   RE T O E S I I GE   D   H   N 之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：”LCIRETOESIIGEDHN”。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-05-07T09:48:29.918Z">
+<meta property="og:updated_time" content="2019-06-24T08:20:06.169Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="leetcode:Z字形变换">
 <meta name="twitter:description" content="题目如下将一个给定字符串根据给定的行数，以从上往下、从左到右进行 Z 字形排列。 比如输入字符串为 “LEETCODEISHIRING” 行数为 3 时，排列如下： 123L   C   I   RE T O E S I I GE   D   H   N 之后，你的输出需要从左往右逐行读取，产生出一个新的字符串，比如：”LCIRETOESIIGEDHN”。">
@@ -459,7 +459,7 @@
 <li>第一种解法：构造二维数组</li>
 </ul>
 <p>构造二位数组最主要的就是计算出这个二维数组有多少列，列数有了，按照Z型规律将原字符串塞进去就行了，计算列数代码如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">private int getColNum(String s, int n) &#123;</span><br><span class="line">        int x = s.length() / (2 * n - 2);</span><br><span class="line">        int y = s.length() % (2 * n - 2);</span><br><span class="line">        int l = x + 1 + x * (n - 2);</span><br><span class="line">        if (y &gt;= n) &#123;</span><br><span class="line">            l = l + 1 + y % n;</span><br><span class="line">        &#125;</span><br><span class="line">        return l;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">int</span> <span class="title">getColNum</span><span class="params">(String s, <span class="keyword">int</span> n)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> x = s.length() / (<span class="number">2</span> * n - <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">int</span> y = s.length() % (<span class="number">2</span> * n - <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">int</span> l = x + <span class="number">1</span> + x * (n - <span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span> (y &gt;= n) &#123;</span><br><span class="line">            l = l + <span class="number">1</span> + y % n;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> l;</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li>第二种解法：计算下一个要输出的字符的下标<br>直接看github代码吧：<a href="https://github.com/Fatezhang/DataStructureAndAlgorithm/tree/master/Algorithm/src/main/java/Alogrithm/Alogrithm/ZigZagConversion" target="_blank" rel="noopener">点这里</a></li>
 </ul>
@@ -794,7 +794,7 @@
     
       <span class="post-meta-item-text">站点字数统计&#58;</span>
     
-    <span title="站点字数统计">31.8k</span>
+    <span title="站点字数统计">31.9k</span>
   
 </div>
 

@@ -17,7 +17,7 @@ tags: [序列化,Java基础,transient关键字]
 
   - 在Java中，对象一般是无法进行序列化与反序列化的。而使得对象能够被序列化的方式也很简单，即实现接口 `Serializable` 。如下代码即将对象序列化以及反序列化的过程。
 
-  ```
+  ```java
     public class TestSerializable implements Serializable {
         private static final long serialVersionUID = 1L;
         private Integer age;
@@ -46,7 +46,7 @@ tags: [序列化,Java基础,transient关键字]
 ##### 静态变量的序列化
 
   - 在序列化的时候，静态变量能够被序列化成功吗？
-  ```
+  ```java
   public class TestSerializable implements Serializable {
       private static final long serialVersionUID = 1L;
       public static String staticName;
@@ -94,7 +94,7 @@ tags: [序列化,Java基础,transient关键字]
 
   - 如下，你会发现我在这俩方法中调用了defaultWriteObject()和defaultReadObject()用于处理未被transient修饰的成员变量。
 
-  ```
+  ```java
   public class TestSerializable implements Serializable {
       private static final long serialVersionUID = 1L;
       public static String staticName;
@@ -149,7 +149,7 @@ tags: [序列化,Java基础,transient关键字]
 ##### 常问：ArrayList中数组使用transient修饰为何还能被序列化
 
   **ArrayList源码：**
-  ```
+  ```java
   /**
    * The array buffer into which the elements of the ArrayList are stored.
    * The capacity of the ArrayList is the length of this array buffer. Any
@@ -159,7 +159,7 @@ tags: [序列化,Java基础,transient关键字]
   transient Object[] elementData; // non-private to simplify nested class access
   ```
   transient用来表示一个域不是该对象序行化的一部分，当一个对象被序行化的时候，transient修饰的变量的值是不包括在序行化的表示中的。但是ArrayList又是可序行化的类，elementData是ArrayList具体存放元素的成员，用transient来修饰elementData，需要实现自己的序列化方式去处理。即对于数组中多余的空间不去进行序列化。如下：
-  ```
+  ```java
   /**
    * Save the state of the <tt>ArrayList</tt> instance to a stream (that
    * is, serialize it).

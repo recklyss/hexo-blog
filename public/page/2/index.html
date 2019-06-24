@@ -403,7 +403,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  727 字
+                  772 字
                 </span>
               
 
@@ -810,7 +810,7 @@
 
       
         
-          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在layui的开发中，我们经常会用到表格数据展示。但是在数据库中我们通常保存的一些状态等数据，都是枚举值，而我们在前端展示的时候就不能使用这些枚举值了，而要展示枚举值对应的意义数据。比如状态status，1=启用，0=停用。<br>那么在layui的数据表格中，我们要展示这样的数据，写法可以是：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">templet: function (d) &#123;</span><br><span class="line">  if(d.status === 1)&#123;</span><br><span class="line">      return &quot;启用&quot;;</span><br><span class="line">  &#125; else if(d.status === 0)&#123;</span><br><span class="line">      return &quot;停用&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+          <h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>在layui的开发中，我们经常会用到表格数据展示。但是在数据库中我们通常保存的一些状态等数据，都是枚举值，而我们在前端展示的时候就不能使用这些枚举值了，而要展示枚举值对应的意义数据。比如状态status，1=启用，0=停用。<br>那么在layui的数据表格中，我们要展示这样的数据，写法可以是：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">templet: <span class="function"><span class="keyword">function</span> (<span class="params">d</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(d.status === <span class="number">1</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"启用"</span>;</span><br><span class="line">  &#125; <span class="keyword">else</span> <span class="keyword">if</span>(d.status === <span class="number">0</span>)&#123;</span><br><span class="line">      <span class="keyword">return</span> <span class="string">"停用"</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>但是这样的写法很low啊，我们在数据库中定义多少枚举值在这里就要写多少代码，一旦有重复使用的情况，这种写法会让我们痛不欲生。<br>在考虑到后台使用freemarker的情况下，配置freemarker自定义标签就能很好地解决这个问题。<br>最后我们的写法就会简化成：<code>&lt;@th type=&quot;template&quot; nid=&quot;basics_sys_status&quot; objName=&quot;status&quot;&gt;&lt;/@th&gt;</code>，接下来看看如何在springboot中配置使用吧。<br></p>
           <!--noindex-->
           <div class="post-button text-center">
@@ -3226,7 +3226,7 @@
     
       <span class="post-meta-item-text">站点字数统计&#58;</span>
     
-    <span title="站点字数统计">31.8k</span>
+    <span title="站点字数统计">31.9k</span>
   
 </div>
 

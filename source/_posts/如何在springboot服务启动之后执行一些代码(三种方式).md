@@ -14,7 +14,7 @@ tags: [spring,springboot]
 
 从Java EE5规范开始，Servlet中增加了两个影响Servlet生命周期的注解，`@PostConstruct`和`@PreDestroy`，这两个注解被用来修饰一个非静态的void（）方法。`@PostConstruct`会在所在类的构造函数执行之后执行，在init()方法执行之前执行。(`@PreDestroy`注解的方法会在这个类的destory()方法执行之后执行。)
 - 使用示例：在Spring容器加载之后，我需要启动定时任务去做任务的处理（我的定时任务采用的是读取数据库配置的方式）。在这里我使用`@PostConstruct` 指定了需要启动的方法。
-```
+```java
 @Component // 注意 这里必须有
 public class StartAllJobInit {
 
@@ -53,7 +53,7 @@ public class StartAllJobInit {
 
 #### 2、实现`CommandLineRunner`接口并重写run()方法
 `CommandLineRunner`接口文档描述如下：
-```
+```java
 /**
  * Interface used to indicate that a bean should <em>run</em> when it is contained within
  * a {@link SpringApplication}. Multiple {@link CommandLineRunner} beans can be defined
@@ -80,7 +80,7 @@ public interface CommandLineRunner {
 如上所说：接口被用作加入Spring容器中时执行run(String... args)方法，通过命令行传递参数。SpringBoot在项目启动后会遍历所有实现CommandLineRunner的实体类并执行run方法，多个实现类可以并存并且根据order注解排序顺序执行。这边还有个`ApplicationRunner`接口，但是接收参数是使用的`ApplicationArguments`。这边不再赘述。
 
 **同样是启动时执行定时任务，使用这种方式我的写法如下：**
-```
+```java
 @Component // 注意 这里必须有
 //@Order(2) 如果有多个类需要启动后执行 order注解中的值为启动的顺序
 public class StartAllJobInit implements CommandLineRunner {
@@ -121,7 +121,7 @@ ContextRefreshedEvent是Spring的ApplicationContextEvent一个实现，ContextRe
 
 **在这里我需要在springboot程序启动之后加载配置信息和字典信息到Redis缓存中去，我可以这样写：**
 
-```
+```java
 @Component // 注意 这个也是必须有的注解 三种都需要 使spring扫描到这个类并交给它管理
 public class InitRedisCache implements ApplicationListener<ContextRefreshedEvent> {
     static final Logger logger = LoggerFactory
@@ -145,7 +145,7 @@ public class InitRedisCache implements ApplicationListener<ContextRefreshedEvent
         logger.info("-------加载字典信息 end-------");
     }
 }
-```
+```java
 **注意**：这种方式在springmvc-spring的项目中使用的时候会出现执行两次的情况。这种是因为在加载spring和springmvc的时候会创建两个容器，都会触发这个事件的执行。这时候只需要在`onApplicationEvent`方法中判断是否有父容器即可。
 ```
 @Override  

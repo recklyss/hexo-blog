@@ -50,7 +50,7 @@ tags: [Java基础,并发编程,可重入锁,AQS]
 
 **具体的代码实现如下**
 
-```
+```java
 
 /**
  * @Author zhangjiaheng

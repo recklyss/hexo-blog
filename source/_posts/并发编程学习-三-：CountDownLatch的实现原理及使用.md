@@ -21,7 +21,7 @@ tags: [Java基础,并发编程,AQS,CountDownLatch]
 #### 首先是内部类Sync的实现
   构造器接收一个int参数初始化state的值。`tryAcquireShared()`方法不会对state做改变，当state不为0的时候返回-1即失败，当state等于0其返回1，表示计数器已经计数完成，`await()`方法不再阻塞。`tryReleaseShared()`方法会使用原子操作当`countDown()`被调用的时候释放一个state的占用，即state-1。
 
-```
+```java
 private static final class Sync extends AbstractQueuedSynchronizer {
       private static final long serialVersionUID = 4982264981922014374L;
       Sync(int count) {
@@ -50,7 +50,7 @@ private static final class Sync extends AbstractQueuedSynchronizer {
 #### CountDownLatch的countDown方法
   countDown方法主要作用就是使state-1
 
-```
+```java
 public void countDown() {
     sync.releaseShared(1);
 }
@@ -58,7 +58,7 @@ public void countDown() {
 
   AQS中的`releaseShared()`方法的实现，如果释放成功执行`doReleaseShared();`
 
-```
+```java
 public final boolean releaseShared(int arg) {
     if (tryReleaseShared(arg)) {
         doReleaseShared();
@@ -71,7 +71,7 @@ public final boolean releaseShared(int arg) {
 #### CountDownLatch的await方法
   await方法会等待当前state值是否是0，如果不是的话就一直阻塞。直到state为0。
 
-```
+```java
 public void await() throws InterruptedException {
     sync.acquireSharedInterruptibly(1);
 }
@@ -83,7 +83,7 @@ public boolean await(long timeout, TimeUnit unit)
 ```
 
   AQS中的`acquireSharedInterruptibly()`方法实现如下，在AQS的实现中，判断当前线程是否中断，是的话抛出中断异常，否则判断当前线程是否继续需要阻塞，即调用`tryAcquireShared()`。是的话进入`doAcquireSharedInterruptibly()`方法，不断的判断`int r = tryAcquireShared(arg);`，state如果一直不等于0，r就一直是负数，就会继续进入循环。
-```
+```java
 public final void acquireSharedInterruptibly(int arg)
         throws InterruptedException {
     if (Thread.interrupted())

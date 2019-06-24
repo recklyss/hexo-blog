@@ -26,7 +26,7 @@ tags: [Java基础,Spring,SpringMVC,Servlet]
 ### 以下是框架流程的详细步骤说明
 #### 项目的结构
 Summer项目仅仅是一个单独的Servlet项目，没有引入Spring相关的任何依赖，仅仅使用了一些外部的工具类，我的pom.xml文件如下：
-```aidl
+```xml
   <dependencies>
     <dependency>
       <groupId>javax.servlet</groupId>
@@ -51,7 +51,7 @@ Summer项目仅仅是一个单独的Servlet项目，没有引入Spring相关的�
   </dependencies>
 ```
 项目使用jetty启动，所以我还配置了jetty插件
-```aidl
+```xml
 <build>
     <plugins>
       <!-- jetty插件 -->
@@ -82,7 +82,7 @@ Summer项目仅仅是一个单独的Servlet项目，没有引入Spring相关的�
 把扫描到的所有类全链路径名保存在list中
 > 以下是servlet的配置
 
-```aidl
+```xml
 <servlet>
     <!-- 声明Servlet对象 -->
     <servlet-name>myServlet</servlet-name>

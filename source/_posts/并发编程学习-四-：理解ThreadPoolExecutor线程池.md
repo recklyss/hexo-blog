@@ -104,7 +104,7 @@ public static class CallerRunsPolicy implements RejectedExecutionHandler {...}
 如图是Executors类中的所有方法
 ![预置线程池构造](yzxcgz.png)
 #### Executors.newCachedThreadPool()
-```aidl
+```java
     public static ExecutorService newCachedThreadPool() {
         return new ThreadPoolExecutor(0, Integer.MAX_VALUE,
                                   60L, TimeUnit.SECONDS,
@@ -114,7 +114,7 @@ public static class CallerRunsPolicy implements RejectedExecutionHandler {...}
 无限容量的线程池(最大为2147483647)，调用ThreadPoolExecutor构造传入的核心线程数为0。适合场景为创建执行时间短效快速的线程任务，线程在执行完成之后直接被回收。阻塞队列使用SynchronousQueue，这是一个不保存数据的队列，因为该线程池有任务提交就会创建线程去执行，所以不需要保存
 
 #### Executors.newFixedThreadPool(nThreads)
-```aidl
+```java
     public static ExecutorService newFixedThreadPool(int nThreads) {
         return new ThreadPoolExecutor(nThreads, nThreads,
                                       0L, TimeUnit.MILLISECONDS,
@@ -124,7 +124,7 @@ public static class CallerRunsPolicy implements RejectedExecutionHandler {...}
 创建固定数量的线程池。调用ThreadPoolExecutor的构造函数传入的核心线程数等于最大线程数。该线程池中的阻塞队列也使用的是无界的LinkedBlockingQueue。
 
 #### Executors.newSingleThreadExecutor()：
-```aidl
+```java
     public static ExecutorService newSingleThreadExecutor() {
         return new FinalizableDelegatedExecutorService
             (new ThreadPoolExecutor(1, 1,
@@ -135,7 +135,7 @@ public static class CallerRunsPolicy implements RejectedExecutionHandler {...}
 每次都只有一个线程去执行任务，用户提交的任务都会排队阻塞在阻塞队列中等待上一个任务执行完之后执行下一个。适用场景为后面任务依赖前面任务的情况。该线程池中的阻塞队列也使用的是无界的LinkedBlockingQueue。使用这个线程池需要小心<a href="#线程饥饿死锁">线程饥饿死锁</a>
 
 #### Executors.newWorkStealingPool()
-```aidl
+```java
     public static ExecutorService newWorkStealingPool() {
         return new ForkJoinPool
             (Runtime.getRuntime().availableProcessors(),
@@ -147,7 +147,7 @@ public static class CallerRunsPolicy implements RejectedExecutionHandler {...}
 
 
 #### Executors.newScheduledThreadPool()
-```aidl
+```java
     public static ScheduledExecutorService newScheduledThreadPool(int corePoolSize) {
         return new ScheduledThreadPoolExecutor(corePoolSize);
     }

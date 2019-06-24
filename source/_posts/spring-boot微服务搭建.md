@@ -16,7 +16,7 @@ Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来�
 ----------
 ### springboot框架的搭建与简单的REST风格的MVC架构demo
 #### 首先，建立一个新的maven工程，pom文件主要内容如下：
-```
+```xml
 <parent>
     <groupId>org.springframework.boot</groupId>
     <artifactId>spring-boot-starter-parent</artifactId>
@@ -58,14 +58,14 @@ Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来�
   </build>
 ```
 其中核心依赖是	`spring-boot-starter-web`
-```
+```xml
 	<dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
     </dependency>
 ```
 访问静态资源文件可以加入模板：
-```
+```xml
 	<dependency>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-thymeleaf</artifactId>
@@ -73,7 +73,7 @@ Spring Boot是由Pivotal团队提供的全新框架，其设计目的是用来�
 ```
 #### 编写Application.java文件，存放于src/main/java这个目录下
 ##### 这里是springboot的核心启动类
-```
+```java
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.context.annotation.ComponentScan;
@@ -94,7 +94,7 @@ public class Application{
 
 其中各层代码如下：
 #### controller
-```
+```java
 package com.zhang.controller;
 import java.util.HashMap;
 import java.util.Map;
@@ -126,7 +126,7 @@ public class mainController {
 
 ```
 #### service实现类
-```
+```java
 package com.zhang.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -149,7 +149,7 @@ public class mainServiceImpl implements mainService {
 
 ```
 #### dao实现类
-```
+```java
 package com.zhang.dao.impl;
 
 import org.springframework.stereotype.Repository;
@@ -172,7 +172,7 @@ public class mainDaoImpl implements mainDao {
 
 ```
 #### 实体类photo
-```
+```java
 package com.zhang.entity;
 public class Photo {
 	private int id;
