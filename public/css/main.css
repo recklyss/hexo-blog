@@ -2224,7 +2224,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #38cfff;
+  background: #3eb0b8;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -3323,5 +3323,14 @@ hr {
   }
   #footer a {
     color: #eee;
+  }
+}
+@media (max-width: 767px) {
+  body {
+    background-image: url("/images/mbbg.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: 50% 50%;
+    background-size: 100% 100%;
   }
 }
