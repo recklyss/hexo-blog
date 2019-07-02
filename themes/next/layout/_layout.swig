@@ -109,6 +109,6 @@
       s.parentNode.insertBefore(bp, s);
     })();
     </script>
-
+{{ live2d() }}
 </body>
 </html>

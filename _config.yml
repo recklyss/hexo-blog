@@ -97,3 +97,8 @@ baidusitemap:
 ##
 encrypt:
     enable: true
+    
+    
+live2d:
+  model: wanko
+  bottom: -30
