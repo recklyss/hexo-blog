@@ -16,6 +16,7 @@ tags: [leetcode,算法题解,并发编程]
 #### 1、[按序打印](https://leetcode-cn.com/problems/print-in-order)
 
 - 方法一：使用volatile变量控制顺序
+- 思路：利用volatile语义，实现变量的内存可见性，使得别的线程在修改完state状态变量的时候结果对于另一个线程立即可见。这样每个线程在打印的时候就可以通过状态判断是不是该轮到自己执行了。
 
 ```java
 public class Foo2 {
@@ -53,8 +54,7 @@ public class Foo2 {
 ```
 
 - 方法二：使用CountDownLatch控制顺序（只适用于执行一次。。。可以使用循环栅栏改一下~）
-
-  
+- CountDownLatch俗称“闭锁”。使用闭锁来控制线程是否该执行，在没有达到条件时，闭锁阻塞线程。这样在第一个线程执行完成之后打开第二个线程的闭锁，第二个执行完成之后打开第三个线程的闭锁，实现按照顺序打印。
 ```java
 import java.util.concurrent.CountDownLatch;
 
@@ -92,6 +92,8 @@ public class Foo3 {
 
 
 #### 2、[交替打印FooBar](https://leetcode-cn.com/problems/print-foobar-alternately)
+
+- 思路：使用显示可重入锁加上Condition条件阻塞机制，再加上volatile修饰的状态变量控制打印顺序。线程打印时加锁，如果状态是使当前线程打印，就打印并且转换状态，然后唤醒另一个线程。下一次再判断当前状态不适合打印，就使用第一个条件锁阻塞当前线程。以此类推。
 
 ```java
 
@@ -161,6 +163,8 @@ public class FooBar {
 
 
 #### 3、[打印0与奇偶数](https://leetcode-cn.com/problems/print-zero-even-odd)
+
+- 思路：也是使用显示可重入锁加上条件阻塞机制，加上volatile修饰的状态变量控制奇偶数的打印。不符合当前执行的状态就使用condition阻塞，符合就执行并且转换状态，然后唤醒其他线程。
 
 ```java
 import java.util.concurrent.ArrayBlockingQueue;
@@ -293,6 +297,7 @@ public class ZeroEvenOdd {
 #### 4、[H2O生成](https://leetcode-cn.com/problems/building-h2o)
 
 - 方法一：使用显示锁和condition
+- 思路：老生常谈的思路了，同上面一样的原理。
 
 ```java
   import java.util.concurrent.locks.Condition;
@@ -378,6 +383,7 @@ public class ZeroEvenOdd {
   
 
 - 方法二：使用信号量控制通知线程
+- 思路：使用信号量控制线程间的通信。分别分为执行信号和唤醒信号，氢原子的执行信号首先为2，氧原子的执行信号首先为1。氢氧线程执行时消耗执行信号量，当一个氢原子执行后，氢原子的释放信号开始释放（只有一个氧线程等待其释放），然后等待氧原子释放信号释放（即一个氧原子已经产生），之后产生一个氢原子在释放请求信号。氧线程执行时，开始请求释放一个氧原子，成功之后氧线程释放信号开始释放（因为2个氢线程等待所以释放两个信号），然后等待氢线程释放两个信号（说明已经有两个氢原子生成）。然后再生成氧原子，成功之后在释放氧线程的请求信号。
 
 ```java
 import java.util.Random;
