@@ -1,5 +1,5 @@
 ---
-title: 'leetcode:Z字形变换'
+title: 'Leetcode - Z字形变换'
 date: 2018-12-23 19:43:02
 categories: [数据结构与算法,算法题解]
 tags: [leetcode,算法题解]
