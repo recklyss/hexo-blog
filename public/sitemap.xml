@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhangjiaheng.cn/about/resume.html</loc>
+    
+    <lastmod>2019-08-09T11:40:15.512Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhangjiaheng.cn/blog/20190809/Leetcode-52-N%E7%9A%87%E5%90%8E-II-%E5%9B%9E%E6%BA%AF%E7%AE%97%E6%B3%95%E6%B1%82%E8%A7%A3/</loc>
     
     <lastmod>2019-08-09T10:26:44.297Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://zhangjiaheng.cn/blog/20190714/%E5%B0%86%E9%98%BF%E9%87%8CJava%E7%BC%96%E7%A0%81%E8%A7%84%E8%8C%83%E6%95%B2%E6%88%90%E6%80%9D%E7%BB%B4%E5%AF%BC%E5%9B%BE/</loc>
     
     <lastmod>2019-07-24T03:25:02.238Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhangjiaheng.cn/about/resume.html</loc>
-    
-    <lastmod>2019-07-23T07:00:32.812Z</lastmod>
     
   </url>
   

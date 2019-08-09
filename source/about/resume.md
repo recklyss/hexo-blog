@@ -30,20 +30,21 @@ body {
 
 ### <i class="fa fa-code"></i> 技能清单
 
-  - Java基础扎实，熟悉集合、多线程等操作，熟悉常用的设计模式以及数据结构与算法
-  - 熟练使用Spring、SpringMvc、Springboot、Mybatis等框架进行web后端开发
-  - 拥有分布式服务开发经验，多个使用dubbo/zookeeper进行分布式服务开发的项目经验
-  - 熟悉Redis/Memcache等缓存服务，熟悉使用Mysql数据库
-  - 了解Linux常用操作，能够独立进行项目搭建部署以及各种依赖环境的配置
-  - 熟悉nginx、tomcat等，能够使用Jenkins进行代码的持续集成部署
-  - 掌握前端常用的html/css/JS/jQuery等语言或库
-  - 熟练使用git，svn，maven等开发管理工具，熟练使用markdown进行文档编写
+- 2 年 Java 后端开发经验，熟悉常用的设计模式、数据结构与算法、多线程编程等
+-  熟悉 SpringMVC、SpringBoot、SpringCloud、Mybatis、等并阅读过部分源码
+- 熟悉分布式服务开发，多个使用 dubbo/zookeeper 进行分布式开发的项目经验，熟悉分布式事务、分布式锁机制、分布式并发环境下的数据安全处理，熟悉服务垂直拆分、分库分表等
+- Redis/Memcache 缓存服务；MySQL 数据库；常用的消息队列服务
+- 前端 jQuery、JS、layUI、TopJUI 等
+- 版本控制：svn/git，maven
+- 运维管理：nginx/tomcat。能够编写 shell 脚本，熟悉 Linux、docker、Jenkins
+- IDE：Eclipse/IDEA，nodepad，atom，熟悉 markdown 文档编写
+- 个人博客：http://zhangjiaheng.cn 善于技术总结与分享
 
 
 ### <i class="fa fa-id-badge"></i>  工作经历
 #### <i class="fa fa-bookmark-o"></i> 杭州51公积金 ( *2018/07 - 今* ) &nbsp;&nbsp;&nbsp;&nbsp; <font size="2" color="#BDB76B">Java后端开发工程师</font>
   - **51有钱理财后台**：负责理财后台业务以及APP相关接口开发。项目管理后台前端使用TopjUI框架，后台使用Springboot+MyBatis框架搭建，结合dubbo+zookeeper进行服务拆分，使用rocketmq作为消息队列以对系统进行削峰和某些业务解耦，使用redis完成业务的一些缓存服务，使用[TX-LCN](https://www.txlcn.org/zh-cn/docs/demo/env.html)解决dubbo中的分布式事务问题。使用Jenkins进行代码可持续集成部署。我主要负责的有：开发**风控模块**，对接新颜以及同盾数据接口，对商户推来的订单进行风控的自动审核，提高风控人员的工作效率；开发报表数据等页面**异步导出**功能，后台结合阿里OSS追加上传实现大数据量异步导出，前端只需要添加一个页面导出按钮即可无需再编写其他代码，很大程度上减少了同事的开发时间；开发**定时任务管理模块**，整合quartz完成定时任务的可配置化操作，减少编写定时任务的大量冗余代码，提高了同事们的工作效率。
-  - **贷款超市**：负责框架搭建以及管理系统的开发。项目使用Springboot+MyBatis框架，使用redis作为缓存服务。我主要负责框架搭建部署以及后台管理系统权限相关、资源位等相关模块的开发。
+  - **海外贷款项目**：负责框架搭建以及管理系统的开发。项目使用Springboot+MyBatis框架，使用redis作为缓存服务。我主要负责框架搭建部署以及后台管理系统权限相关、资源位等相关模块的开发。整合 SpringBoot 的国际化功能，将国际化信息设计为使用数据库配置而不是存储在配置文件。
 
 #### <i class="fa fa-bookmark-o"></i> 浙江核新同花顺 ( *2017/02 - 2018/07* ) &nbsp;&nbsp;&nbsp;&nbsp; <font size="2" color="#BDB76B">Java后端开发工程师</font>
   - **level2后台管理系统**：负责level2十档权限订单管理系统后台开发以及APP的服务端开发。项目使用SpringMVC+MyBatis框架搭建，使用dubbo+zookeeper进行服务拆分。主要包括商品、活动、订单、报表等模块。使用百度开源的disconf做统一配置管理，使用memcache作为缓存服务，提高部分查询频率高的接口响应速度。使用quartz实现分布式定时任务。
