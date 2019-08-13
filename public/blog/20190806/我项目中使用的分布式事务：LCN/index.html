@@ -98,7 +98,7 @@
 <meta property="og:image" content="http://zhangjiaheng.cn/blog/20190806/我项目中使用的分布式事务：LCN/LCN1.png">
 <meta property="og:image" content="http://zhangjiaheng.cn/blog/20190806/我项目中使用的分布式事务：LCN/LCN2.png">
 <meta property="og:image" content="http://zhangjiaheng.cn/blog/20190806/我项目中使用的分布式事务：LCN/LCN3.png">
-<meta property="og:updated_time" content="2019-08-13T03:17:55.047Z">
+<meta property="og:updated_time" content="2019-08-13T12:34:36.014Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="我项目中使用的分布式事务：LCN">
 <meta name="twitter:description" content="其他关于分布式事务的总结整理">
@@ -423,7 +423,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  3,365 字
+                  3,374 字
                 </span>
               
 
@@ -464,7 +464,6 @@
 <center><a href="#more2">其他关于分布式事务的总结整理</a></center>
 
 
-
 <a id="more"></a>
 <h4 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h4><p>由于公司项目是使用dubbo进行开发的分布式服务，所以项目中有很多涉及到分布式事务问题的场景。比如有两个模块：用户模块和账户资金模块。有一个场景是用户被邀请成为系统的新用户，需要先初始化用户信息，然后再去账户资金模块初始化用户账户信息。两个不同的模块为两个不同的RPC服务，分别被调用然后插入数据，这时候如果账户资金插入失败，不加入分布式事务的话用户直接初始化成功。我们希望这种情况下用户插入的信息被回滚，所以需要引入分布式事务来进行业务处理。</p>
 <h4 id="使用的框架"><a href="#使用的框架" class="headerlink" title="使用的框架"></a>使用的框架</h4><p>经过调研，我们发现TX-LCN框架比较适合我们的业务场景，我们打算引入并使用LCN事务模式来进行服务中的分布式事务的业务处理。关于LCN、TCC、TXC几种事务模式的区别在<a href="#more2">下面</a>整理。</p>
@@ -482,7 +481,7 @@
 <h4 id="其他关于分布式事务的总结整理"><a href="#其他关于分布式事务的总结整理" class="headerlink" title="其他关于分布式事务的总结整理"></a>其他关于分布式事务的总结整理</h4><h5 id="关于Tx-LCN-官网文档"><a href="#关于Tx-LCN-官网文档" class="headerlink" title="关于Tx-LCN - 官网文档"></a>关于Tx-LCN - <a href="https://www.txlcn.org/zh-cn/docs/preface.html" target="_blank" rel="noopener">官网文档</a></h5><p>Tx-LCN早期是为了设计出LCN分布式事务而命名的，不过在5.0之后可以支持LCN、TXC、TCC三种分布式事务模式。LCN框架定位为<code>不生产事务，只做事务的搬运工</code>。即TX-LCN是一款事务协调框架，本身并不操作事务，只是基于对事务的协调从而达到事务一致性的效果。</p>
 <p>最新版本的TX-LCN同时支持多种事务模式。并支持多种不同的数据源同时使用分布式事务，完全达到拔插效果。以下是三种事务模式的介绍、区别及优缺点。</p>
 <h6 id="LCN事务模式"><a href="#LCN事务模式" class="headerlink" title="LCN事务模式"></a>LCN事务模式</h6><ul>
-<li>仅仅作为事务的协调者，本身不生产事务。原理是在事务发起方创建事务分组，并通过Http/Tcp协议调用的时候将事务分组传递到事务参与方。事务参与方的本地事务执行成功之后，根据事务分组ID通知事务的发起方提交所有事务。在全部事务成功通知之前，其各个本地事务均为假关闭，等待TxManager协调完成十五之后再关闭连接。</li>
+<li>仅仅作为事务的协调者，本身不生产事务。原理是在事务发起方创建事务分组，并通过Http/Tcp协议调用的时候将事务分组传递到事务参与方。事务参与方的本地事务执行成功之后，根据事务分组ID通知事务的发起方提交所有事务。在全部事务成功通知之前，其各个本地事务均为假关闭，等待TxManager协调完成事务之后再关闭连接。</li>
 <li>LCN事务对于代码几乎没有嵌入性，只需要添加注解即可实现分布式事务。</li>
 <li>LCN的事务提交与回滚都有本地事务保障，更安全的确保数据一致性。</li>
 <li>但是LCN仅限于存在本地事务并且可以通过连接对象控制事务模块的系统。</li>
@@ -506,7 +505,7 @@
 <li>Availability 服务可用性：服务一直可用，并且是正常响应时间</li>
 <li>Partition tolerance 分区容错性：分布式多节点在某几个节点挂掉后仍然可以对外提供正常的服务</li>
 </ul>
-<p>事实上，CAP这三种并无法保证完全满足，一般只能满足其二。对于分布式系统来说，分区容错性是最基本需要满足的条件，否则不能成为分布式系统，只满足CA 其实是传统的单机服务。那么在满足P的时候，就需要在C和A之间权衡。事实上，分布式系统下一般会保证AP，放弃数据的强一致性，只保证数据的最终一致性。这样就衍生出了BASE理论。</p>
+<p>事实上，CAP这三种并无法保证完全满足，一般只能满足其二。对于分布式系统来说，分区容错性是最基本需要满足的条件，否则不能称为分布式系统，只满足CA 其实是传统的单机服务。那么在满足P（分区容错）的时候，就需要在C和A之间权衡。事实上，分布式系统下一般会保证A（服务可用）P，放弃数据的强一致性，只保证数据的最终一致性。这样就衍生出了BASE理论。</p>
 <h6 id="BASE理论"><a href="#BASE理论" class="headerlink" title="BASE理论"></a>BASE理论</h6><p>BASE是Basically Available（基本可用）、Soft state（软状态）和Eventually consistent（最终一致性）三个短语的缩写。BASE理论是对CAP中一致性和可用性权衡的结果，其来源于对大规模互联网系统分布式实践的总结，是基于CAP定理逐步演化而来的。BASE理论的核心思想是：<strong>即使无法做到强一致性，但每个应用都可以根据自身业务特点，采用适当的方式来使系统达到最终一致性</strong>。</p>
 <ul>
 <li>基本可用：在分布式系统中，允许在出现不可预知故障的情况下损失部分可用性（并不是允许系统不可用），允许响应时间上的确实和部分系统功能的错误（并发场景下拒绝服务产生报错等）</li>
