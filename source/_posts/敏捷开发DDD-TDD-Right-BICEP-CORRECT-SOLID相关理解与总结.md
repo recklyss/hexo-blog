@@ -5,7 +5,7 @@ categories: [敏捷开发]
 tags: [敏捷开发,DDD,TDD,CORRECT,Right-BICEP,SOLID]
 ---
 
-![]()
+![](fm.jpg)
 
 <!--more-->
 
@@ -113,6 +113,8 @@ tags: [敏捷开发,DDD,TDD,CORRECT,Right-BICEP,SOLID]
 
 
 
-DDD（Domain-Driven Design 领域驱动设计）即对软件所涉及到的领域进行建模。
+DDD（Domain-Driven Design 领域驱动设计）即对软件所涉及到的领域进行建模。其实本质上一开始是针对数据库的设计方式——将软件所用到的数据模型进行建模，细粒度的划分那个模块都需要哪些字段。但是也不全然对，更详细的参照一篇博客：
+
+>    [DDD 极简教程](https://www.jianshu.com/p/b0379067c978)
 
 ![](ddd.webp)
