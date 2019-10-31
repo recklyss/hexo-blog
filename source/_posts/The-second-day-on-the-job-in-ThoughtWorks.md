@@ -1,6 +1,6 @@
 ---
 title: The second day on the job in ThoughtWorks
-date: 2019-10-22 20:41:42
+date: 1995-10-25 20:41:42
 categories: [程序人生]
 tags: [程序人生]
 ---
@@ -10,6 +10,8 @@ tags: [程序人生]
 
 
 <!--more-->
+
+>   date: 2019-10-22 20:41:42
 
 ### 来到了一个我曾经羡慕的公司
 
