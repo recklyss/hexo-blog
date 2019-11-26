@@ -6,23 +6,17 @@ tags: [SpringCloud, 微服务, 分布式, SpringBoot]
 top: true 
 ---
 
-![scaffold](scaffold.png)
+<center><u style="font-size=16px;"><a href="/">Scaffold-Cloud: SpringCloud微服务脚手架</a></u></center> [幕布](https://mubu.com/doc/6NZlNw3DIw)
 
-<center><u style="font-size=8px; color:gray">Scaffold-Cloud SpringCloud微服务脚手架</u></center>
+Scaffold-Cloud 是一个适用于开发者学习的 Spring-Cloud 微服务项目脚手架。项目期望集成大部分目前互联网公司使用的主流的Spring-Cloud微服务相关工具和服务。并结合一些实际的业务增加一些其他功能，如：分布式事务、定时任务、消息队列、日志分析等等，然后加入 CI/CD 并引入 docker 部署。
 
-<!--more-->
-
-## 什么是Scaffold-Cloud？-- [幕布](https://mubu.com/doc/6NZlNw3DIw)
-
-Scaffold-Cloud 是一个适用于开发者学习的 Spring-Cloud 微服务项目脚手架。项目期望集成大部分目前互联网公司使用的主流的Spring-Cloud微服务相关工具和服务。并结合一些实际的业务增加一些其他功能，如：分布式事务、定时任务、消息队列、日志分析等等。
-
-Scaffold-Cloud 基于 SpringCloud NetFlix 全家桶进行微服务项目的构建，所以在这之前，使用 Scaffold-Cloud 需要先了解 Spring Cloud NetFlix 提供的一系列的 SpringCloud 框架。
+Scaffold-Cloud 基于 SpringCloud Netflix 全家桶进行微服务项目的构建，所以在这之前，使用 Scaffold-Cloud 需要先了解下 SpringCloud 以及 Netflix 工具全家桶。
 
 ![](netflix.png)
 
 <center><u style="font-size=6px; color:gray">Sorry, NetFlix is not available in your country yet.</u></center>
 
-
+<!--more-->
 
 ## Spring Cloud 介绍 
 
@@ -36,11 +30,24 @@ Scaffold-Cloud 基于 SpringCloud NetFlix 全家桶进行微服务项目的构�
 
 而微服务是对以上服务架构的最终演进结构：将服务切分成多个微小的应用，提供统一的服务访问协议HTTP(SpringCloud)/TCP(Dubbo)，强调运行时的分散解耦，在业务上也有着高度的抽离。
 
+> `微服务架构风格`**是一种将`一个单一应用程序`开发为`一组小型服务`的方法，每个服务运行在自己的进程中，服务间通信采用轻量级通信机制**(通常使用HTTP资源API)。这些**服务围绕`业务能力`构建**，并且可通过**全自动部署机制独立部署**。这些服务共用一个**最小型的集中式的管理**，服务可用不同的语言开发，使用不同的**数据存储技术**。
+> ![](microservice.webp)
+> —— Martin Fowler
+
 **但是拆分成这么微小的微服务一定会碰到各种各样的问题——如何拆分？服务之间如何发现？如何授权？如何做负载均衡？如何管理多服务配置？如何跟踪调用链路？如何实时查看服务状态等等... ... SpringCloud 就是以上一系列问题的 Solver。它提供了一整套的解决方案！**
 
 #### SpringCloud
 
-首先，SpringCloud 并不是一个框架，而是一系列微服务框架的集合，或者说一个微服务的规范。
+首先，SpringCloud 并不是一个框架，而是一个微服务的规范，或者说是一个微服务工具集合。
+
+SpringCloud特点：
+
+- 约定大于配置，基于 SpringBoot
+- 开发部署于各种环境，AWS，阿里云，PC 等
+- 隐藏组件复杂性，声明式配置，无 xml
+- 开箱即用，快速启动
+- 丰富的轻量级组件
+- 灵活选型，如注册发现可用 eureka，zookeeper 或者 Redis
 
 ### SpringCloudNetFlix 全家桶
 
