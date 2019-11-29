@@ -86,6 +86,7 @@ deploy:
   repo:
     github: git@github.com:Fatezhang/Fatezhang.github.io.git
     coding: git@git.dev.tencent.com:zhangjiaheng/zhangjiaheng.git
+    ecoding: git@e.coding.net:fatezhang/zhangjiaheng.git
   bransh: master
 plugins: hexo-generate-feed
 
