@@ -107,14 +107,4 @@ tags: [敏捷开发,DDD,TDD,CORRECT,Right-BICEP,SOLID]
 
 #### TDD-FIRST(TEST DRIVEN DEVELOPMENT)
 
-测试驱动开发：用测试去驱动开发，在开发功能代码之前，先编写单元测试代码。是敏捷开发模式中的一种设计方法论。
-
-### DDD(Domain-Driven Design)
-
-
-
-DDD（Domain-Driven Design 领域驱动设计）即对软件所涉及到的领域进行建模。我对这一块还没有做过多的学习，更详细的参照一篇博客：
-
->    [DDD 极简教程](https://www.jianshu.com/p/b0379067c978)
-
-![](ddd.webp)
+通常的理解是测试驱动开发：用测试去驱动开发，在开发功能代码之前，先编写单元测试代码。是敏捷开发模式中的一种设计方法论。
