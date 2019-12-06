@@ -87,9 +87,7 @@ Scaffold-Cloud 基于 SpringCloud Netflix 全家桶进行微服务项目的构�
 
 #### spring-cloud-zuul 微服务网关
 
-
-
-
+#### spring-cloud-config 配置中心
 
 ## 项目创建的目的？
 
