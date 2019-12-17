@@ -58,7 +58,7 @@ protected Object _readMapAndClose(JsonParser p0, JavaType valueType)
 }
 ```
 
-这行代码`result = deser.deserialize(p, ctxt);`使用一个反序列化对象进行 JSON 的反序列化，这里如果传入的是数字转化成 Boolean的话就是用的是`NumberDeserializers`中的`BooleanDeserializer`，而它的``方法是这样的：
+这行代码`result = deser.deserialize(p, ctxt);`使用一个反序列化对象进行 JSON 的反序列化，这里如果传入的是数字转化成 Boolean的话就是用的是`NumberDeserializers`中的`BooleanDeserializer`，而它的`deserialize`方法是这样的：
 
 ```java
 @Override
