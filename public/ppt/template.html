@@ -70,6 +70,29 @@
 					Slide 3
 					![](images/demo-png.png)
 				</section>
+				<section data-background="#663300"
+						 data-markdown="./markdown/demo.md"
+						 data-separator="^\n\n\n"
+						 data-separator-notes="^Note:">
+				</section>
+				<section data-transition="zoom">
+					<section>
+						<h2>幻灯片切换方式</h2>
+						<p class="fragment">右下角控制条[控制切](http://www.baidu.com)换</p>
+						<p class="fragment">可以使用键盘方向键操作</p>
+						<p class="fragment">可以设置使用鼠标滚轮切换</p>
+						<p class="fragment">移动端滑动切换</p>
+					</section>
+					<section data-markdown>
+						<script type="text/template">
+							<!-- .slide: data-background="#ff0000" -->
+							- 列表项 1 <!-- .element: class="fragment" data-fragment-index="2" -->
+							- 列表项 2 <!-- .element: class="fragment" data-fragment-index="1" -->
+						</script>
+					</section>
+				</section>
+			</div>
+		</div>
 		<script src="/reveal.js/js/reveal.js"></script>
 	
 		<script>
@@ -79,7 +102,16 @@
 					{ src: '/reveal.js/plugin/markdown/markdown.js' },
 					{ src: '/reveal.js/plugin/notes/notes.js', async: true },
 					{ src: '/reveal.js/plugin/highlight/highlight.js', async: true }
-				]
+				],
+				slideNumber: 'c/t',
+				transaction: 'concave',
+				width: 1280,
+				height: 1080,
+				// 传入 marked 的配置
+				// 参考 https://github.com/chjj/marked#options-1
+				markdown: {
+					smartypants: true
+				}
 			});
 		</script>
 	</body>
