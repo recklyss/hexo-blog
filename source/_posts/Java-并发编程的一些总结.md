@@ -25,13 +25,10 @@ tags: [Java基础,并发编程]
 
 [Synchronized使用时一个不起眼的注意点](http://localhost:4000/blog/20190716/Synchronized使用时一个不起眼的注意点/)
 
-今天想要将这些知识串一串，加深一下记忆，毕竟经常不用也会忘掉。
 
+这篇博客，制作了一个 Slide，来针对 Java 并发编程做一些小小的总结：
 
-
-
-
-// TODO 完成博客
+[> 点击查看 Slide](/ppt/java-concurrent-knowledge.html)
 
 
 

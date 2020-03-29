@@ -4,21 +4,21 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
-	
-		<link rel="stylesheet" href="/reveal.js/css/reset.css">
-		<link rel="stylesheet" href="/reveal.js/css/reveal.css">
-		<link rel="stylesheet" href="/reveal.js/css/theme/black.css">
-	
+		<title>Guide of reveal.js</title>
+
+		<link href="https://cdn.bootcss.com/reveal.js/3.8.0/css/reveal.css" rel="stylesheet">
+		<link href="https://cdn.bootcss.com/reveal.js/1.4.0/css/reset.css" rel="stylesheet">
+		<link href="https://cdn.bootcss.com/reveal.js/3.8.0/css/theme/black.css" rel="stylesheet">
+
 		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="/reveal.js/lib/css/monokai.css">
-	
+		<link href="https://cdn.bootcss.com/reveal.js/3.8.0/lib/css/monokai.css" rel="stylesheet">
+
 		<!-- Printing and PDF exports -->
 		<script>
 			var link = document.createElement( 'link' );
 			link.rel = 'stylesheet';
 			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? '/reveal.js/css/print/pdf.css' : '/reveal.js/css/print/paper.css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'https://cdn.bootcss.com/reveal.js/3.8.0/css/print/pdf.css' : 'https://cdn.bootcss.com/reveal.js/3.8.0/css/print/paper.css';
 			document.getElementsByTagName( 'head' )[0].appendChild( link );
 		</script>
 	</head>
@@ -27,33 +27,29 @@
 			<div class="slides">
 				<section>
 					<section>
-					Slide 1
+					Guide: How to use reveal.js to create your slides
 					</section>
 					<section>
 					Slide 2
 					</section>
 					<section data-markdown>
-						<script type="text/template">
-							# h1
+						# h1
 
-							## h2
+						## h2
 
-							- 无序列表
-							  - 无序列表
+						- 无序列表
+						  - 无序列表
 
-							1. 有序
-							2. 有序
-							3. 有序
+						1. 有序
+						2. 有序
+						3. 有序
 
-							- [ ] checkbox
+						- [ ] checkbox
 
-							- [ ] checkbox
-						</script>
+						- [ ] checkbox
 					</section>
 				</section>
 				<section data-markdown>
-					
-
 					```java
 					    @Test
 					    void shouldReturn1WhenGiven1() {
@@ -83,6 +79,17 @@
 						<p class="fragment">可以设置使用鼠标滚轮切换</p>
 						<p class="fragment">移动端滑动切换</p>
 					</section>
+					<section>
+						<p class="fragment grow"> 放大：初始可见，播放时放大 </p>
+						<p class="fragment shrink"> 缩小：初始可见，播放时缩小 </p>
+						<p class="fragment fade-out"> 渐隐消失：初始可见，播放时渐隐消失 </p>
+						<p class="fragment fade-up"> 渐显上升：初始隐藏，播放时渐显上升出现（down、left、right 类似） </p>
+						<p class="fragment current-visible"> 显示一次：初始隐藏，播放时出现，继续播放则消失 </p>
+						<p class="fragment highlight-current-blue"> 高亮蓝一次：初始可见，播放时变蓝，继续播放则恢复颜色 </p>
+						<p class="fragment highlight-red"> 高亮红：初始可见，播放时变红 </p>
+						<p class="fragment highlight-green"> 高亮绿：初始可见，播放时变绿 </p>
+						<p class="fragment highlight-blue"> 高亮蓝：初始可见，播放时变蓝 </p>
+					</section>
 					<section data-markdown>
 						<script type="text/template">
 							<!-- .slide: data-background="#ff0000" -->
@@ -93,25 +100,26 @@
 				</section>
 			</div>
 		</div>
-		<script src="/reveal.js/js/reveal.js"></script>
-	
+		<script src="https://cdn.bootcss.com/reveal.js/3.8.0/js/reveal.js"></script>
+
 		<script>
 			Reveal.initialize({
 				dependencies: [
-					{ src: '/reveal.js/plugin/markdown/marked.js' },
-					{ src: '/reveal.js/plugin/markdown/markdown.js' },
-					{ src: '/reveal.js/plugin/notes/notes.js', async: true },
-					{ src: '/reveal.js/plugin/highlight/highlight.js', async: true }
+					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/markdown/marked.js' },
+					{ src: 'https://cdn.bootcss.com/reveal.js/3.7.0/plugin/markdown/markdown.js' },
+					{ src: 'https://cdn.bootcss.com/reveal.js/3.8.0/plugin/notes/notes.js', async: true },
+					{ src: 'https://cdn.bootcss.com/reveal.js/3.7.0/plugin/highlight/highlight.js', async: true }
 				],
 				slideNumber: 'c/t',
 				transaction: 'concave',
 				width: 1280,
 				height: 1080,
-				// 传入 marked 的配置
-				// 参考 https://github.com/chjj/marked#options-1
+				margin: 0.1,
 				markdown: {
 					smartypants: true
-				}
+				},
+				help: true,
+				backgroundTransition: 'fade',
 			});
 		</script>
 	</body>
