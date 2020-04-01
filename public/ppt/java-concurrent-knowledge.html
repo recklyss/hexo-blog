@@ -58,7 +58,7 @@
                     ```java
                     public class NumberMachine {
 
-                        private int number = 0;
+                        private int number;
 
                         public int getNextNumber(){
                             return ++number;
@@ -68,14 +68,70 @@
                     ![slt](images/number.png) <!-- .element: class="fragment" data-fragment-index="1" -->
                 </script>
             </section>
+            <section>
+                <p class="fragment fade-up">
+                    如果一个对象能够被多个线程访问，那么在使用这个对象的时候就需要注意是否要保证其线程安全，
+                    当对象中有可变状态的时候，多个线程对其的读取与使用都会相互影响。
+                    这个时候就需要保证对于对象可变状态的访问，使用一种同步机制进行控制。
+                </p>
+                <p class="fragment current-visible">那么什么是线程安全的定义呢？</p>
+                <p class="fragment current-visible">可以在多个线程中使用，并且线程间不会出现错误的交互？</p>
+                <p class="fragment current-visible">可以同时被多个线程调用，而调用者无需执行额外的操作？</p>
+                <p class="fragment fade-up">
+                    当多个线程访问某个类时，不管运行时环境采用何种调度方式或者这些线程将如何交替执行，并且在调用方代码中不需要引入额外的同步或协同，
+                    这个类都能够表现出正确的行为，那么就称这个类是线程安全的。
+                </p>
+            </section>
+        </section>
+        <section>
             <section data-markdown>
                 ## 如何确保线程安全？
             </section>
-<!--            <section>-->
-<!--                <p class="fragment fade-up">原子性</p>-->
-<!--                <p class="fragment fade-up">可见性</p>-->
-<!--                <p class="fragment fade-up">有序性</p>-->
-<!--            </section>-->
+            <section data-markdown>
+                <script type="text/template">
+                    ```java
+                    public class NumberMachine {
+                        private final int number = 0;
+
+                        public int getNextNumber() {
+                            return number + 1;
+                        }
+                    }
+                    ```
+                </script>
+            </section>
+            <section data-markdown>
+                <script type="text/template">
+                    ```java
+                    public class NumberMachine {
+
+                        public int getNextNumber() {
+                            int number = 0;
+                            return number + 1;
+                        }
+                    }
+                    ```
+                </script>
+            </section>
+            <section data-markdown>
+                <script type="text/template">
+                    ```java
+                    public class NumberMachine {
+                        private int number;
+
+                        public synchronized int getNextNumber(){
+                            return ++number;
+                        }
+                    }
+                    ```
+                    ![slt](images/number2.png) <!-- .element: class="fragment" data-fragment-index="1" -->
+                </script>
+            </section>
+            <section>
+                <p class="fragment fade-up">不在线程间共享该状态变量</p>
+                <p class="fragment fade-up">将状态变量修改为不可变的</p>
+                <p class="fragment fade-up">在访问该状态变量的时候使用同步机制</p>
+            </section>
         </section>
         <section>
             <section data-markdown>
@@ -100,7 +156,7 @@
                     - synchronized <!-- .element: class="fragment" -->
                     - final <!-- .element: class="fragment" -->
                     - volatile <!-- .element: class="fragment" -->
-                    - CAS <!-- .element: class="fragment" -->
+                    - CAS/Atomic 原子变量 <!-- .element: class="fragment" -->
                     - J.U.C 包 <!-- .element: class="fragment" -->
                         - Lock <!-- .element: class="fragment" -->
                         - ConcurrentHashMap <!-- .element: class="fragment" -->
@@ -153,6 +209,7 @@
         transaction: 'convex',
         width: 1360,
         height: 1280,
+        history: true,
         markdown: {
             smartypants: true
         }
