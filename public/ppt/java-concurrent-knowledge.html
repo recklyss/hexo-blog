@@ -37,6 +37,8 @@
                 <p class="fragment fade-left">线程的实现可以使用内核线程（操作系统内核调度）或用户线程（用户自行调度）或内核线程混合用户线程</p>
                 <p class="fragment fade-right">同一个进程中的多个线程，可以共享该进程所拥有的资源，以此可以实现线程中的相互通信</p>
             </section>
+        </section>
+        <section>
             <section data-markdown>
                 ## 多线程的好处？
                 ![海贼王 罗宾](images/luobin.jpg)
@@ -46,6 +48,7 @@
                 <p class="fragment fade-up">计算机的运算能力远大于进行 I/O 操作，网络通信，数据库操作</p>
                 <p class="fragment fade-up">将等待计算机进行 I/O 操作（存储、通信）的时间节约出来去同时处理其他任务</p>
                 <p class="fragment fade-up">并行处理多个互不依赖的任务</p>
+                <p class="fragment fade-up">将复杂的程序架构解耦开，使其设计简单化，不同的线程去处理不同类型的工作</p>
             </section>
         </section>
         <section>
@@ -58,11 +61,11 @@
                         private int number = 0;
 
                         public int getNextNumber(){
-                            return number++;
+                            return ++number;
                         }
                     }
                     ```
-                    ![slt](images/dsg.jpg) <!-- .element: class="fragment" data-fragment-index="1" -->
+                    ![slt](images/number.png) <!-- .element: class="fragment" data-fragment-index="1" -->
                 </script>
             </section>
             <section data-markdown>
@@ -125,7 +128,12 @@
             ## [编写线程安全的单例类](/blog/20190607/深度分析如何写出一个线程安全的单例)
         </section>
         <section>
-            使用 CountDownLatch 进行并发测试
+            <section>
+                <h2>使用 CountDownLatch 进行并发测试</h2>
+            </section>
+            <section data-markdown>
+                ![cdl](images/cdl.png)
+            </section>
         </section>
     </div>
 </div>
@@ -143,8 +151,8 @@
         ],
         slideNumber: 'c/t',
         transaction: 'convex',
-        width: 1280,
-        height: 1080,
+        width: 1360,
+        height: 1280,
         markdown: {
             smartypants: true
         }
