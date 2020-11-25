@@ -3,7 +3,6 @@ title: Scaffold-Cloud —— SpringCloud微服务架构实践
 date: 2019-10-25 13:42:24
 categories: [SpringCloud]
 tags: [SpringCloud, 微服务, 分布式, SpringBoot]
-top: true 
 ---
 
 <center><u style="font-size=16px;"><a href="/">Scaffold-Cloud: SpringCloud微服务脚手架</a></u></center> [幕布](https://mubu.com/doc/6NZlNw3DIw)
