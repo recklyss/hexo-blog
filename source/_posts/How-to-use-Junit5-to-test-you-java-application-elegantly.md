@@ -7,8 +7,6 @@ tags: [Junit5, Java 基础, 单元测试, unit test]
 
 <h1 align="center">Junit5 的一些实际开发中常用的功能【 TDD 向 】</h1>
 
-<a href="/ppt/junit-study.html"><h2 align="center">点击阅读PPT</h2></a>
-
 ![Junit](junit5.png)
 
 <!--more-->
