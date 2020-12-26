@@ -13,7 +13,7 @@
 # Set to true, if you want to fully override the default configuration.
 # Useful if you don't want to inherit the theme _config.yml configurations.
 override: false
-avatar: /images/tx.jpg
+avatar: https://cdn.jsdelivr.net/gh/Fatezhang/FigureCloud@master/uPic/logo.png
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------
@@ -114,9 +114,11 @@ menu_icons:
   #github: github
 #tag-cloud 配置
 tag_cloud:
-  textColour: \#663300
-  outlineColour: \#9999ff
-  textHeight: 30
+  textFont: Trebuchet MS, Helvetica
+  textColor: '#333'
+  textHeight: 25
+  outlineColor: '#E2E1D1'
+  maxSpeed: 0.1
 
 # ---------------------------------------------------------------
 # Scheme Settings
@@ -256,7 +258,7 @@ post_wordcount:
 wechat_subscriber:
   enabled: true
   qcode: /images/wx.jpg
-  description: 本不想放微信的，如果有转账的需求，请加我好友～哈哈
+  description: Add my WeChat, share tech-skills to each other 🙆‍
 
 # Reward
 #reward_comment: Donate comment here
@@ -278,7 +280,7 @@ post_copyright:
 # Reduce padding / margin indents on devices with narrow width.
 mobile_layout_economy: false
 
-# Android Chrome header panel color ($black-deep).
+# Android Chrome header panel color ($p-yellow).
 android_chrome_color: "#222"
 
 # Custom Logo.
@@ -322,7 +324,7 @@ font:
   enable: false
 
   # Uri of fonts host. E.g. //fonts.googleapis.com (Default).
-  host:
+  host: fonts.useso.com
 
   # Font options:
   # `external: true` will load this font family from `host` above.
@@ -421,7 +423,7 @@ valine:
 
 # Support for LiveRe comments system.
 # You can get your uid from https://livere.com/insight/myCode (General web site)
-livere_uid: MTAyMC8zNzcwOS8xNDI0MA==
+#livere_uid: MTAyMC8zNzcwOS8xNDI0MA==
 
 # Gitment
 # Introduction: https://imsun.net/posts/gitment-introduction/
@@ -471,21 +473,21 @@ baidushare:
 #           Technorati,Posterous,Tumblr,GoogleBookmarks,Newsvine,
 #           Evernote,Friendfeed,Vkontakte,Odnoklassniki,Mailru
 needmoreshare2:
-  enable: false
+  enable: true
   postbottom:
     enable: false
     options:
-      iconStyle: box
+      iconStyle: default
       boxForm: horizontal
-      position: bottomCenter
-      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+      position: topRight
+      networks: Weibo,Wechat,Twitter,Facebook
   float:
-    enable: false
+    enable: true
     options:
-      iconStyle: box
-      boxForm: horizontal
-      position: middleRight
-      networks: Weibo,Wechat,Douban,QQZone,Twitter,Facebook
+      iconStyle: default
+      boxForm: vertical
+      position: topRight
+      networks: Weibo,Wechat,Twitter,Facebook
 
 # Google Webmaster tools verification setting
 # See: https://www.google.com/webmasters/

@@ -27,18 +27,22 @@ $black-blue   = #3f5658cc
 $gold-yellow  = #8e9807bd
 $gold-y-2     = #826f0fcf
 
+$p-black      = #000;
+$p-yellow     = #f90;
+$p-white      = #fff;
+
 // Scaffolding
 // Settings for some of the most global styles.
 // --------------------------------------------------
 
 // Global text color on <body>
-$text-color                   = $black-light
+$text-color                   = $p-yellow
 
 // Global link color.
-$link-color                   = $black-light
-$link-hover-color             = $black-deep
+$link-color                   = $p-yellow
+$link-hover-color             = $p-yellow
 $link-decoration-color        = $grey-light
-$link-decoration-hover-color  = $black-deep
+$link-decoration-hover-color  = $p-yellow
 
 // Global border color.
 $border-color                 = $grey-light
@@ -47,8 +51,8 @@ $border-color                 = $grey-light
 $body-bg-color                = white
 
 // Selection
-$selection-bg                 = $blue-deep
-$selection-color              = white
+$selection-bg                 = $p-yellow
+$selection-color              = $p-black
 
 
 
@@ -148,7 +152,7 @@ $code-font-family               = $font-family-monospace
 $code-font-size                 = 13px
 $code-font-size                 = unit(hexo-config('font.codes.size'), px) if hexo-config('font.codes.size') is a 'unit'
 $code-border-radius             = 3px
-$code-foreground                = $black-light
+$code-foreground                = $p-yellow
 $code-background                = $gainsboro
 
 
@@ -159,14 +163,14 @@ $code-background                = $gainsboro
 $btn-font-weight                = normal
 
 $btn-default-radius             = 0
-$btn-default-bg                 = $black-deep
+$btn-default-bg                 = $p-yellow
 $btn-default-color              = white
 $btn-default-font-size          = 14px
 $btn-default-border-width       = 2px
-$btn-default-border-color       = $black-deep
+$btn-default-border-color       = $p-yellow
 $btn-default-hover-bg           = white
-$btn-default-hover-color        = $black-deep
-$btn-default-hover-border-color = $black-deep
+$btn-default-hover-color        = $p-yellow
+$btn-default-hover-border-color = $p-yellow
 
 
 
@@ -181,11 +185,11 @@ $pagination-link-border         = $gainsboro
 
 $pagination-link-hover-bg       = transparent
 $pagination-link-hover-color    = $link-color
-$pagination-link-hover-border   = $black-deep
+$pagination-link-hover-border   = $p-yellow
 
-$pagination-active-bg           = $grey-light
-$pagination-active-color        = white
-$pagination-active-border       = $grey-light
+$pagination-active-bg           = $p-yellow
+$pagination-active-color        = $p-black
+$pagination-active-border       = $p-white
 
 
 
@@ -213,7 +217,7 @@ $gap-between-main-and-footer    = 100px
 // Headband
 // --------------------------------------------------
 $headband-height                = 3px
-$headband-bg                    = $black-deep
+$headband-bg                    = $p-yellow
 
 
 
@@ -227,7 +231,7 @@ $head-bg                        = transparent
 $site-meta-text-align           = center
 $brand-color                    = white
 $brand-hover-color              = white
-$brand-bg                       = $black-deep
+$brand-bg                       = $p-yellow
 
 $logo-font-size                 = 20px
 $logo-font-size                 = unit(hexo-config('font.logo.size'), px) if hexo-config('font.logo.size') is a 'unit'
@@ -238,7 +242,7 @@ $subtitle-color                 = $grey-dark
 
 // Menu
 $menu-link-border               = transparent
-$menu-link-hover-border         = $black-deep
+$menu-link-hover-border         = $p-yellow
 
 
 
@@ -266,7 +270,7 @@ $posts-collapse-left-mobile     = 5px
 // Sidebar
 // Variables for sidebar section elements.
 // --------------------------------------------------
-$sidebar-nav-color                    = $black-light
+$sidebar-nav-color                    = $p-yellow
 $sidebar-nav-hover-color              = $whitesmoke
 $sidebar-highlight                    = $blue-bright
 
@@ -279,7 +283,7 @@ $site-author-image-border-color       = $black-dim
 $site-author-name-margin              = 5px 0 0
 $site-author-name-color               = $whitesmoke
 $site-author-name-align               = center
-$site-author-name-weight              = normal
+$site-author-name-weight              = bold
 
 $site-description-font-size           = 14px
 $site-description-color               = $black-blue
@@ -294,7 +298,7 @@ $site-state-item-name-color           = inherit
 $site-state-item-border-color         = $black-dim
 
 $toc-link-color                       = $grey-dark
-$toc-link-border-color                = $black-light
+$toc-link-border-color                = $p-yellow
 $toc-link-hover-color                 = $grey-light
 $toc-link-hover-border-color          = $grey-light
 $toc-link-active-color                = $sidebar-highlight
@@ -313,7 +317,7 @@ $b2t-position-bottom-on       = 19px
 $b2t-position-right           = 30px
 $b2t-font-size                = 12px
 $b2t-color                    = white
-$b2t-bg-color                 = $black-deep
+$b2t-bg-color                 = $p-yellow
 
 // full-image
 $full-image-width             = 110%

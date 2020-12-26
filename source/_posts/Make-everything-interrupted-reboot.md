@@ -5,7 +5,7 @@ categories: [程序人生]
 tags: [程序人生]
 ---
 
- ![](flag.JPG)
+![cxlyp3](https://cdn.jsdelivr.net/gh/Fatezhang/FigureCloud@master/uPic/cxlyp3.jpg)
 
 <!--more-->
 

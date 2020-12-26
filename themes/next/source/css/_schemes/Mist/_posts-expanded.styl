@@ -25,7 +25,7 @@
     +mobile() { font-size: $font-size-headings-small; }
     +desktop-large() { font-size: $font-size-headings-large; }
   }
-  .post-title:hover:before { background: $black-deep; }
+  .post-title:hover:before { background: $p-yellow; }
 
   .post-body {
     +mobile() { font-size: $font-size-small; }
@@ -37,7 +37,8 @@
     text-align: left;
     a {
       padding: 1px 5px;
-      background: $whitesmoke;
+      background: $p-yellow;
+      color: $p-black;
       border-bottom: none;
     }
     a:hover { background: $grey-light; }
@@ -62,6 +63,6 @@
     +desktop-large() { font-size: $font-size-large; }
 
 
-    &:hover { border-bottom-color: $black-deep; }
+    &:hover { border-bottom-color: $p-yellow; }
   }
 }
