@@ -3,7 +3,6 @@ title: Java 并发编程的一些总结
 date: 2020-01-29 22:06:28
 categories: [Java基础,并发编程]
 tags: [Java基础,并发编程]
-top: true
 ---
 
 > ### 前言
