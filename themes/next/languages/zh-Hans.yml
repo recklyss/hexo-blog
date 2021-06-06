@@ -53,7 +53,7 @@ counter:
   tag_cloud:
     zero: 暂无标签
     one: 目前共计 1 个标签
-    other: " %d 点繁星"
+    other: " %d 颗✨"
 
   categories:
     zero: 暂无分类

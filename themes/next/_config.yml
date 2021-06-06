@@ -13,7 +13,7 @@
 # Set to true, if you want to fully override the default configuration.
 # Useful if you don't want to inherit the theme _config.yml configurations.
 override: false
-avatar: https://cdn.jsdelivr.net/gh/Fatezhang/FigureCloud@master/uPic/logo.png
+avatar: https://cdn.jsdelivr.net/gh/Fatezhang/FigureCloud@master/uPic/heartbeat.gif
 # ---------------------------------------------------------------
 # Site Information Settings
 # ---------------------------------------------------------------

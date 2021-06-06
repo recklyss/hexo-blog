@@ -14,7 +14,7 @@ $gray-lighter = #ddd
 $grey-light   = #ccc
 $grey         = #bbb
 $grey-dark    = #999
-$grey-dim     = #666
+$grey-dim     = #524c4c3b
 $black-light  = #555
 $black-dim    = #333
 $black-deep   = #222
@@ -26,23 +26,24 @@ $orange       = #fc6423
 $black-blue   = #3f5658cc
 $gold-yellow  = #8e9807bd
 $gold-y-2     = #826f0fcf
-
+$light-green  = #8fb6a4a6
 $p-black      = #000;
-$p-yellow     = #f90;
+$gray-lighter = #3c4617;
 $p-white      = #fff;
+$blockquote-bg= rgba(206, 212, 185, 0.22);
 
 // Scaffolding
 // Settings for some of the most global styles.
 // --------------------------------------------------
 
 // Global text color on <body>
-$text-color                   = $p-yellow
+$text-color                   = $gray-lighter
 
 // Global link color.
-$link-color                   = $p-yellow
-$link-hover-color             = $p-yellow
+$link-color                   = $gray-lighter
+$link-hover-color             = $gray-lighter
 $link-decoration-color        = $grey-light
-$link-decoration-hover-color  = $p-yellow
+$link-decoration-hover-color  = $gray-lighter
 
 // Global border color.
 $border-color                 = $grey-light
@@ -51,7 +52,7 @@ $border-color                 = $grey-light
 $body-bg-color                = white
 
 // Selection
-$selection-bg                 = $p-yellow
+$selection-bg                 = $gray-lighter
 $selection-color              = $p-black
 
 
@@ -152,7 +153,7 @@ $code-font-family               = $font-family-monospace
 $code-font-size                 = 13px
 $code-font-size                 = unit(hexo-config('font.codes.size'), px) if hexo-config('font.codes.size') is a 'unit'
 $code-border-radius             = 3px
-$code-foreground                = $p-yellow
+$code-foreground                = $gray-lighter
 $code-background                = $gainsboro
 
 
@@ -163,14 +164,14 @@ $code-background                = $gainsboro
 $btn-font-weight                = normal
 
 $btn-default-radius             = 0
-$btn-default-bg                 = $p-yellow
+$btn-default-bg                 = $gray-lighter
 $btn-default-color              = white
 $btn-default-font-size          = 14px
 $btn-default-border-width       = 2px
-$btn-default-border-color       = $p-yellow
+$btn-default-border-color       = $gray-lighter
 $btn-default-hover-bg           = white
-$btn-default-hover-color        = $p-yellow
-$btn-default-hover-border-color = $p-yellow
+$btn-default-hover-color        = $gray-lighter
+$btn-default-hover-border-color = $gray-lighter
 
 
 
@@ -185,9 +186,9 @@ $pagination-link-border         = $gainsboro
 
 $pagination-link-hover-bg       = transparent
 $pagination-link-hover-color    = $link-color
-$pagination-link-hover-border   = $p-yellow
+$pagination-link-hover-border   = $gray-lighter
 
-$pagination-active-bg           = $p-yellow
+$pagination-active-bg           = $gold-yellow
 $pagination-active-color        = $p-black
 $pagination-active-border       = $p-white
 
@@ -217,7 +218,7 @@ $gap-between-main-and-footer    = 100px
 // Headband
 // --------------------------------------------------
 $headband-height                = 3px
-$headband-bg                    = $p-yellow
+$headband-bg                    = $gray-lighter
 
 
 
@@ -231,7 +232,7 @@ $head-bg                        = transparent
 $site-meta-text-align           = center
 $brand-color                    = white
 $brand-hover-color              = white
-$brand-bg                       = $p-yellow
+$brand-bg                       = $gray-lighter
 
 $logo-font-size                 = 20px
 $logo-font-size                 = unit(hexo-config('font.logo.size'), px) if hexo-config('font.logo.size') is a 'unit'
@@ -242,7 +243,7 @@ $subtitle-color                 = $grey-dark
 
 // Menu
 $menu-link-border               = transparent
-$menu-link-hover-border         = $p-yellow
+$menu-link-hover-border         = $gray-lighter
 
 
 
@@ -270,7 +271,7 @@ $posts-collapse-left-mobile     = 5px
 // Sidebar
 // Variables for sidebar section elements.
 // --------------------------------------------------
-$sidebar-nav-color                    = $p-yellow
+$sidebar-nav-color                    = $gray-lighter
 $sidebar-nav-hover-color              = $whitesmoke
 $sidebar-highlight                    = $blue-bright
 
@@ -281,7 +282,7 @@ $site-author-image-border-width       = 2px
 $site-author-image-border-color       = $black-dim
 
 $site-author-name-margin              = 5px 0 0
-$site-author-name-color               = $whitesmoke
+$site-author-name-color               = $gold-y-2
 $site-author-name-align               = center
 $site-author-name-weight              = bold
 
@@ -298,7 +299,7 @@ $site-state-item-name-color           = inherit
 $site-state-item-border-color         = $black-dim
 
 $toc-link-color                       = $grey-dark
-$toc-link-border-color                = $p-yellow
+$toc-link-border-color                = $gray-lighter
 $toc-link-hover-color                 = $grey-light
 $toc-link-hover-border-color          = $grey-light
 $toc-link-active-color                = $sidebar-highlight
@@ -317,7 +318,7 @@ $b2t-position-bottom-on       = 19px
 $b2t-position-right           = 30px
 $b2t-font-size                = 12px
 $b2t-color                    = white
-$b2t-bg-color                 = $p-yellow
+$b2t-bg-color                 = $gray-lighter
 
 // full-image
 $full-image-width             = 110%
