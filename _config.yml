@@ -89,7 +89,6 @@ deploy:
   type: git
   repo:
     github: git@github.com:Fatezhang/Fatezhang.github.io.git
-    ecoding: git@e.coding.net:fatezhang/zhangjiaheng.git
   bransh: master
 plugins: hexo-generate-feed
 
