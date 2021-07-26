@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zhangjiaheng.cn/"/>
-  <updated>2021-07-21T15:30:06.151Z</updated>
+  <updated>2021-07-26T12:14:36.524Z</updated>
   <id>http://zhangjiaheng.cn/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>我的无奈的来源，正是他</title>
+    <link href="http://zhangjiaheng.cn/blog/20210726/%E6%88%91%E7%9A%84%E6%97%A0%E5%A5%88%E7%9A%84%E6%9D%A5%E6%BA%90%EF%BC%8C%E6%AD%A3%E6%98%AF%E4%BB%96/"/>
+    <id>http://zhangjiaheng.cn/blog/20210726/我的无奈的来源，正是他/</id>
+    <published>2021-07-26T12:06:19.000Z</published>
+    <updated>2021-07-26T12:14:36.524Z</updated>
+    
+    <content type="html"><![CDATA[<p>多年以前，我遇到了这么一个人。在长期的相处于磨合中，我渐渐的了解他，又渐渐的开始厌恶他。</p><p>在我看来他存在懒惰、不上进等诸多问题。我厌恶他的没有担当，面对一切事物只会去逃避。</p><p>我厌恶他做事情犹豫不决，不愿意向自己渴望的东西迈出脚步，痴望着上天能够怜悯他，将他喜欢的事物和人送到他手中。</p><p>性格上的懦弱、怯惧，以至于平平挫折，却自视为被生活沉重打击。</p><p>他把年华用以虚度的拙劣手段，对于青春与未来的人生所持有消极的态度，也曾令我屡屡失望、但同时我也是怜悯他的，我经历过他不被重视时的落寞，不被需要时的孤独，这种体验很糟糕，清楚的提醒着我，他正在难过。</p><p>他很脆弱，对于旁人的冷笑和嘲讽极度敏感。</p><p>我来到这个世界并无多么重大的意义，生活赋予我的第一要务就是要照顾好他。</p><p>于是我必须细心的感知他的大脑波动，替他整理悲苦、负面的情绪害怕他迷失，害怕他放弃只能一遍又一遍的安慰，一遍又一遍的强调。</p><p>在明知无望的情况下，还是想他能够逐渐的快乐起来。</p><p>但是我好无奈。</p><p>我无奈的来源于：我正是他。</p><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;多年以前，我遇到了这么一个人。在长期的相处于磨合中，我渐渐的了解他，又渐渐的开始厌恶他。&lt;/p&gt;
+&lt;p&gt;在我看来他存在懒惰、不上进等诸多问题。我厌恶他的没有担当，面对一切事物只会去逃避。&lt;/p&gt;
+&lt;p&gt;我厌恶他做事情犹豫不决，不愿意向自己渴望的东西迈出脚步，痴望着上天能够怜
+      
+    
+    </summary>
+    
+      <category term="随笔" scheme="http://zhangjiaheng.cn/categories/%E9%9A%8F%E7%AC%94/"/>
+    
+    
+      <category term="随笔" scheme="http://zhangjiaheng.cn/tags/%E9%9A%8F%E7%AC%94/"/>
+    
+  </entry>
   
   <entry>
     <title>写博客有什么用？</title>
@@ -556,40 +583,6 @@
       <category term="leetcode" scheme="http://zhangjiaheng.cn/tags/leetcode/"/>
     
       <category term="算法题解" scheme="http://zhangjiaheng.cn/tags/%E7%AE%97%E6%B3%95%E9%A2%98%E8%A7%A3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Synchronized使用时一个不起眼的注意点</title>
-    <link href="http://zhangjiaheng.cn/blog/20190716/Synchronized%E4%BD%BF%E7%94%A8%E6%97%B6%E4%B8%80%E4%B8%AA%E4%B8%8D%E8%B5%B7%E7%9C%BC%E7%9A%84%E6%B3%A8%E6%84%8F%E7%82%B9/"/>
-    <id>http://zhangjiaheng.cn/blog/20190716/Synchronized使用时一个不起眼的注意点/</id>
-    <published>2019-07-16T09:12:47.000Z</published>
-    <updated>2019-11-01T01:40:48.191Z</updated>
-    
-    <content type="html"><![CDATA[<h4 id="Synchronized-前情提要"><a href="#Synchronized-前情提要" class="headerlink" title="Synchronized 前情提要"></a>Synchronized 前情提要</h4><p>Synchronized是Java中用来进行方法或者代码同步的一个内置锁机制。这种内置锁机制可以保证代码执行的原子性、可见性，但是并不能屏蔽代码的重排序。Synchronized可以修饰方法、对象以及代码块，并可以保证被修饰的方法或者代码块，在同一个时刻只能有一个线程能够访问得到。</p><ul><li>修饰静态方法：锁的是当前类的class对象，修饰方法时Synchronized没有表现在字节码指令中，而是在class文件的方法表中将该方法的access_flags值置为1。表示该方法是同步方法，并使用调用该方法的对象或该方法所属的 Class 在 JVM 的内部对象表示 Klass 作为锁对象。</li><li>修饰普通方法：锁的是当前实例对象，修饰方法时同上。</li><li>修饰代码块：锁的是Synchronized()中的对象，编译后的字节码会在代码块前后插入monitorenter 和monitorexit。JVM需要每一个monitorenter都有一个monitorexit与之对应，任何对象都有一个monitor与之相对应，当一个monitor被持有，即线程执行到monitorenter时，对象将处于锁定状态。</li></ul><p>Synchronized是Java内置的重量级锁，在jdk1.6之后引入了自旋锁、轻量级锁、适应性自旋、锁粗化、锁消除、偏向锁等技术来减少Synchronized的性能开销。</p><a id="more"></a><h4 id="切入正题"><a href="#切入正题" class="headerlink" title="切入正题"></a>切入正题</h4><p>以上知识点想必刚开始学习并发编程的程序员都会先学习以上知识，但是很多程序员在使用Synchronized的时候有可能会发现，我明明加锁了，但是方法却并没有同步执行，这到底是什么原因？先看下如下代码：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Integer cn = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> size = <span class="number">20</span>;</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; size; j++) &#123;</span><br><span class="line">        <span class="keyword">new</span> Thread(</span><br><span class="line">            () -&gt; &#123;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">                    <span class="keyword">synchronized</span> (cn) &#123;</span><br><span class="line">                        cn++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            .start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>以上代码启动了20个线程，对Integer变量cn进行自增。很多人在写Synchronized的时候都有可能出现这种问题。这样的写法是错误的！</p><p>因为<code>cn++</code>这句代码的原理是将cn指向一个cn+1的新的Integer对象！</p><p>修改成如下，然后看看输出：</p><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> Integer cn = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">final</span> <span class="keyword">int</span> size = <span class="number">20</span>;</span><br><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> CountDownLatch cd = <span class="keyword">new</span> CountDownLatch(size);</span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; size; j++) &#123;</span><br><span class="line">        <span class="keyword">int</span> finalJ = j;</span><br><span class="line">        <span class="keyword">new</span> Thread(</span><br><span class="line">            () -&gt; &#123;</span><br><span class="line">                <span class="keyword">try</span> &#123;</span><br><span class="line">                    cd.countDown();</span><br><span class="line">                    cd.await();</span><br><span class="line">                &#125; <span class="keyword">catch</span> (InterruptedException e) &#123;</span><br><span class="line">                    e.printStackTrace();</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</span><br><span class="line">                    <span class="keyword">synchronized</span> (cn) &#123;</span><br><span class="line">                        cn++;</span><br><span class="line">                        System.out.println(</span><br><span class="line">                            <span class="string">"cn"</span> + finalJ + <span class="string">" = "</span> + cn + <span class="string">"\t\t\t"</span> + System.identityHashCode(cn));</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;)</span><br><span class="line">            .start();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>以上代码输出如下 &gt;&gt;</strong></p><p><img src="/blog/20190716/Synchronized使用时一个不起眼的注意点/cons.png" alt="输出"></p><p>每次输出的Integer对象的HashCode值并不相同。所以，每次锁的并不是同一个对象！既然不是同一个对象，那么这个方法在多线程访问的时候肯定就不是线程安全的！对于如上这种例子我们当然可以使用原子变量<code>AtomicInteger</code>来实现更高级的同步机制去解决这个问题，但是其他场景下呢？</p><p>不仅仅是Integer对象哦！所有的对象都有可能会有这些问题存在！当你在锁这个对象的时候，一定要保证加锁的对象在线程中不被修改成另一个对象！否则就是一个<strong>假的</strong>同步代码块！</p><hr><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">]]></content>
-    
-    <summary type="html">
-    
-      &lt;h4 id=&quot;Synchronized-前情提要&quot;&gt;&lt;a href=&quot;#Synchronized-前情提要&quot; class=&quot;headerlink&quot; title=&quot;Synchronized 前情提要&quot;&gt;&lt;/a&gt;Synchronized 前情提要&lt;/h4&gt;&lt;p&gt;Synchronized是Java中用来进行方法或者代码同步的一个内置锁机制。这种内置锁机制可以保证代码执行的原子性、可见性，但是并不能屏蔽代码的重排序。Synchronized可以修饰方法、对象以及代码块，并可以保证被修饰的方法或者代码块，在同一个时刻只能有一个线程能够访问得到。&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;修饰静态方法：锁的是当前类的class对象，修饰方法时Synchronized没有表现在字节码指令中，而是在class文件的方法表中将该方法的access_flags值置为1。表示该方法是同步方法，并使用调用该方法的对象或该方法所属的 Class 在 JVM 的内部对象表示 Klass 作为锁对象。&lt;/li&gt;
-&lt;li&gt;修饰普通方法：锁的是当前实例对象，修饰方法时同上。&lt;/li&gt;
-&lt;li&gt;修饰代码块：锁的是Synchronized()中的对象，编译后的字节码会在代码块前后插入monitorenter 和monitorexit。JVM需要每一个monitorenter都有一个monitorexit与之对应，任何对象都有一个monitor与之相对应，当一个monitor被持有，即线程执行到monitorenter时，对象将处于锁定状态。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Synchronized是Java内置的重量级锁，在jdk1.6之后引入了自旋锁、轻量级锁、适应性自旋、锁粗化、锁消除、偏向锁等技术来减少Synchronized的性能开销。&lt;/p&gt;
-    
-    </summary>
-    
-      <category term="Java基础" scheme="http://zhangjiaheng.cn/categories/Java%E5%9F%BA%E7%A1%80/"/>
-    
-      <category term="并发编程" scheme="http://zhangjiaheng.cn/categories/Java%E5%9F%BA%E7%A1%80/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-    
-      <category term="Java基础" scheme="http://zhangjiaheng.cn/tags/Java%E5%9F%BA%E7%A1%80/"/>
-    
-      <category term="并发编程" scheme="http://zhangjiaheng.cn/tags/%E5%B9%B6%E5%8F%91%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="Synchronized" scheme="http://zhangjiaheng.cn/tags/Synchronized/"/>
     
   </entry>
   
