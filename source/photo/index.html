@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        .row {
+            display: flex;
+            /*flex-wrap: wrap;*/
+            padding: 0 4px;
+        }
+
+        /* Create two equal columns that sits next to each other */
+        .column {
+            flex: 20%;
+            padding: 0 4px;
+            max-width: 20%;
+        }
+
+        .column img {
+            width: 100%;
+            margin-top: 8px;
+            vertical-align: middle;
+        }
+        /* The Modal (background) */
+
+        .myImg {
+            border-radius: 5px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .myImg:hover {opacity: 0.7;}
+
+        .modal {
+            display: none; /* Hidden by default */
+            position: fixed; /* Stay in place */
+            z-index: 1; /* Sit on top */
+            padding-top: 100px; /* Location of the box */
+            left: 0;
+            top: 0;
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            overflow: auto; /* Enable scroll if needed */
+            background-color: rgb(0,0,0); /* Fallback color */
+            background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+        }
+
+        /* Modal Content (Image) */
+        .modal-content {
+            margin: auto;
+            display: block;
+            max-height: 80%;
+        }
+        /* Caption of Modal Image (Image Text) - Same Width as the Image */
+        #caption {
+            margin: auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+            text-align: center;
+            color: #ccc;
+            padding: 10px 0;
+            height: 150px;
+        }
+
+        /* Add Animation - Zoom in the Modal */
+        .modal-content, #caption {
+            animation-name: zoom;
+            animation-duration: 0.6s;
+        }
+
+        @keyframes zoom {
+            from {transform:scale(0)}
+            to {transform:scale(1)}
+        }
+
+        /* The Close Button */
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        /* 100% Image Width on Smaller Screens */
+        @media only screen and (max-width: 700px){
+            .modal-content {
+                width: 100%;
+            }
+        }
+    </style>
+    <script type="application/javascript">
+      document.addEventListener('DOMContentLoaded', function() {
+        const pics = ['0.jpg','1.jpg','10.jpg','12.jpg','11.jpg','13.jpg','14.jpg','15.jpg','16.jpg','17.jpg','18.jpg','19.jpg','2.jpg','20.jpg','21.jpg','22.jpg','23.jpg','3.jpg','3hmYwN.jpg','4.jpg','4TZSfg.jpg','5.jpg','6.jpg','7.jpg','7k4lz1.png','8.jpg','8HJN1K.jpg','9.jpg','CMd8b4.png','DBhQX3.jpg','DU1MGD.png','Daco_1211680.png','FinalVideo_1635178451.708375.mov','GOUUhS.png','IMG_4253%202.JPG','IMG_5839.JPG','IMG_6473.JPG','IMG_6479.mov','IMG_6517.JPG','IMG_6535.JPG','IMG_6544.JPG','IMG_6545.JPG','IMG_6571.jpg','IMG_6578.JPG','IMG_6596.JPG','IMG_6603.JPG','IMG_6735.JPG','IMG_6760.JPG','IMG_6842.JPG','IMG_6861.JPG','IMG_6872.JPG','IMG_6885.JPG','IMG_6903.JPG','IMG_6907.JPG','IMG_6916.JPG','IMG_6929.JPG','IMG_6931.JPG','IMG_6943.JPG','IMG_7112.JPG','IMG_7157.JPG','IMG_7174.JPG','IMG_7176.JPG','IMG_7207.JPG','IMG_7243.JPG','IMG_7260.JPG','IMG_7308.JPG','IMG_7313.JPG','IMG_7319.JPG','IMG_7329.JPG','IMG_7339.JPG','IMG_7340.jpg','IMG_7351.JPG','IMG_7501.JPG','IMG_7505.JPG','IMG_7511.JPG','IMG_7512.JPG','IMG_7546.JPG','IMG_7550.JPG','IMG_7596.JPG','IMG_7607.JPG','IMG_8095.jpg','Ip590l.jpg','KLwJUK.png','KP1wY6.png','LZT2OG.png','MgsXoR.png','PQLGTr.jpg','RPReplay_Final1635172502.MOV','Screen%20Shot%202021-05-12%20at%2023.58.28.png','Screen%20Shot%202021-10-18%20at%2010.28.52.png','Screen%20Shot%202021-10-27%20at%2022.02.08.png','T68qZr.png','WwdRFX.png','WxIjjE.png','X7Bm04.png','XG7pwD.png','XSTYNS.png','aJVZ1b.png','cxlyp3.jpg','dO4Sf5.jpg','do0JqI.png','e7o4dc.png','eRDYCM.png','genie_2021_Oct_04_295185.JPEG','genie_2021_Oct_04_712796.mov','genie_2021_Oct_05_143274.jpg','genie_2021_Oct_05_293345.JPEG','genie_2021_Oct_05_71416.JPEG','genie_2021_Oct_05_963147.jpg','genie_2021_Oct_08_103103.jpg','gg7I2o.png','gm2qI7.jpg','h28s2N.jpg','happy.gif','heartbeat.gif','ihj1Tk.png','image-20210128163124729.png','image-20210129164557982.png','jNkH6T.png','jxUAcq.png','k8zPU6.png','logo.png','loop_picture.mov','no-dash.jpg','oqdLfF.png','p8BFFK.png','pKtFXF.png','simple.jpg','spider1.jpg','tbBhpL.jpg','tortoise.jpg','us91g0.png','vkHY6u.png','xCxT2g.png'];
+        let index = 0;
+        for (let i = 1; i <= 5; i++) {
+          let imagesHtml = '';
+          for (let j = 0; j < pics.length/5 && index < pics.length; j++) {
+            const src = 'https://cdn.jsdelivr.net/gh/Fatezhang/FigureCloud@master/uPic/' + pics[index++];
+            imagesHtml += '<img class="myImg" src="'+src+'" id="#myImg">';
+          }
+          const colId = 'col_' + i;
+          const column = document.getElementById(colId);
+          column.innerHTML = imagesHtml;
+        }
+        const images = document.querySelectorAll('.myImg');
+        images.forEach(function (mi) {
+          mi.addEventListener("click", function () {
+            // Get the modal
+            const modal = document.getElementById("myModal");
+            // Get the image and insert it inside the modal - use its "alt" text as a caption
+            const imgSrc = this.getAttribute("src");
+            const modalImg = document.getElementById("modalImg");
+            const captionText = document.getElementById("caption");
+            modal.style.display = "block";
+            modalImg.src = imgSrc;
+            captionText.innerHTML = this.alt;
+
+            // copy image src to the clip board
+            navigator.clipboard.writeText(imgSrc);
+
+            // Get the <span> element that closes the modal
+            const span = document.getElementsByClassName("close")[0];
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+              modal.style.display = "none";
+            }
+            modal.onclick = function() {
+              modal.style.display = "none";
+            }
+
+          })
+        })
+      })
+    </script>
+</head>
+<body>
+<!-- The Modal -->
+<div id="myModal" class="modal">
+
+    <!-- The Close Button -->
+    <span class="close">&times;</span>
+
+    <!-- Modal Content (The Image) -->
+    <img class="modal-content" id="modalImg">
+
+    <!-- Modal Caption (Image Text) -->
+    <div id="caption"></div>
+</div>
+<div class="row">
+    <div class="column" id="col_1">
+
+    </div>
+    <div class="column" id="col_2">
+
+    </div>
+    <div class="column" id="col_3">
+
+    </div>
+    <div class="column" id="col_4">
+
+    </div>
+    <div class="column" id="col_5">
+
+    </div>
+</div>
+
+</body>
+</html>

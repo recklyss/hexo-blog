@@ -101,6 +101,7 @@ menu:
   tags: /tags/tags.html || tags
   categories: /categories/ || th
   archives: /archives/ || archive
+  photo: /photo/ || image
   #schedule: /schedule/ || calendar
   #sitemap: /sitemap.xml || sitemap
   #commonweal: /404/ || heartbeat
