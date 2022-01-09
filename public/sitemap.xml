@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zhangjiaheng.cn/about/index.html</loc>
+    
+    <lastmod>2022-01-09T07:51:04.576Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zhangjiaheng.cn/photo/index.html</loc>
     
     <lastmod>2022-01-08T12:14:55.130Z</lastmod>
@@ -117,13 +124,6 @@
     <loc>http://zhangjiaheng.cn/blog/20201227/%E4%BD%BF%E7%94%A8localstack-%E6%90%AD%E5%BB%BA-AWS-%E6%9C%AC%E5%9C%B0%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83/</loc>
     
     <lastmod>2020-12-27T09:45:48.171Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zhangjiaheng.cn/about/index.html</loc>
-    
-    <lastmod>2020-12-27T03:00:24.947Z</lastmod>
     
   </url>
   
