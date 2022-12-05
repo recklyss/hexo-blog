@@ -116,7 +116,7 @@ menu_icons:
 #tag-cloud 配置
 tag_cloud:
   textFont: Trebuchet MS, Helvetica
-  textColor: '#333'
+  textColor: '#f90'
   textHeight: 25
   outlineColor: '#E2E1D1'
   maxSpeed: 0.1
