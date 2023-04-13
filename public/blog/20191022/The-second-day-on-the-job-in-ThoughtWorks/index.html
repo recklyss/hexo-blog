@@ -1,0 +1,1905 @@
+<!DOCTYPE html>
+
+
+<script type="text/javascript" color="248,248,255" opacity="0.7" count="50" src="//cdn.bootcss.com/canvas-nest.js/1.0.0/canvas-nest.min.js"></script>
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.9.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="程序人生,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="陈年风楼 | 博客" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="The article has been encrypted, please enter your password to view.">
+<meta name="keywords" content="程序人生">
+<meta property="og:type" content="article">
+<meta property="og:title" content="The Second Day on the Job in ThoughtWorks">
+<meta property="og:url" content="http://zhangjiaheng.cn/blog/20191022/The-second-day-on-the-job-in-ThoughtWorks/index.html">
+<meta property="og:site_name" content="陈年风楼 | 博客">
+<meta property="og:description" content="The article has been encrypted, please enter your password to view.">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2022-11-29T14:56:28.797Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="The Second Day on the Job in ThoughtWorks">
+<meta name="twitter:description" content="The article has been encrypted, please enter your password to view.">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":10,"b2t":true,"scrollpercent":true,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://zhangjiaheng.cn/blog/20191022/The-second-day-on-the-job-in-ThoughtWorks/">
+
+
+
+
+
+  <title>The Second Day on the Job in ThoughtWorks | 陈年风楼 | 博客</title>
+  
+
+
+
+
+
+  <script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?e44eb2ecb3cbca508790ceb92aa7acc4";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+	
+    <a id="fork-me-custom" href="https://github.com/Fatezhang"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub"></a>
+	
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">陈年风楼 | 博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">当你看到了一座山，一定会想再看看山的后面是什么！</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            短诗的序
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            迷途自渡
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/tags.html" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            寒星三两
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            林深见鹿
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            记昨日书
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-photo">
+          <a href="/photo/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-image"></i> <br>
+            
+            老树古屋
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            顾探往昔
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="顾探往昔，搜寻往日记忆..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://zhangjiaheng.cn/blog/20191022/The-second-day-on-the-job-in-ThoughtWorks/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="陈年风楼">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://cdn.jsdelivr.net/gh/Fatezhang/FigureCloud@master/uPic/heartbeat.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="陈年风楼 | 博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">The Second Day on the Job in ThoughtWorks</h1>
+        
+
+        <div class="post-meta">
+
+	  
+
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-10-22T20:41:42+07:00">
+                2019-10-22
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类：</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/程序人生/" itemprop="url" rel="index">
+                    <span itemprop="name">程序人生</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次阅读
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  246 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  2 min
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <script src="/crypto-js.js"></script><script src="/mcommon.js"></script><h3 id="encrypt-message">Please enter the password to read the blog.</h3><link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css"> <link rel="stylesheet" href="//cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css"> <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script> <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script> <div id="security"> <div> <div class="input-group"> <input type="text" class="form-control" aria-label="Enter the password." id="pass"> <div class="input-group-btn"> <button type="button" class="btn btn-default" onclick="decryptAES()">Decrypt</button> </div> </div> </div> </div> <div id="encrypt-blog" style="display:none"> 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 </div><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kity@2.0.4/dist/kity.min.js"></script><script type="text/javascript" src="https://cdn.jsdelivr.net/npm/kityminder-core@1.4.50/dist/kityminder.core.min.js"></script><script defer="true" type="text/javascript" src="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.js"></script><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/hexo-simple-mindmap@0.2.0/dist/mindmap.min.css">
+      
+    </div>
+    
+    
+    
+
+    
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/wx.jpg" alt="陈年风楼 wechat" style="width: 200px; max-width: 100%;">
+    <div>Add my WeChat, share tech-skills to each other 🙆‍</div>
+</div>
+
+      </div>
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/程序人生/" rel="tag"><i class="fa fa-tag"></i> 程序人生</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/20191020/我项目中使用的分布式事务：LCN/" rel="next" title="我项目中使用的分布式事务：LCN">
+                <i class="fa fa-chevron-left"></i> 我项目中使用的分布式事务：LCN
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/20191025/SpringCloud微服务架构实践/" rel="prev" title="Scaffold-Cloud —— SpringCloud微服务架构实践">
+                Scaffold-Cloud —— SpringCloud微服务架构实践 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+  <div class="bdsharebuttonbox">
+    <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+    <a href="#" class="bds_douban" data-cmd="douban" title="分享到豆瓣网"></a>
+    <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+    <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间"></a>
+    <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+    <a href="#" class="bds_tieba" data-cmd="tieba" title="分享到百度贴吧"></a>
+    <a href="#" class="bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+    <a href="#" class="bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+    <a href="#" class="bds_more" data-cmd="more"></a>
+    <a class="bds_count" data-cmd="count"></a>
+  </div>
+  <script>
+    window._bd_share_config = {
+      "common": {
+        "bdText": "",
+        "bdMini": "2",
+        "bdMiniList": false,
+        "bdPic": ""
+      },
+      "share": {
+        "bdSize": "16",
+        "bdStyle": "0"
+      },
+      "image": {
+        "viewList": ["tsina", "douban", "sqq", "qzone", "weixin", "twi", "fbook"],
+        "viewText": "分享到：",
+        "viewSize": "16"
+      }
+    }
+  </script>
+
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="https://cdn.jsdelivr.net/gh/Fatezhang/FigureCloud@master/uPic/heartbeat.gif" alt="陈年风楼">
+            
+              <p class="site-author-name" itemprop="name">陈年风楼</p>
+              <p class="site-description motion-element" itemprop="description">真正的大师永远都怀着一颗学徒的心！</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">62</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/tags.html">
+                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/Fatezhang" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_26627671" target="_blank" title="CSDN">
+                      
+                        <i class="fa fa-fw fa-copyright"></i>CSDN</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zhangjiahengpoping@gmail.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com/zhangjiaheng1874" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                他山之石
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.homuralovelive.com/" title="Da Tui's blog[大蜕の个人博客]" target="_blank">Da Tui's blog[大蜕の个人博客]</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://hamger.github.io/" title="Hanger's blog[一个努力的前端小哥]" target="_blank">Hanger's blog[一个努力的前端小哥]</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://xuanwo.io/" title="Xuanwo's blog[一个牛逼的后端大佬]" target="_blank">Xuanwo's blog[一个牛逼的后端大佬]</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://crossoverjie.top/" title="Crossover jie's blog[一个经常出现在视线里的博主]" target="_blank">Crossover jie's blog[一个经常出现在视线里的博主]</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.hollischuang.com/" title="HollisChuang's blog[一个Java大佬]" target="_blank">HollisChuang's blog[一个Java大佬]</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          <div style="" class="clock-container">
+  <canvas id="canvas" style="width:60%;"></canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f90';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#fff"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#encrypt-message"><span class="nav-text">Please enter the password to read the blog.</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+        
+        
+        
+        <div style="" class="clock-container">
+  <canvas id="canvas" style="width:60%;"></canvas>
+</div>
+<script>
+(function(){
+
+   var digit=
+    [
+        [
+            [0,0,1,1,1,0,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,0,1,1,0],
+            [0,0,1,1,1,0,0]
+        ],//0
+        [
+            [0,0,0,1,1,0,0],
+            [0,1,1,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [1,1,1,1,1,1,1]
+        ],//1
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,1,1],
+            [1,1,1,1,1,1,1]
+        ],//2
+        [
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//3
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,0],
+            [0,0,1,1,1,1,0],
+            [0,1,1,0,1,1,0],
+            [1,1,0,0,1,1,0],
+            [1,1,1,1,1,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,1,1]
+        ],//4
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,1,1,1,1,0],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//5
+        [
+            [0,0,0,0,1,1,0],
+            [0,0,1,1,0,0,0],
+            [0,1,1,0,0,0,0],
+            [1,1,0,0,0,0,0],
+            [1,1,0,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//6
+        [
+            [1,1,1,1,1,1,1],
+            [1,1,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,0,0,1,1,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0],
+            [0,0,1,1,0,0,0]
+        ],//7
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,1,1,0]
+        ],//8
+        [
+            [0,1,1,1,1,1,0],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [1,1,0,0,0,1,1],
+            [0,1,1,1,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,0,1,1],
+            [0,0,0,0,1,1,0],
+            [0,0,0,1,1,0,0],
+            [0,1,1,0,0,0,0]
+        ],//9
+        [
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,0]
+        ]//:
+    ];
+
+var canvas = document.getElementById('canvas');
+
+if(canvas.getContext){
+    var cxt = canvas.getContext('2d');
+    //声明canvas的宽高
+    var H = 100,W = 700;
+    canvas.height = H;
+    canvas.width = W;
+    cxt.fillStyle = '#f90';
+    cxt.fillRect(10,10,50,50);
+
+    //存储时间数据
+    var data = [];
+    //存储运动的小球
+    var balls = [];
+    //设置粒子半径
+    var R = canvas.height/20-1;
+    (function(){
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        //存储时间数字，由十位小时、个位小时、冒号、十位分钟、个位分钟、冒号、十位秒钟、个位秒钟这7个数字组成
+        data.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+    })();
+
+    /*生成点阵数字*/
+    function renderDigit(index,num){
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    cxt.beginPath();
+                    cxt.arc(14*(R+2)*index + j*2*(R+1)+(R+1),i*2*(R+1)+(R+1),R,0,2*Math.PI);
+                    cxt.closePath();
+                    cxt.fill();
+                }
+            }
+        }
+    }
+
+    /*更新时钟*/
+    function updateDigitTime(){
+        var changeNumArray = [];
+        var temp = /(\d)(\d):(\d)(\d):(\d)(\d)/.exec(new Date());
+        var NewData = [];
+        NewData.push(temp[1],temp[2],10,temp[3],temp[4],10,temp[5],temp[6]);
+        for(var i = data.length-1; i >=0 ; i--){
+            //时间发生变化
+            if(NewData[i] !== data[i]){
+                //将变化的数字值和在data数组中的索引存储在changeNumArray数组中
+                changeNumArray.push(i+'_'+(Number(data[i])+1)%10);
+            }
+        }
+        //增加小球
+        for(var i = 0; i< changeNumArray.length; i++){
+            addBalls.apply(this,changeNumArray[i].split('_'));
+        }
+        data = NewData.concat();
+    }
+
+    /*更新小球状态*/
+    function updateBalls(){
+        for(var i = 0; i < balls.length; i++){
+            balls[i].stepY += balls[i].disY;
+            balls[i].x += balls[i].stepX;
+            balls[i].y += balls[i].stepY;
+            if(balls[i].x > W + R || balls[i].y > H + R){
+                balls.splice(i,1);
+                i--;
+            }
+        }
+    }
+
+    /*增加要运动的小球*/
+    function addBalls(index,num){
+        var numArray = [1,2,3];
+        var colorArray =  ["#fff"];
+        for(var i = 0; i < digit[num].length; i++){
+            for(var j = 0; j < digit[num][i].length; j++){
+                if(digit[num][i][j] == 1){
+                    var ball = {
+                        x:14*(R+2)*index + j*2*(R+1)+(R+1),
+                        y:i*2*(R+1)+(R+1),
+                        stepX:Math.floor(Math.random() * 4 -2),
+                        stepY:-2*numArray[Math.floor(Math.random()*numArray.length)],
+                        color:colorArray[Math.floor(Math.random()*colorArray.length)],
+                        disY:1
+                    };
+                    balls.push(ball);
+                }
+            }
+        }
+    }
+
+    /*渲染*/
+    function render(){
+        //重置画布宽度，达到清空画布的效果
+        canvas.height = 100;
+        //渲染时钟
+        for(var i = 0; i < data.length; i++){
+            renderDigit(i,data[i]);
+        }
+        //渲染小球
+        for(var i = 0; i < balls.length; i++){
+            cxt.beginPath();
+            cxt.arc(balls[i].x,balls[i].y,R,0,2*Math.PI);
+            cxt.fillStyle = balls[i].color;
+            cxt.closePath();
+            cxt.fill();
+        }
+    }
+
+    clearInterval(oTimer);
+    var oTimer = setInterval(function(){
+        //更新时钟
+        updateDigitTime();
+        //更新小球状态
+        updateBalls();
+        //渲染
+        render();
+    },50);
+}
+
+})();
+</script>
+
+
+
+      
+        <div class="back-to-top">
+          <i class="fa fa-arrow-up"></i>
+          
+            <span id="scrollpercent"><span>0</span>%</span>
+          
+        </div>
+      
+
+    </div>
+  </aside>
+
+
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">陈年风楼</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">站点字数统计&#58;</span>
+    
+    <span title="站点字数统计">64.7k</span>
+  
+</div>
+
+
+  <div class="powered-by">博客使用 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 搭建</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      人访问
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次查看
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+
+    
+      <div id="needsharebutton-float">
+        <span class="btn">
+          <i class="fa fa-share-alt" aria-hidden="true"></i>
+        </span>
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/needsharebutton/needsharebutton.css">
+
+  
+  
+  <script src="/lib/needsharebutton/needsharebutton.js"></script>
+
+  <script>
+    
+    
+      flOptions = {};
+      
+          flOptions.iconStyle = "default";
+      
+          flOptions.boxForm = "vertical";
+      
+          flOptions.position = "topRight";
+      
+          flOptions.networks = "Weibo,Wechat,Twitter,Facebook";
+      
+      new needShareButton('#needsharebutton-float', flOptions);
+    
+  </script>
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  <script async src="/js/cursor/fireworks.js"></script>
+
+  <script>
+  (function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(bp, s);
+    })();
+    </script>
+
+</body>
+</html>
