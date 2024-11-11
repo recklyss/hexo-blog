@@ -89,7 +89,7 @@ theme: next
 deploy:
   type: git
   repo:
-    github: git@github.com:Fatezhang/Fatezhang.github.io.git
+    github: git@github.com:recklyss/recklyss.github.io.git
   bransh: master
 plugins: hexo-generate-feed
 
